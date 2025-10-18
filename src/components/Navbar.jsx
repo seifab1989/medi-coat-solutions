@@ -5,26 +5,30 @@ import MediCoatLogo from './MediCoatLogo'
 
 export default function Navbar(){
   const [openMobile, setOpenMobile] = useState(false)
-  const [companyOpen, setCompanyOpen] = useState(false)
-  const [newsOpen, setNewsOpen] = useState(false)
-  const [productOpen, setProductOpen] = useState(false)
-  const [careerOpen, setCareerOpen] = useState(false)
-  const [sustainOpen, setSustainOpen] = useState(false)
-  const companyRef = useRef(null)
-  const newsRef = useRef(null)
-  const productRef = useRef(null)
-  const careerRef = useRef(null)
-  const sustainRef = useRef(null)
+  const [UnternehmenOpen, setUnternehmenOpen] = useState(false)
+  const [AktuellesOpen, setAktuellesOpen] = useState(false)
+  const [ProdukteOpen, setProdukteOpen] = useState(false)
+  const [KarriereOpen, setKarriereOpen] = useState(false)
+  const [NachhaltigkeitOpen, setNachhaltigkeitOpen] = useState(false)
+  const [ZertifizierungOpen, setZertifizierungOpen] = useState(false)
+  const [KontaktOpen, setKontaktOpen] = useState(false)
+  const UnternehmenRef = useRef(null)
+  const AktuellesRef = useRef(null)
+  const ProdukteRef = useRef(null)
+  const KarriereRef = useRef(null)
+  const NachhaltigkeitRef = useRef(null)
+  const ZertifizierungRef = useRef(null)
+  const KontaktRef = useRef(null)
 
   useEffect(() => {
     function onDocClick(e){
-      if(companyRef.current && !companyRef.current.contains(e.target)){
-        setCompanyOpen(false)
+      if(UnternehmenRef.current && !UnternehmenRef.current.contains(e.target)){
+        setUnternehmenOpen(false)
       }
-      if (newsRef.current && !newsRef.current.contains(e.target)) setNewsOpen(false)
-      if (productRef.current && !productRef.current.contains(e.target)) setProductOpen(false)
-      if (careerRef.current && !careerRef.current.contains(e.target)) setCareerOpen(false)
-      if (sustainRef.current && !sustainRef.current.contains(e.target)) setSustainOpen(false)
+      if (AktuellesRef.current && !AktuellesRef.current.contains(e.target)) setAktuellesOpen(false)
+      if (ProdukteRef.current && !ProdukteRef.current.contains(e.target)) setProdukteOpen(false)
+      if (KarriereRef.current && !KarriereRef.current.contains(e.target)) setKarriereOpen(false)
+      if (NachhaltigkeitRef.current && !NachhaltigkeitRef.current.contains(e.target)) setNachhaltigkeitOpen(false)
     }
     document.addEventListener('mousedown', onDocClick)
     return () => document.removeEventListener('mousedown', onDocClick)
@@ -41,96 +45,159 @@ export default function Navbar(){
 
         {/* Desktop nav */}
         <nav className="hidden md:flex gap-6 text-slate-700 items-center">
-          <div className="relative" ref={companyRef}>
+          <div className="relative" ref={UnternehmenRef}>
             <button
-              onClick={() => setCompanyOpen(v => !v)}
-              aria-expanded={companyOpen}
+              onClick={() => setUnternehmenOpen(v => !v)}
+              aria-expanded={UnternehmenOpen}
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
               Unternehmen ▾
             </button>
-            {companyOpen && (
+            {UnternehmenOpen && (
               <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="kontakt/KarteAnfahrt" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standortkarte und Anfahrt</Link>
-                <Link to="unternehmen/team" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
-                <Link to="unternehmen/about" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
-                <Link to="unternehmen/UnternehmenIndex" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Zertifizierung</Link>
+                <Link to="kontakt/KarteAnfahrt" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standortkarte und Anfahrt</Link>
+                <Link to="unternehmen/team" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
+                <Link to="unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
+                <Link to="unternehmen/UnternehmenIndex" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Zertifizierung</Link>
               </div>
             )}
           </div>
 
-          <div className="relative" ref={newsRef}>
+          <div className="relative" ref={ProdukteRef}>
             <button
-              onClick={() => setNewsOpen(v => !v)}
-              aria-expanded={newsOpen}
-              aria-haspopup="menu"
-              className="flex items-center gap-2 hover:text-slate-900"
-            >
-              Aktuelles ▾
-            </button>
-            {newsOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="/blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNewsOpen(false)}>Blog</Link>
-                <Link to="/messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNewsOpen(false)}>Messeauftritte</Link>
-                <Link to="/pressemitteilungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNewsOpen(false)}>Pressemitteilungen</Link>
-                <Link to="/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNewsOpen(false)}>Innovation / Forschung</Link>
-              </div>
-            )}
-          </div>
-
-          <div className="relative" ref={productRef}>
-            <button
-              onClick={() => setProductOpen(v => !v)}
-              aria-expanded={productOpen}
+              onClick={() => setProdukteOpen(v => !v)}
+              aria-expanded={ProdukteOpen}
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
               Produkte ▾
             </button>
-            {productOpen && (
+            {ProdukteOpen && (
               <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
-                <Link to="/produkte/portfolio" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProductOpen(false)}>Portfolio</Link>
-                <Link to="/produkte/dienstleistungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProductOpen(false)}>Dienstleistungen</Link>
-                <Link to="/produkte/downloadcenter" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProductOpen(false)}>Downloadcenter</Link>
+                <Link to="/produkte/portfolio" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Portfolio</Link>
+                <Link to="/produkte/dienstleistungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Dienstleistungen</Link>
+                <Link to="/produkte/downloadcenter" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Downloadcenter</Link>
               </div>
             )}
           </div>
-          <div className="relative" ref={careerRef}>
+
+             <div className="relative">
+                <Link to="Patientensicherheit/Patientensicherheit" className="flex items-center gap-2 hover:text-slate-900">
+                PVD & Patientensicherheit ▾
+                </Link>
+              </div>
+
+            <div className="relative" ref={ZertifizierungRef}>
             <button
-              onClick={() => setCareerOpen(v => !v)}
-              aria-expanded={careerOpen}
+              onClick={() => setZertifizierungOpen(v => !v)}
+              aria-expanded={ZertifizierungOpen}
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Karriere ▾
+              Zertifizierung ▾
             </button>
-            {careerOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="/karriere/arbeiten" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setCareerOpen(false)}>Arbeiten bei uns</Link>
-                <Link to="/karriere/ausbildung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setCareerOpen(false)}>Ausbildung / Praktika</Link>
-                <Link to="/karriere/offene-stellen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setCareerOpen(false)}>Offene Stellen</Link>
+            {ZertifizierungOpen && (
+              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
+                <Link to="/zertifizierung/Qualitätsmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Qualitätsmanagement</Link>
+                <Link to="/zertifizierung/Biokompatibilität" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Biokompatibilität</Link>
+                <Link to="/zertifizierung/Zertifikate" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Zertifikate</Link>
               </div>
             )}
           </div>
-          
-          <div className="relative" ref={sustainRef}>
+
+            <div className="relative" ref={NachhaltigkeitRef}>
             <button
-              onClick={() => setSustainOpen(v => !v)}
-              aria-expanded={sustainOpen}
+              onClick={() => setNachhaltigkeitOpen(v => !v)}
+              aria-expanded={NachhaltigkeitOpen}
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
               Nachhaltigkeit ▾
             </button>
-            {sustainOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
-                <Link to="/nachhaltigkeit/konformitaet" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setSustainOpen(false)}>Konformität</Link>
-                <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setSustainOpen(false)}>Soziale Verantwortung</Link>
-                <Link to="/nachhaltigkeit/umweltmanagement" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setSustainOpen(false)}>Umweltmanagement</Link>
+            {NachhaltigkeitOpen && (
+              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
+                <Link to="/nachhaltigkeit/konformitaet" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Konformität</Link>
+                <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Soziale Verantwortung</Link>
+                <Link to="/nachhaltigkeit/umweltmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Umweltmanagement</Link>
               </div>
             )}
           </div>
+
+          <div className="relative" ref={AktuellesRef}>
+            <button
+              onClick={() => setAktuellesOpen(v => !v)}
+              aria-expanded={AktuellesOpen}
+              aria-haspopup="menu"
+              className="flex items-center gap-2 hover:text-slate-900"
+            >
+              Aktuelles ▾
+            </button>
+            {AktuellesOpen && (
+              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
+                <Link to="aktuelles/Messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
+                <Link to="aktuelles/Pressemitteilungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Pressemitteilungen</Link>
+                <Link to="aktuelles/Innovation-Forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
+                <Link to="aktuelles/Blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Blog</Link>                
+              </div>
+            )}
+          </div>
+
+          
+          <div className="relative" ref={KarriereRef}>
+            <button
+              onClick={() => setKarriereOpen(v => !v)}
+              aria-expanded={KarriereOpen}
+              aria-haspopup="menu"
+              className="flex items-center gap-2 hover:text-slate-900"
+            >
+              Karriere ▾
+            </button>
+            {KarriereOpen && (
+              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
+                <Link to="/karriere/offene-stellen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Offene Stellen</Link>
+                <Link to="/karriere/ausbildung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Ausbildung / Praktika</Link>
+                <Link to="/karriere/arbeiten" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Arbeiten bei uns</Link>
+              </div>
+            )}
+          </div>
+
+          <div className="relative" ref={NachhaltigkeitRef}>
+            <button
+              onClick={() => setNachhaltigkeitOpen(v => !v)}
+              aria-expanded={NachhaltigkeitOpen}
+              aria-haspopup="menu"
+              className="flex items-center gap-2 hover:text-slate-900"
+            >
+              Nachhaltigkeit ▾
+            </button>
+            {NachhaltigkeitOpen && (
+              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
+                <Link to="/nachhaltigkeit/konformitaet" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Konformität</Link>
+                <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Soziale Verantwortung</Link>
+                <Link to="/nachhaltigkeit/umweltmanagement" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Umweltmanagement</Link>
+              </div>
+            )}
+          </div>
+
+          <div className="relative" ref={KontaktRef}>
+            <button
+              onClick={() => setKontaktOpen(v => !v)}
+              aria-expanded={KontaktOpen}
+              aria-haspopup="menu"
+              className="flex items-center gap-2 hover:text-slate-900"
+            >
+              Kontakt ▾
+            </button>
+            {KontaktOpen && (
+              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
+                <Link to="/kontakt/Ansprechpartner" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Direkter Ansprechpartner</Link>
+                <Link to="/kontakt/Formular" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Kontaktformular</Link>
+                <Link to="/kontakt/KarteAnfahrt" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Standortkarte & Anfahrt</Link>
+              </div>
+            )}
+          </div>
+
         </nav>
 
         <div className="hidden md:block">
@@ -165,38 +232,71 @@ export default function Navbar(){
             </div>
 
             <div>
-              <button
-                className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
-                onClick={() => setNewsOpen(v => !v)}
-              >Aktuelles ▾</button>
-              {newsOpen && (
+              <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setProdukteOpen(v => !v)}>Produkte ▾</button>
+              {ProdukteOpen && (
                 <div className="pl-4">
-                  <Link to="/blog" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNewsOpen(false); }}>Blog</Link>
-                  <Link to="/messeauftritte" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNewsOpen(false); }}>Messeauftritte</Link>
-                  <Link to="/pressemitteilungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNewsOpen(false); }}>Pressemitteilungen</Link>
-                  <Link to="/innovation-forschung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNewsOpen(false); }}>Innovation / Forschung</Link>
+                  <Link to="/produkte/portfolio" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Portfolio</Link>
+                  <Link to="/produkte/dienstleistungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Dienstleistungen</Link>
+                  <Link to="/produkte/downloadcenter" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Downloadcenter</Link>
                 </div>
               )}
             </div>
 
+               <div>
+                 <Link to="/Patientensicherheit/Patientensicherheit" className="w-full block text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => { setOpenMobile(false); }}>
+                  PVD & Patientensicherheit ▾
+                 </Link>
+               </div>
+
             <div>
-              <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setProductOpen(v => !v)}>Produkte ▾</button>
-              {productOpen && (
+              <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setZertifizierungsOpen(v => !v)}>Zertifizierungen ▾</button>
+              {ZertifizierungsOpen && (
                 <div className="pl-4">
-                  <Link to="/produkte/portfolio" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProductOpen(false); }}>Portfolio</Link>
-                  <Link to="/produkte/dienstleistungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProductOpen(false); }}>Dienstleistungen</Link>
-                  <Link to="/produkte/downloadcenter" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProductOpen(false); }}>Downloadcenter</Link>
+                  <Link to="/zertifizierungen/Qualitätsmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Qualitätsmanagement</Link>
+                  <Link to="/zertifizierungen/Biokompatibilität" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Biokompatibilität</Link>
+                  <Link to="/zertifizierungen/Zertifikate" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Zertifikate</Link>
                 </div>
               )}
             </div>
 
               <div>
-                <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setSustainOpen(v => !v)}>Nachhaltigkeit ▾</button>
-                {sustainOpen && (
+                <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(v => !v)}>Nachhaltigkeit ▾</button>
+                {NachhaltigkeitOpen && (
                   <div className="pl-4">
-                    <Link to="/nachhaltigkeit/konformitaet" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setSustainOpen(false); }}>Konformität</Link>
-                    <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setSustainOpen(false); }}>Soziale Verantwortung</Link>
-                    <Link to="/nachhaltigkeit/umweltmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setSustainOpen(false); }}>Umweltmanagement</Link>
+                    <Link to="/nachhaltigkeit/konformitaet" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Konformität</Link>
+                    <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Soziale Verantwortung</Link>
+                    <Link to="/nachhaltigkeit/umweltmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Umweltmanagement</Link>
+                  </div>
+                )}
+              </div>
+
+            <div>
+              <button
+                className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                onClick={() => setAktuellesOpen(v => !v)}
+              >Aktuelles ▾</button>
+              {AktuellesOpen && (
+                <div className="pl-4">
+                  <Link to="aktuelles/Messeauftritte" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Messeauftritte</Link>
+                  <Link to="aktuelles/Pressemitteilungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Pressemitteilungen</Link>
+                  <Link to="aktuelles/Innovation-Forschung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
+                  <Link to="aktuelles/Blog" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Blog</Link>
+                </div>
+              )}
+            </div>
+
+              <div>
+                <button
+                  className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                  onClick={() => setKarriereOpen(v => !v)}
+                >
+                  Karriere ▾
+                </button>
+                {KarriereOpen && (
+                  <div className="pl-4">
+                    <Link to="/karriere/offene-stellen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Offene Stellen</Link>
+                    <Link to="/karriere/ausbildung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Ausbildung / Praktika</Link>
+                    <Link to="/karriere/arbeiten" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Arbeiten bei uns</Link>
                   </div>
                 )}
               </div>
@@ -204,15 +304,15 @@ export default function Navbar(){
               <div>
                 <button
                   className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
-                  onClick={() => setCareerOpen(v => !v)}
+                  onClick={() => setKontaktOpen(v => !v)}
                 >
-                  Karriere ▾
+                  Kontakt ▾
                 </button>
-                {careerOpen && (
+                {KontaktOpen && (
                   <div className="pl-4">
-                    <Link to="/karriere/arbeiten" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setCareerOpen(false); }}>Arbeiten bei uns</Link>
-                    <Link to="/karriere/ausbildung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setCareerOpen(false); }}>Ausbildung / Praktika</Link>
-                    <Link to="/karriere/offene-stellen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setCareerOpen(false); }}>Offene Stellen</Link>
+                    <Link to="/kontakt/Ansprechpartner" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
+                    <Link to="/kontakt/Formular" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
+                    <Link to="/kontakt/KarteAnfahrt" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
                   </div>
                 )}
               </div>
