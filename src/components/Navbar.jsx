@@ -162,24 +162,6 @@ export default function Navbar(){
             )}
           </div>
 
-          <div className="relative" ref={NachhaltigkeitRef}>
-            <button
-              onClick={() => setNachhaltigkeitOpen(v => !v)}
-              aria-expanded={NachhaltigkeitOpen}
-              aria-haspopup="menu"
-              className="flex items-center gap-2 hover:text-slate-900"
-            >
-              Nachhaltigkeit ▾
-            </button>
-            {NachhaltigkeitOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
-                <Link to="/nachhaltigkeit/konformitaet" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Konformität</Link>
-                <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Soziale Verantwortung</Link>
-                <Link to="/nachhaltigkeit/umweltmanagement" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Umweltmanagement</Link>
-              </div>
-            )}
-          </div>
-
           <div className="relative" ref={KontaktRef}>
             <button
               onClick={() => setKontaktOpen(v => !v)}
