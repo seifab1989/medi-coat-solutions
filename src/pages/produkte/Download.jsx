@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import DocLink from '../components/DocLink'
-import CategoryHeading from '../components/CategoryHeading'
+import DocLink from '../../components/DocLink'
+import CategoryHeading from '../../components/CategoryHeading'
 
 export default function Download(){
   const [meta, setMeta] = useState({})
