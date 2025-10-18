@@ -29,6 +29,8 @@ export default function Navbar(){
       if (ProdukteRef.current && !ProdukteRef.current.contains(e.target)) setProdukteOpen(false)
       if (KarriereRef.current && !KarriereRef.current.contains(e.target)) setKarriereOpen(false)
       if (NachhaltigkeitRef.current && !NachhaltigkeitRef.current.contains(e.target)) setNachhaltigkeitOpen(false)
+      if (ZertifizierungRef.current && !ZertifizierungRef.current.contains(e.target)) setZertifizierungOpen(false)
+      if (KontaktRef.current && !KontaktRef.current.contains(e.target)) setKontaktOpen(false)
     }
     document.addEventListener('mousedown', onDocClick)
     return () => document.removeEventListener('mousedown', onDocClick)
@@ -212,7 +214,10 @@ export default function Navbar(){
             </div>
 
             <div>
-              <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setProdukteOpen(v => !v)}>Produkte ▾</button>
+              <button 
+              className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" 
+              onClick={() => setProdukteOpen(v => !v)}
+              >Produkte ▾</button>
               {ProdukteOpen && (
                 <div className="pl-4">
                   <Link to="/produkte/portfolio" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Portfolio</Link>
@@ -229,7 +234,10 @@ export default function Navbar(){
                </div>
 
             <div>
-              <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setZertifizierungsOpen(v => !v)}>Zertifizierungen ▾</button>
+              <button 
+              className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" 
+              onClick={() => setZertifizierungsOpen(v => !v)}
+              >Zertifizierungen ▾</button>
               {ZertifizierungsOpen && (
                 <div className="pl-4">
                   <Link to="/zertifizierungen/Qualitätsmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Qualitätsmanagement</Link>
@@ -240,7 +248,10 @@ export default function Navbar(){
             </div>
 
               <div>
-                <button className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(v => !v)}>Nachhaltigkeit ▾</button>
+                <button
+                  className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                  onClick={() => setNachhaltigkeitOpen(v => !v)}
+                >Nachhaltigkeit ▾</button>
                 {NachhaltigkeitOpen && (
                   <div className="pl-4">
                     <Link to="/nachhaltigkeit/konformitaet" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Konformität</Link>
