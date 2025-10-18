@@ -52,10 +52,10 @@ export default function Navbar(){
             </button>
             {companyOpen && (
               <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="/standorte" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50" >Standorte</Link>
-                <Link to="/team" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
-                <Link to="/about" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
-                <Link to="/unternehmen/zertifizierung" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Zertifizierung</Link>
+                <Link to="kontakt/KarteAnfahrt" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standortkarte und Anfahrt</Link>
+                <Link to="unternehmen/team" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
+                <Link to="unternehmen/about" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
+                <Link to="unternehmen/UnternehmenIndex" onClick={() => setCompanyOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Zertifizierung</Link>
               </div>
             )}
           </div>
@@ -134,7 +134,7 @@ export default function Navbar(){
         </nav>
 
         <div className="hidden md:block">
-          <Button to="/contact" className="px-4 py-2">Beratung anfragen</Button>
+          <Button to="/kontakt/formular" className="px-4 py-2">Beratung anfragen</Button>
         </div>
 
         {/* Mobile toggle */}
@@ -157,10 +157,10 @@ export default function Navbar(){
             <div>
               <div className="font-medium">Unternehmen</div>
               <div className="mt-2 flex flex-col pl-3">
-                <Link to="/standorte" onClick={() => setOpenMobile(false)} className="py-1">Standorte</Link>
-                <Link to="/team" onClick={() => setOpenMobile(false)} className="py-1">Team</Link>
-                <Link to="/about" onClick={() => setOpenMobile(false)} className="py-1">Über uns</Link>
-                <Link to="/unternehmen/zertifizierung" onClick={() => setOpenMobile(false)} className="py-1">Zertifizierung</Link>
+                <Link to="kontakt/KarteAnfahrt" onClick={() => setOpenMobile(false)} className="py-1">Standortkarte und Anfahrt</Link>
+                <Link to="unternehmen/team" onClick={() => setOpenMobile(false)} className="py-1">Team</Link>
+                <Link to="unternehmen/about" onClick={() => setOpenMobile(false)} className="py-1">Über uns</Link>
+                <Link to="unternehmen/UnternehmenIndex" onClick={() => setOpenMobile(false)} className="py-1">Zertifizierung</Link>
               </div>
             </div>
 
@@ -218,7 +218,7 @@ export default function Navbar(){
               </div>
 
             <div className="pt-2">
-              <Link to="/contact" onClick={() => setOpenMobile(false)}>
+              <Link to="/kontakt/formular" onClick={() => setOpenMobile(false)}>
                 <Button className="w-full">Beratung anfragen</Button>
               </Link>
             </div>
