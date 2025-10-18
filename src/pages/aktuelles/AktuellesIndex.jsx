@@ -1,4 +1,4 @@
-export default function Aktuelles(){
+export default function AktuellesIndex(){
   return (
     <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-3xl md:text-4xl font-semibold">Aktuelles</h1>

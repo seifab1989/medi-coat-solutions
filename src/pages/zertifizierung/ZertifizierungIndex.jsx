@@ -3,7 +3,7 @@ import Biokompatibilitaet from '../../components/Zertifizierungen/Biokompatibili
 import Qualitaetsmanagement from '../../components/Zertifizierungen/Qualitaetsmanagement'
 import Zertifikate from '../../components/Zertifizierungen/Zertifikate'
 
-export default function Zertifizierung(){
+export default function ZertifizierungIndex(){
   return (
     <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="page-title">
       <h1 id="page-title" className="text-3xl md:text-4xl font-semibold">Zertifizierung & Nachweise</h1>

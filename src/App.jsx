@@ -4,15 +4,15 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/unternehmen/About'
-import Contact from './pages/kontakt/Contact'
+import Formular from './pages/kontakt/formular'
 import Demo from './pages/Demo'
 import Download from './pages/produkte/Download'
 import Impressum from './pages/Impressum'
 import Datenschutz from './pages/Datenschutz'
 import Team from './pages/unternehmen/Team'
-import Standorte from './pages/unternehmen/Standorte'
-import Zertifizierung from './pages/zertifizierung/zertifizierung'
-import Aktuelles from './pages/aktuelles/Aktuelles'
+import KarteAnfahrt from './pages/kontakt/KarteAnfahrt'
+import ZertifizierungIndex from './pages/zertifizierung/ZertifizierungIndex'
+import AktuellesIndex from './pages/aktuelles/AktuellesIndex'
 import Blog from './pages/aktuelles/Blog'
 import Messeauftritte from './pages/aktuelles/Messeauftritte'
 import Pressemitteilungen from './pages/aktuelles/Pressemitteilungen'
@@ -36,29 +36,29 @@ export default function App(){
         <main className="py-8">
           <Routes>
             <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/contact" element={<Contact/>} />
-            <Route path="/demo" element={<Demo/>} />
-            <Route path="/team" element={<Team/>} />
-            <Route path="/standorte" element={<Standorte/>} />
-            <Route path="/download" element={<Download/>} />
-            <Route path="/produkte/portfolio" element={<Portfolio/>} />
-            <Route path="/produkte/dienstleistungen" element={<Dienstleistungen/>} />
-            <Route path="/produkte/downloadcenter" element={<DownloadcenterProducts/>} />
-            <Route path="/unternehmen/zertifizierung" element={<Zertifizierung/>} />
-            <Route path="/aktuelles" element={<Aktuelles/>} />
-            <Route path="/blog" element={<Blog/>} />
-            <Route path="/messeauftritte" element={<Messeauftritte/>} />
-            <Route path="/pressemitteilungen" element={<Pressemitteilungen/>} />
-            <Route path="/innovation-forschung" element={<InnovationForschung/>} />
-            <Route path="/nachhaltigkeit/konformitaet" element={<Konformitaet/>} />
-            <Route path="/nachhaltigkeit/soziale-verantwortung" element={<SozialeVerantwortung/>} />
-            <Route path="/nachhaltigkeit/umweltmanagement" element={<Umweltmanagement/>} />
-            <Route path="/karriere/arbeiten" element={<Arbeiten/>} />
-            <Route path="/karriere/ausbildung" element={<Ausbildung/>} />
-            <Route path="/karriere/offene-stellen" element={<OffeneStellen/>} />
-            <Route path="/impressum" element={<Impressum/>} />
-            <Route path="/datenschutz" element={<Datenschutz/>} />
+            <Route path="unternehmen/about" element={<About/>} />
+            <Route path="kontakt/Formular" element={<Formular/>} />
+            <Route path="demo" element={<Demo/>} />
+            <Route path="unternehmen/team" element={<Team/>} />
+            <Route path="kontakt/KarteAnfahrt" element={<KarteAnfahrt/>} />
+            <Route path="produkte/download" element={<Download/>} />
+            <Route path="produkte/portfolio" element={<Portfolio/>} />
+            <Route path="produkte/dienstleistungen" element={<Dienstleistungen/>} />
+            <Route path="produkte/downloadcenter" element={<DownloadcenterProducts/>} />
+            <Route path="unternehmen/zertifizierung/ZertifizierungIndex" element={<ZertifizierungIndex/>} />
+            <Route path="aktuelles/AktuellesIndex" element={<AktuellesIndex/>} />
+            <Route path="aktuelles/blog" element={<Blog/>} />
+            <Route path="aktuelles/messeauftritte" element={<Messeauftritte/>} />
+            <Route path="aktuelles/pressemitteilungen" element={<Pressemitteilungen/>} />
+            <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
+            <Route path="nachhaltigkeit/konformitaet" element={<Konformitaet/>} />
+            <Route path="nachhaltigkeit/soziale-verantwortung" element={<SozialeVerantwortung/>} />
+            <Route path="nachhaltigkeit/umweltmanagement" element={<Umweltmanagement/>} />
+            <Route path="karriere/arbeiten" element={<Arbeiten/>} />
+            <Route path="karriere/ausbildung" element={<Ausbildung/>} />
+            <Route path="karriere/offene-stellen" element={<OffeneStellen/>} />
+            <Route path="impressum" element={<Impressum/>} />
+            <Route path="datenschutz" element={<Datenschutz/>} />
           </Routes>
         </main>
         <Footer />
