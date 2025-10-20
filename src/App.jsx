@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/unternehmen/About'
 import Standorte from './pages/unternehmen/Standorte'
 import Team from './pages/unternehmen/Team'
+import Herstellung from './pages/produkte/Herstellung'
 import Portfolio from './pages/produkte/portfolio'
 import Dienstleistungen from './pages/produkte/dienstleistungen'
 import DownloadcenterProducts from './pages/produkte/downloadcenter'
@@ -49,6 +50,7 @@ export default function App(){
             <Route path="unternehmen/about" element={<About/>} />
             <Route path="unternehmen/Standort" element={<Standorte/>} />
             <Route path="unternehmen/Team" element={<Team/>} />
+            <Route path="produkte/Herstellung" element={<Herstellung/>} />
             <Route path="produkte/download" element={<Download/>} />
             <Route path="produkte/portfolio" element={<Portfolio/>} />
             <Route path="produkte/dienstleistungen" element={<Dienstleistungen/>} />

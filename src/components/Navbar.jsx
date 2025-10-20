@@ -76,6 +76,7 @@ export default function Navbar(){
             </button>
             {ProdukteOpen && (
               <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
+                <Link to="/produkte/Herstellung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Herstellung PVD-Schichten</Link>
                 <Link to="/produkte/portfolio" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Portfolio</Link>
                 <Link to="/produkte/dienstleistungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Dienstleistungen</Link>
                 <Link to="/produkte/downloadcenter" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Downloadcenter</Link>
@@ -220,6 +221,7 @@ export default function Navbar(){
               >Produkte ▾</button>
               {ProdukteOpen && (
                 <div className="pl-4">
+                  <Link to="/produkte/Herstellung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Herstellung PVD-Schichten</Link>
                   <Link to="/produkte/portfolio" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Portfolio</Link>
                   <Link to="/produkte/dienstleistungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Dienstleistungen</Link>
                   <Link to="/produkte/downloadcenter" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Downloadcenter</Link>
