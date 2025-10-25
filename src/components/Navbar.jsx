@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import Button from './Button'
 import MediCoatLogo from './MediCoatLogo'
 
@@ -19,6 +19,61 @@ export default function Navbar(){
   const NachhaltigkeitRef = useRef(null)
   const ZertifizierungRef = useRef(null)
   const KontaktRef = useRef(null)
+
+// Breadcrumb Setup (liest aktuelle URL aus dem Router)
+  const location = useLocation()
+  const pathnames = location.pathname.split('/').filter(Boolean)
+  const labelMap = {
+    'UnternehmenIndex': 'Unternehmen',
+    'team': 'Team',
+    'about': 'Über uns',
+    'Standorte': 'Standorte',
+
+
+    'ProdukteIndex': 'Produkte',
+    'Herstellung': 'Herstellung PVD-Schichten',
+    'portfolio': 'Portfolio',
+    'dienstleistungen': 'Dienstleistungen',
+    'downloadcenter': 'Downloadcenter',
+
+
+    'patientensicherheit': 'PVD & Patientensicherheit',
+
+
+    'ZertifizierungIndex': 'Zertifizierung',
+    'Qualitaetsmanagement': 'Qualitätsmanagement',
+    'Biokompatibilitaet': 'Biokompatibilität',
+    'Zertifikate': 'Zertifikate',
+
+
+    'NachhaltigkeitIndex': 'Nachhaltigkeit',
+    'konformitaet': 'Konformität',
+    'soziale-verantwortung': 'Soziale Verantwortung',
+    'umweltmanagement': 'Umweltmanagement',
+
+
+    'AktuellesIndex': 'Aktuelles',
+    'Messeauftritte': 'Messeauftritte',
+    'Pressemitteilungen': 'Pressemitteilungen',
+    'InnovationForschung': 'Innovation / Forschung',
+    'Blog': 'Blog',
+
+
+    'KarriereIndex': 'Karriere',
+    'offene-stellen': 'Offene Stellen',
+    'ausbildung': 'Ausbildung / Praktika',
+    'arbeiten': 'Arbeiten bei uns',
+
+
+    'KontaktIndex': 'Kontakt',
+    'Ansprechpartner': 'Direkter Ansprechpartner',
+    'Formular': 'Kontaktformular',
+    'KarteAnfahrt': 'Standortkarte & Anfahrt'
+ }
+
+  const toTitle = (seg) => labelMap[seg.toLowerCase()] || decodeURIComponent(seg).replace(/-/g, ' ')
+  const crumbs = pathnames.map((seg, idx) => ({name: toTitle(seg), to: '/' + pathnames.slice(0, idx + 1).join('/')}))
+
 
   useEffect(() => {
     function onDocClick(e){
@@ -60,7 +115,7 @@ export default function Navbar(){
               <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="unternehmen/team" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
                 <Link to="unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
-                <Link to="unternehmen/UnternehmenIndex" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Zertifizierung</Link>
+                <Link to="unternehmen/Standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
               </div>
             )}
           </div>
@@ -101,8 +156,8 @@ export default function Navbar(){
             </button>
             {ZertifizierungOpen && (
               <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
-                <Link to="/zertifizierung/Qualitätsmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Qualitätsmanagement</Link>
-                <Link to="/zertifizierung/Biokompatibilität" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Biokompatibilität</Link>
+                <Link to="/zertifizierung/Qualitaetsmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Qualitätsmanagement</Link>
+                <Link to="/zertifizierung/Biokompatibilitaet" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Biokompatibilität</Link>
                 <Link to="/zertifizierung/Zertifikate" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Zertifikate</Link>
               </div>
             )}
@@ -201,6 +256,28 @@ export default function Navbar(){
         </div>
       </div>
 
+        {/* Breadcrumb */}
+        {location.pathname !== '/' && !openMobile && (
+          <nav aria-label="Breadcrumb" className="bg-white/70 backdrop-blur border-t">
+            <ol className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-2 text-sm text-slate-600">
+              <li>
+                <Link to="/" className="hover:text-slate-900">Startseite</Link>
+              </li>
+
+              {crumbs.map((c, idx) => (
+                <li key={c.to} className="flex items-center gap-2">
+                  <span aria-hidden>›</span>
+                  {idx < crumbs.length - 1 ? (
+                    <Link to={c.to} className="hover:text-slate-900">{c.name}</Link>
+                  ) : (
+                    <span aria-current="page" className="font-medium text-slate-900">{c.name}</span>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </nav>
+        )}
+
       {/* Mobile menu */}
       {openMobile && (
         <div className="md:hidden bg-white/80 backdrop-blur border-t">
@@ -210,7 +287,7 @@ export default function Navbar(){
               <div className="mt-2 flex flex-col pl-3">
                 <Link to="unternehmen/team" onClick={() => setOpenMobile(false)} className="py-1">Team</Link>
                 <Link to="unternehmen/about" onClick={() => setOpenMobile(false)} className="py-1">Über uns</Link>
-                <Link to="unternehmen/UnternehmenIndex" onClick={() => setOpenMobile(false)} className="py-1">Zertifizierung</Link>
+                <Link to="unternehmen/Standorte" onClick={() => setOpenMobile(false)} className="py-1">Standorte</Link>
               </div>
             </div>
 
@@ -238,13 +315,13 @@ export default function Navbar(){
             <div>
               <button 
               className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" 
-              onClick={() => setZertifizierungsOpen(v => !v)}
+              onClick={() => setZertifizierungOpen(v => !v)}
               >Zertifizierungen ▾</button>
-              {ZertifizierungsOpen && (
+              {ZertifizierungOpen && (
                 <div className="pl-4">
-                  <Link to="/zertifizierungen/Qualitätsmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Qualitätsmanagement</Link>
-                  <Link to="/zertifizierungen/Biokompatibilität" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Biokompatibilität</Link>
-                  <Link to="/zertifizierungen/Zertifikate" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungsOpen(false); }}>Zertifikate</Link>
+                  <Link to="/zertifizierungen/Qualitaetsmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
+                  <Link to="/zertifizierungen/Biokompatibilitaet" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Biokompatibilität</Link>
+                  <Link to="/zertifizierungen/Zertifikate" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Zertifikate</Link>
                 </div>
               )}
             </div>
