@@ -111,8 +111,8 @@ export default function Navbar(){
             >
               Unternehmen ▾
             </button>
-            {UnternehmenOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
+                {UnternehmenOpen && (
+                  <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="unternehmen/team" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
                 <Link to="unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
                 <Link to="unternehmen/Standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
@@ -130,7 +130,7 @@ export default function Navbar(){
               Produkte ▾
             </button>
             {ProdukteOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
+              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
                 <Link to="/produkte/Herstellung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Herstellung PVD-Schichten</Link>
                 <Link to="/produkte/portfolio" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Portfolio</Link>
                 <Link to="/produkte/dienstleistungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Dienstleistungen</Link>
@@ -155,7 +155,7 @@ export default function Navbar(){
               Zertifizierung ▾
             </button>
             {ZertifizierungOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
+              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
                 <Link to="/zertifizierung/Qualitaetsmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Qualitätsmanagement</Link>
                 <Link to="/zertifizierung/Biokompatibilitaet" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Biokompatibilität</Link>
                 <Link to="/zertifizierung/Zertifikate" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Zertifikate</Link>
@@ -173,7 +173,7 @@ export default function Navbar(){
               Nachhaltigkeit ▾
             </button>
             {NachhaltigkeitOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
+              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
                 <Link to="/nachhaltigkeit/konformitaet" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Konformität</Link>
                 <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Soziale Verantwortung</Link>
                 <Link to="/nachhaltigkeit/umweltmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Umweltmanagement</Link>
@@ -191,7 +191,7 @@ export default function Navbar(){
               Aktuelles ▾
             </button>
             {AktuellesOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
+              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="aktuelles/Messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
                 <Link to="aktuelles/Pressemitteilungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Pressemitteilungen</Link>
                 <Link to="aktuelles/Innovation-Forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
@@ -211,7 +211,7 @@ export default function Navbar(){
               Karriere ▾
             </button>
             {KarriereOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
+              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="/karriere/offene-stellen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Offene Stellen</Link>
                 <Link to="/karriere/ausbildung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Ausbildung / Praktika</Link>
                 <Link to="/karriere/arbeiten" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Arbeiten bei uns</Link>
@@ -229,7 +229,7 @@ export default function Navbar(){
               Kontakt ▾
             </button>
             {KontaktOpen && (
-              <div className="absolute mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
+              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
                 <Link to="/kontakt/Ansprechpartner" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Direkter Ansprechpartner</Link>
                 <Link to="/kontakt/Formular" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Kontaktformular</Link>
                 <Link to="/kontakt/KarteAnfahrt" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Standortkarte & Anfahrt</Link>
@@ -258,7 +258,7 @@ export default function Navbar(){
 
         {/* Breadcrumb */}
         {location.pathname !== '/' && !openMobile && (
-          <nav aria-label="Breadcrumb" className="bg-white/70 backdrop-blur border-t">
+          <nav aria-label="Breadcrumb" className="relative z-10 bg-white/70 backdrop-blur border-t">
             <ol className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-2 text-sm text-slate-600">
               <li>
                 <Link to="/" className="hover:text-slate-900">Startseite</Link>
