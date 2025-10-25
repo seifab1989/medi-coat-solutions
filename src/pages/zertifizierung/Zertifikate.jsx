@@ -1,11 +1,21 @@
 import React from 'react'
+import DownloadsList from '../../components/DownloadsList'
 
 export default function Zertifikate(){
+  // filter pattern to match likely certificate filenames; adjust if your filenames differ
+  const certPattern = 'zertifikat|certificate|certificat|cert|attest|zeugnis|certificate|bescheinigung'
   return (
-    <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-3xl md:text-4xl font-semibold">Konformität</h1>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-      <p className="mt-3 text-slate-700 max-w-3xl">Informationen zur regulatorischen Konformität unserer Prozesse und Produkte.</p>
-    </main>
+    <DownloadsList
+      title="Zertifikate"
+      intro="Hier finden Sie unsere relevanten Zertifikate zum Download."
+      includePattern={certPattern}
+      splitByDataSheet={false}
+      defaultItems={{
+        dataSheets: null,
+        others: [
+          { title: 'Beispiel-Zertifikat (Fallback)', href: '/downloads/zertifikat-beispiel.pdf' }
+        ]
+      }}
+    />
   )
 }

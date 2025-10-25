@@ -17,7 +17,7 @@ import Biokompatibilitaet from './pages/zertifizierung/Biokompatibilitaet'
 import Zertifikate from './pages/zertifizierung/Zertifikate'
 import Umweltmanagement from './pages/nachhaltigkeit/umweltmanagement'
 import SozialeVerantwortung from './pages/nachhaltigkeit/soziale-verantwortung'
-import Konformitaet from './pages/nachhaltigkeit/konformitaet'
+import Konformitaet from './pages/Nachhaltigkeit/konformitaet'
 import Messeauftritte from './pages/aktuelles/Messeauftritte'
 import Pressemitteilungen from './pages/aktuelles/Pressemitteilungen'
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
@@ -48,17 +48,17 @@ export default function App(){
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="unternehmen/about" element={<About/>} />
-            <Route path="unternehmen/Standort" element={<Standorte/>} />
-            <Route path="unternehmen/Team" element={<Team/>} />
-            <Route path="produkte/Herstellung" element={<Herstellung/>} />
+            <Route path="unternehmen/standorte" element={<Standorte/>} />
+            <Route path="unternehmen/team" element={<Team/>} />
+            <Route path="produkte/herstellung" element={<Herstellung/>} />
             <Route path="produkte/download" element={<Download/>} />
             <Route path="produkte/portfolio" element={<Portfolio/>} />
             <Route path="produkte/dienstleistungen" element={<Dienstleistungen/>} />
             <Route path="produkte/downloadcenter" element={<DownloadcenterProducts/>} />
-            <Route path="patientensicherheit/Patientensicherheit" element={<Patientensicherheit/>} />
-            <Route path="zertifizierung/Qualitätsmanagement" element={<Qualitaetsmanagement/>} />
-            <Route path="zertifizierung/Biokompatibilität" element={<Biokompatibilitaet/>} />
-            <Route path="zertifizierung/Zertifikate" element={<Zertifikate/>} />
+            <Route path="patientensicherheit/patientensicherheit" element={<Patientensicherheit/>} />
+            <Route path="zertifizierung/qualitaetsmanagement" element={<Qualitaetsmanagement/>} />
+            <Route path="zertifizierung/biokompatibilitaet" element={<Biokompatibilitaet/>} />
+            <Route path="zertifizierung/zertifikate" element={<Zertifikate/>} />
             <Route path="nachhaltigkeit/umweltmanagement" element={<Umweltmanagement/>} />
             <Route path="nachhaltigkeit/soziale-verantwortung" element={<SozialeVerantwortung/>} />
             <Route path="nachhaltigkeit/konformitaet" element={<Konformitaet/>} />
@@ -69,9 +69,9 @@ export default function App(){
             <Route path="karriere/offene-stellen" element={<OffeneStellen/>} />
             <Route path="karriere/ausbildung" element={<Ausbildung/>} />
             <Route path="karriere/arbeiten" element={<Arbeiten/>} />
-            <Route path="kontakt/Ansprechpartner" element={<Ansprechpartner/>} />
-            <Route path="kontakt/Formular" element={<Formular/>} />
-            <Route path="kontakt/KarteAnfahrt" element={<KarteAnfahrt/>} />          
+            <Route path="kontakt/ansprechpartner" element={<Ansprechpartner/>} />
+            <Route path="kontakt/formular" element={<Formular/>} />
+            <Route path="kontakt/karteanfahrt" element={<KarteAnfahrt/>} />          
             <Route path="demo" element={<Demo/>} />
             <Route path="impressum" element={<Impressum/>} />
             <Route path="datenschutz" element={<Datenschutz/>} />
