@@ -65,10 +65,10 @@ export default function Navbar(){
     'arbeiten': 'Arbeiten bei uns',
 
 
-    'KontaktIndex': 'Kontakt',
-    'Ansprechpartner': 'Direkter Ansprechpartner',
-    'Formular': 'Kontaktformular',
-    'KarteAnfahrt': 'Standortkarte & Anfahrt'
+  'KontaktIndex': 'Kontakt',
+  'Ansprechpartner': 'Direkter Ansprechpartner',
+  'Formular': 'Kontaktformular',
+  'karteanfahrt': 'Standortkarte & Anfahrt'
  }
 
   const toTitle = (seg) => labelMap[seg.toLowerCase()] || decodeURIComponent(seg).replace(/-/g, ' ')
