@@ -16,11 +16,33 @@ function Bullet({ children }){
 }
 
 function Overview(){
+  // Reuse the GradientCard style from Biokompatibilitaet for consistent look
+  const GradientBar = () => (
+    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  );
+
+  const GradientCard = ({ children }) => (
+    <div
+      className="bg-white p-6 rounded-3xl hover:shadow-md transition"
+      style={{
+        border: "2px solid transparent",
+        borderRadius: "1.5rem",
+        backgroundImage:
+          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
+        backgroundOrigin: "border-box",
+        backgroundClip: "padding-box, border-box",
+        color: "#0f172a",
+      }}
+    >
+      {children}
+    </div>
+  );
+
   const Card = ({ title, desc }) => (
-    <div className="bg-white p-6 rounded-3xl hover:shadow-md transition" style={{border:"3px solid transparent",borderRadius:"1.5rem"}}>
+    <GradientCard>
       <h3 className="font-semibold inline-flex items-center gap-1">{title}</h3>
       {desc ? <p className="text-sm text-slate-700 mt-1">{desc}</p> : null}
-    </div>
+    </GradientCard>
   )
   return (
     <div className="grid md:grid-cols-3 gap-6">

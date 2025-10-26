@@ -11,7 +11,7 @@ export default function Biokompatibilitaet() {
       className="bg-white p-6 rounded-3xl"
       // Robuster Gradient-Border (Originaltechnik: doppeltes backgroundImage)
       style={{
-        border: "4px solid transparent",
+        border: "2px solid transparent",
         borderRadius: "1.5rem",
         backgroundImage:
           "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",

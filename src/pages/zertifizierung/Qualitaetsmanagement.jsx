@@ -25,7 +25,7 @@ export default function Qualitaetsmanagement() {
 
   return (
     <main
-      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 bg-white"
+      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
       role="main"
       aria-labelledby="qm-title"
     >
