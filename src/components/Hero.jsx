@@ -1,6 +1,13 @@
 import React from 'react'
 
 export default function Hero(){
+  // Ensure base ends with a trailing slash so concatenations like base + 'assets/..' work
+    // Respect Vite base path; ensure trailing slash for safe concatenation
+    const rawBase = import.meta.env.BASE_URL || '/'
+    const base = rawBase.endsWith('/') ? rawBase : rawBase + '/'
+
+    // Removed debug fetch logic
+
   return (
     <>
       {/* Hero */}
@@ -23,14 +30,19 @@ export default function Hero(){
             </div>
 
             <div className="lg:col-span-5">
-              <div className="aspect-[4/3] rounded-3xl border border-slate-200/60 shadow-sm bg-gradient-to-br from-blue-50 to-green-50 flex items-center justify-center p-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 mx-auto mb-4 text-blue-600 text-3xl">⚙️</div>
-                  <p className="text-sm text-slate-600">
-                    Validierte Prozesse mit statistischer Kontrolle (SPC) – für reproduzierbare Ergebnisse.
-                  </p>
+                <div className="aspect-[4/3] rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative">
+                  <img
+                    src={base + 'assets/hero_chirurgie.jpg'}
+                    alt=""
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    onError={(e) => {
+                      // Silent fallback to a secondary local image if primary fails
+                      e.currentTarget.onerror = null
+                      e.currentTarget.src = base + 'assets/hero_locator.jpg'
+                    }}
+                  />
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -43,6 +55,7 @@ export default function Hero(){
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
               Warum PVD-Schichten in der Medizintechnik?
             </h2>
+            <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
             <p className="mt-2 text-slate-600">
               PVD-Schichten verbessern die Funktion, Langlebigkeit und Sicherheit von Medizinprodukten.
             </p>
@@ -84,11 +97,20 @@ export default function Hero(){
 
 function AdvCard({ icon, title, points }){
   return (
-    <div className="bg-white rounded-2xl border border-slate-200/60 p-6 hover:border-slate-300 hover:shadow-lg transition-all duration-200">
+    <div
+      className="bg-white p-6 rounded-3xl hover:shadow-md transition"
+      style={{
+        border: "2px solid transparent",
+        borderRadius: "1.5rem",
+        backgroundImage:
+          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
+        backgroundOrigin: "border-box",
+        backgroundClip: "padding-box, border-box",
+        color: "#0f172a",
+      }}
+    >
       <div className="flex items-start gap-3 mb-4">
-        <div className="flex-none w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-green-500 flex items-center justify-center text-white shadow-sm">
-          {icon}
-        </div>
+        <div className="flex-none">{icon}</div>
         <h3 className="font-semibold text-slate-900">{title}</h3>
       </div>
       <ul className="space-y-2">
