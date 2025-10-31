@@ -35,7 +35,7 @@ export default function Umweltmanagement() {
 
       {/* Leitlinien / Prinzipien – Karten wie in UeberUns */}
       <section className="mt-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Unser Anspruch</h2>
+  <h2 className="text-2xl md:text-3xl font-semibold">Unser Anspruch</h2>
         <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
@@ -77,7 +77,7 @@ export default function Umweltmanagement() {
 
       {/* Konkrete Maßnahmen – Liste wie typografische Abschnitte in UeberUns */}
       <section className="mt-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Konkrete Maßnahmen</h2>
+  <h2 className="text-2xl md:text-3xl font-semibold">Konkrete Maßnahmen</h2>
         <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li>

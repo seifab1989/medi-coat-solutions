@@ -34,7 +34,7 @@ export default function Biokompatibilitaet() {
 
       {/* Merkmalskarten – angelehnt an UeberUns */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Was geprüft wurde</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Was geprüft wurde</h3>
         <GradientBar />
         <div className="grid md:grid-cols-3 gap-6">
           <GradientCard>
@@ -54,7 +54,7 @@ export default function Biokompatibilitaet() {
 
       {/* Zytotoxizität – Abschnitt im gleichen Stil */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Prüfung auf Zytotoxizität nach DIN EN ISO 10993‑5</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Prüfung auf Zytotoxizität nach DIN EN ISO 10993‑5</h3>
         <GradientBar />
         <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
           <span className="text-sm">Bildplatzhalter – Prüfung auf Zytotoxizität</span>

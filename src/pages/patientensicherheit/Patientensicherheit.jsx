@@ -22,9 +22,13 @@ export default function Patientensicherheit() {
     </div>
   );
 
+  // Respect Vite base path; ensure trailing slash for safe concatenation
+  const rawBase = import.meta.env.BASE_URL || "/";
+  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
+
   return (
     <main
-      className="flex-1 mx-auto max-w-7xl"
+      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
       role="main"
       aria-labelledby="patientensicherheit-title"
     >
@@ -37,9 +41,9 @@ export default function Patientensicherheit() {
         Biokompatibilität und Sterilisationsbeständigkeit gemäß relevanter Normen.
       </p>
 
-      {/* Intro-Section mit Bildplatzhalter (Layout wie in UeberUns) */}
+      {/* Intro-Section */}
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-12">
           <h3 className="text-2xl md:text-3xl font-semibold">Warum Patientensicherheit?</h3>
           <GradientBar />
           <p className="text-slate-700 leading-relaxed">
@@ -48,16 +52,11 @@ export default function Patientensicherheit() {
             minimieren und tragen aktiv zur Patientensicherheit bei.
           </p>
         </div>
-        <div className="lg:col-span-5">
-          <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
-            <span className="text-sm">Bildplatzhalter – Patientensicherheit</span>
-          </div>
-        </div>
       </section>
 
       {/* Nutzenliste – typografisch wie UeberUns Absätze */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Nutzen von PVD-Schichten für Medizinprodukte</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Nutzen von PVD-Schichten für Medizinprodukte</h3>
         <GradientBar />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li>
@@ -82,8 +81,13 @@ export default function Patientensicherheit() {
       <section className="mt-12 grid md:grid-cols-2 gap-6">
         <GradientCard>
           <h4 className="font-semibold">Beispiel 1: Korrosionsbeständigkeit</h4>
-          <div className="aspect-[16/9] rounded-2xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 mt-4 mb-3 flex items-center justify-center text-slate-500">
-            <span className="text-sm">Abbildung zur Korrosionsbeständigkeit – Bildplatzhalter</span>
+          <div className="aspect-[16/9] mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
+            <img
+              src={base + "assets/korrosionsschutz.png"}
+              alt="Korrosionsbeständigkeit – Vergleich"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-contain"
+            />
           </div>
           <p className="text-xs text-slate-500 mb-2">
             Unbeschichteter vs. CrN-mod beschichteter Eisen-Prüfkörper, der mit Kupfersulfat (CuSO₄) beträufelt wurde.
@@ -104,8 +108,13 @@ export default function Patientensicherheit() {
 
         <GradientCard>
           <h4 className="font-semibold">Beispiel 2: Verschleißschutz</h4>
-          <div className="aspect-[16/9] rounded-2xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 mt-4 mb-3 flex items-center justify-center text-slate-500">
-            <span className="text-sm">Abbildung Verschleißschutz – Bildplatzhalter</span>
+          <div className="aspect-[16/9] mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
+            <img
+              src={base + "assets/verschleissschutz.png"}
+              alt="Verschleißschutz – Vergleich"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-contain"
+            />
           </div>
           <p className="text-xs text-slate-500 mb-2">
             Prüfkörper lokal mit PROMAT-Schleifvlies (K180) beansprucht – unbeschichtet vs. TiN-mod.

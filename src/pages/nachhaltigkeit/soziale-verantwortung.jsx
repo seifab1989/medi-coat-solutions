@@ -42,7 +42,7 @@ export default function SozialeVerantwortung() {
 
       {/* Handlungsfelder – Karten im Stil von "Unser Anspruch" */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Unsere Handlungsfelder</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Unsere Handlungsfelder</h3>
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[{
             title: "Arbeits- & Gesundheitsschutz",
@@ -64,7 +64,7 @@ export default function SozialeVerantwortung() {
 
       {/* Langlebigkeit als sozialer Beitrag */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Langlebigkeit schafft Mehrwert</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Langlebigkeit schafft Mehrwert</h3>
         <GradientBar />
         <div className="text-slate-700 leading-relaxed space-y-4">
           <p>Die hohe Langlebigkeit unserer PVD-Schichten trägt indirekt zur sozialen Verantwortung bei. Durch langlebigere Produkte wird der Ressourceneinsatz verringert und die Versorgung im Gesundheitswesen unterstützt.</p>
@@ -73,7 +73,7 @@ export default function SozialeVerantwortung() {
 
       {/* Konkrete Maßnahmen – Liste im UeberUns-Stil */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Konkrete Maßnahmen</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Konkrete Maßnahmen</h3>
         <GradientBar />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li>Regelmäßige Sicherheitsunterweisungen und präventive Gesundheitsangebote.</li>

@@ -6,7 +6,7 @@ export default function Standorte() {
     <div
       className="bg-white rounded-3xl p-6"
       style={{
-        border: "5px solid transparent",
+        border: "2px solid transparent",
         borderRadius: "1.5rem",
         backgroundImage:
           "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
@@ -23,7 +23,7 @@ export default function Standorte() {
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
       {/* Titel */}
       <h1 className="text-3xl md:text-4xl font-semibold">Standorte</h1>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <div className="h-0 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
       <p className="mt-3 text-slate-600 max-w-3xl">
         Unser zentraler Standort für Entwicklung, Beschichtung und Qualitätssicherung.
       </p>
@@ -71,7 +71,8 @@ export default function Standorte() {
 
       {/* Qualität am Standort */}
       <section className="mt-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Qualität am Standort</h2>
+  <h2 className="text-2xl md:text-3xl font-semibold">Qualität am Standort</h2>
+        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <div className="mt-6 grid md:grid-cols-2 gap-6">
           <Card>
             <div className="flex items-start gap-3">

@@ -39,7 +39,7 @@ export default function Pressemitteilungen() {
 
       {/* Pressemitteilung mit ein-/ausklappbarem Inhalt */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold mb-4">Aktuelle Mitteilungen</h3>
+        <h3 className="text-2xl md:text-3xl font-semibold mb-4">Aktuelle Mitteilungen</h3>
         <GradientCard onClick={() => setOpen(!open)}>
           {/* Nur Überschrift sichtbar; Klick toggelt den Inhalt */}
           <h4 className="text-lg font-semibold underline">

@@ -39,7 +39,7 @@ function Ausbildung() {
       role="main"
       aria-labelledby="ausbildung-title"
     >
-      <h2 id="ausbildung-title" className="text-2xl md:text-4xl font-semibold">
+      <h2 id="ausbildung-title" className="text-3xl md:text-4xl font-semibold">
         Ausbildung & Praktika
       </h2>
       <p className="mt-3 text-slate-600 max-w-3xl">
@@ -49,7 +49,7 @@ function Ausbildung() {
 
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-12">
-          <h3 className="text-3xl md:text-2xl font-semibold">
+          <h3 className="text-2xl md:text-3xl font-semibold">
             Ausbildung und Nachwuchsförderung
           </h3>
           <GradientBar />
@@ -67,7 +67,7 @@ function Ausbildung() {
       </section>
 
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">
+        <h3 className="text-2xl md:text-3xl font-semibold">
           Worauf wir Wert legen
         </h3>
         <GradientBar />
@@ -96,7 +96,7 @@ function Ausbildung() {
 
       {jobs.length > 0 && (
         <section className="mt-12" data-testid="jobs-section">
-          <h3 className="text-xl md:text-2xl font-semibold">
+          <h3 className="text-2xl md:text-3xl font-semibold">
             Aktuelle Ausbildungs- und Praktikumsplätze
           </h3>
           <GradientBar />

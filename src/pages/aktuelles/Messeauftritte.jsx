@@ -49,7 +49,7 @@ export default function Messeauftritte() {
 
       {/* Nächste Termine – Karten im Gradient-Stil */}
       <section className="mt-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Nächste Termine</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Nächste Termine</h2>
         <GradientBar />
         <div className="grid md:grid-cols-2 gap-6">
           <EventCard

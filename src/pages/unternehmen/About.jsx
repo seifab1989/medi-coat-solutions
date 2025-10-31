@@ -29,7 +29,7 @@ function About() {
           <h3 className="text-2xl md:text-3xl font-semibold">
             Innovation trifft Präzision
           </h3>
-          <div className="h-1 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+          <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
           <p className="text-slate-700 leading-relaxed">
             Unser Unternehmen wurde <strong>2025</strong> von{" "}
             <strong>Dr. Fabian Seifried</strong> gegründet – mit der Vision, die
@@ -59,10 +59,10 @@ function About() {
       </section>
 
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">
+        <h3 className="text-2xl md:text-3xl font-semibold">
           Erfahrung und Kompetenz
         </h3>
-        <div className="h-1 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <p className="text-slate-700 leading-relaxed mt-3 max-w-4xl">
           Dr. Seifried bringt seine langjährige industrielle und wissenschaftliche
           Expertise in der Beschichtungs- und Werkstofftechnologie in das
@@ -74,8 +74,8 @@ function About() {
       </section>
 
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Unser Anspruch</h3>
-        <div className="h-1 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  <h3 className="text-2xl md:text-3xl font-semibold">Unser Anspruch</h3>
+        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
             {
@@ -112,8 +112,8 @@ function About() {
       </section>
 
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Unser Ziel</h3>
-        <div className="h-1 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  <h3 className="text-2xl md:text-3xl font-semibold">Unser Ziel</h3>
+        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <p className="text-slate-700 leading-relaxed mt-3 max-w-4xl">
           Wir wollen die Zukunft der Medizintechnik mitgestalten – durch
           zuverlässige, präzise und nachhaltige Beschichtungslösungen, die einen

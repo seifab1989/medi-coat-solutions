@@ -181,7 +181,7 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
       {/* Title & divider */}
       <h1 className="text-3xl md:text-4xl font-semibold">Blog & Artikel</h1>
-      <div className="h bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
       <p className="mt-6 text-slate-700 leading-relaxed w-full">
         In unserem Blog finden Sie aktuelle Informationen und Fachbeiträge rund um PVD‑Schichten in der Medizintechnik. Wir berichten
         über Entwicklungen, Forschungsergebnisse und Innovationen.Wir verbinden praxisrelevante Einblicke aus Beschichtungstechnik, Qualitätssicherung und Regulierung. Beiträge sind kompakt,
@@ -233,7 +233,7 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
 
       {/* Cards grid */}
       <section className="mt-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Aktuelle Beiträge</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Beiträge</h2>
         <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPosts.map((post, idx) => (

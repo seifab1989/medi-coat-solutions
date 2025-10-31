@@ -75,7 +75,7 @@ export default function Konformitaet() {
 
       {/* Schwerpunkte – Karten im Stil von UeberUns */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Schwerpunkte</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Schwerpunkte</h3>
         <GradientBar />
         <div className="grid md:grid-cols-3 gap-6">
           <GradientCard>

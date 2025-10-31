@@ -63,7 +63,7 @@ export default function OffeneStellen() {
 
       {/* Stellenliste */}
       <section className="mt-12">
-        <h2 className="text-xl md:text-2xl font-semibold">Aktuelle Ausschreibungen</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Ausschreibungen</h2>
         <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
 
         {jobs.length === 0 ? (

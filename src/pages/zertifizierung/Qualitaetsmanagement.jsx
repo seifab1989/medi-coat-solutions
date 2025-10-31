@@ -79,7 +79,7 @@ export default function Qualitaetsmanagement() {
 
       {/* Prüf- und Validierungsmethoden */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Prüf- und Validierungsmethoden</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Prüf- und Validierungsmethoden</h3>
         <GradientBar />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li><strong>RFA/EDX</strong> zur Bestimmung der chemischen Zusammensetzung</li>

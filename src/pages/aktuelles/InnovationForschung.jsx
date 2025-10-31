@@ -66,7 +66,7 @@ export default function InnovationForschung() {
 
       {/* Ergebnisse im Überblick – mit GradientBar & Kartenlook */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Ergebnisse im Überblick</h3>
+        <h3 className="text-2xl md:text-3xl font-semibold">Ergebnisse im Überblick</h3>
         <GradientBar />
         <div className="grid md:grid-cols-1 gap-4">
           <AccordionItem title="Patent: Beschichtungssystem für verschleißbeanspruchte medizinische Instrumente">
@@ -109,7 +109,7 @@ export default function InnovationForschung() {
 
       {/* Kooperation mit dem KIT – gleicher Stil wie Unterabschnitte in UeberUns */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Kooperationen mit Forschungseinrichtungen</h3>
+        <h3 className="text-2xl md:text-3xl font-semibold">Kooperationen mit Forschungseinrichtungen</h3>
         <GradientBar />
         <div className="grid md:grid-cols-2 gap-6 items-start">
           <GradientCard>

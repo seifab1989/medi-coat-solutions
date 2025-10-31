@@ -3,7 +3,16 @@ import { COATINGS, STORAGE_KEY } from './coatings.data'
 
 // Minimal local FrameCard and SpecLine to avoid shared/ui dependency
 function FrameCard({ children, active }){
-  return <div className={`p-6 rounded-2xl ${active? 'ring-2 ring-blue-300':''} bg-white border border-slate-100`}>{children}</div>
+  if (active) {
+    // Active state: match gradient frame used for callout panels site-wide
+    return (
+      <div className="rounded-3xl p-[2px] bg-gradient-to-r from-blue-800/30 via-blue-600/30 to-green-500/30 hover:shadow-md transition">
+        <div className="bg-white rounded-3xl p-6">{children}</div>
+      </div>
+    )
+  }
+  // Inactive: simple white card with subtle border
+  return <div className="bg-white rounded-3xl p-6 border border-slate-100">{children}</div>
 }
 function SpecLine({ label, value }){
   return <div className="flex justify-between text-sm text-slate-700"><span className="font-medium">{label}</span><span>{value}</span></div>
@@ -22,8 +31,7 @@ export default function Portfolio(){
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
       <h1 className="text-3xl md:text-4xl font-semibold">Portfolio an PVD-Schichten</h1>
-      <div className="h bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-      <p className="mt-3 text-slate-700 max-w-3xl">Beschreibung zum Portfolio (gekürzt).</p>
+      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
 
       <section className="mt-10 grid lg:grid-cols-12 gap-6 items-start">
         <div ref={listRef} className="lg:col-span-5 space-y-3"
@@ -54,7 +62,7 @@ export default function Portfolio(){
 
         <div className="lg:col-span-7">
           <FrameCard>
-            <h3 className="text-xl md:text-2xl font-semibold">{shown.name}</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold">{shown.name}</h3>
             <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-20 rounded-full mt-3 mb-5" />
             <div className="mt-2 space-y-2">
               <SpecLine label="Farbe:" value={shown.color} />
@@ -73,11 +81,13 @@ export default function Portfolio(){
       </section>
 
       <section className="mt-12">
-        <FrameCard>
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-            <p className="text-slate-700">Bitte wählen Sie die passende PVD-Schicht und laden Sie das entsprechende Datenblatt herunter oder lassen Sie sich von uns beraten.</p>
+        <div className="rounded-3xl p-[2px] bg-gradient-to-r from-blue-800/30 via-blue-600/30 to-green-500/30 hover:shadow-md transition">
+          <div className="bg-white rounded-3xl p-6">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <p className="text-slate-700">Bitte wählen Sie die passende PVD-Schicht und laden Sie das entsprechende Datenblatt herunter oder lassen Sie sich von uns beraten.</p>
+            </div>
           </div>
-        </FrameCard>
+        </div>
       </section>
     </main>
   )

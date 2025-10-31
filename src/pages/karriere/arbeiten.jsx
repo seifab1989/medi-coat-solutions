@@ -34,7 +34,7 @@ export default function Arbeiten() {
       {/* Einleitender Abschnitt mit Text links, Visual rechts */}
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7">
-          <h3 className="text-2xl md:text-2xl font-semibold">Was dich bei uns erwartet</h3>
+          <h3 className="text-2xl md:text-3xl font-semibold">Was dich bei uns erwartet</h3>
           <GradientBar />
           <div className="text-slate-700 leading-relaxed space-y-4">
             <ul className="list-disc pl-6 space-y-1">
@@ -75,7 +75,7 @@ export default function Arbeiten() {
 
       {/* Warum es sich lohnt */}
       <section className="mt-12">
-        <h3 className="text-xl md:text-2xl font-semibold">Warum es sich lohnt</h3>
+  <h3 className="text-2xl md:text-3xl font-semibold">Warum es sich lohnt</h3>
         <GradientBar />
         <p className="text-slate-700 leading-relaxed">
           Arbeiten bei uns bedeutet, Teil einer Branche zu sein, die Leben verändert. Deine Arbeit trägt dazu bei,
