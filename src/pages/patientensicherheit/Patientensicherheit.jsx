@@ -132,17 +132,19 @@ export default function Patientensicherheit() {
       
       {/* CTA */}
       <section className="mt-12">
-        <div className="flex items-center gap-4 flex-nowrap bg-gradient-to-r from-slate-50 to-slate-100 border border-slate-200 rounded-2xl px-4 py-3 shadow-sm">
-          <p className="text-slate-700 font-medium m-0">
-            Erfahren Sie, wie unsere PVD-Schichten Ihre Medizintechnikprodukte sicherer machen.
-          </p>
-          <a
-            href="#kontakt"
-            className="inline-flex items-center justify-center rounded-full px-5 py-2 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 text-white text-sm font-medium shadow whitespace-nowrap"
-          >
-            Kontaktieren Sie uns!
-          </a>
-        </div>
+        <GradientCard>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-slate-900 font-medium m-0">
+              Erfahren Sie, wie unsere PVD-Schichten Ihre Medizintechnikprodukte sicherer machen.
+            </p>
+            <a
+              href="#kontakt"
+              className="inline-flex items-center justify-center rounded-full px-5 py-2 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 text-white text-sm font-medium shadow whitespace-nowrap"
+            >
+              Kontaktieren Sie uns!
+            </a>
+          </div>
+        </GradientCard>
       </section>
     </main>
   );

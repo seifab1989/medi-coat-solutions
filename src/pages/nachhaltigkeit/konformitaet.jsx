@@ -22,6 +22,10 @@ export default function Konformitaet() {
     </div>
   );
 
+  // Base-aware Pfad für statische Assets (berücksichtigt Vite base)
+  const rawBase = import.meta.env.BASE_URL || "/";
+  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
+
   return (
     <main
       className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
@@ -64,11 +68,13 @@ export default function Konformitaet() {
           </div>
         </div>
         <div className="lg:col-span-5">
-          <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
-            <div className="text-center px-6">
-              <div className="mx-auto mb-4 h-20 w-20 rounded-full bg-slate-200" />
-              <p className="text-sm">Symbolischer Platzhalter – Compliance &amp; Qualität</p>
-            </div>
+          <div className="aspect-[4/3] mt-2 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
+            <img
+              src={base + "assets/regulatorische-konformitaet.png"}
+              alt="Regulatorische Konformität – Darstellung"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-contain"
+            />
           </div>
         </div>
       </section>

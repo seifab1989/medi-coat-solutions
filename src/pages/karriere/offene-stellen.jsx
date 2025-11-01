@@ -29,6 +29,10 @@ export default function OffeneStellen() {
     </div>
   );
 
+  // Base-aware Pfad für statische Assets (berücksichtigt Vite base)
+  const rawBase = import.meta.env.BASE_URL || "/";
+  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
+
   return (
     <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="offene-stellen-title">
       {/* Titel & Divider wie bei "Messeauftritte" */}
@@ -55,8 +59,13 @@ export default function OffeneStellen() {
           </p>
         </div>
         <div className="lg:col-span-5">
-          <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
-            <span className="text-sm">Bildplatzhalter – Karriere bei MediCoat</span>
+          <div className="h-40 sm:h-48 lg:h-56 w-full mt-2 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
+            <img
+              src={base + "assets/offene-stellen.png"}
+              alt="Karriere – Offene Stellen"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-contain"
+            />
           </div>
         </div>
       </section>

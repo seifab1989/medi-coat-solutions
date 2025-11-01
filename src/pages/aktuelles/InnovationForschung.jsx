@@ -6,9 +6,9 @@ export default function InnovationForschung() {
     <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
   );
 
-  const GradientCard = ({ children }) => (
+  const GradientCard = ({ children, className = "" }) => (
     <div
-      className="bg-white p-6 rounded-3xl"
+      className={`bg-white p-6 rounded-3xl ${className}`}
       style={{
         border: "1px solid transparent",
         borderRadius: "1.5rem",
@@ -50,6 +50,10 @@ export default function InnovationForschung() {
       </div>
     );
   }
+
+  // Base-aware Pfad für statische Assets (berücksichtigt Vite base)
+  const rawBase = import.meta.env.BASE_URL || "/";
+  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
 
   return (
     <div className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -111,8 +115,8 @@ export default function InnovationForschung() {
       <section className="mt-12">
         <h3 className="text-2xl md:text-3xl font-semibold">Kooperationen mit Forschungseinrichtungen</h3>
         <GradientBar />
-        <div className="grid md:grid-cols-2 gap-6 items-start">
-          <GradientCard>
+        <div className="grid md:grid-cols-2 gap-6 items-stretch">
+          <GradientCard className="h-full">
             <p className="text-slate-700 leading-relaxed">
               Für die Charakterisierung unserer PVD-Schichten arbeiten wir eng mit der Arbeitsgruppe
               „Hochleistungsschutzschichten“ von Prof. Dr. Sven Ulrich und Dr. Michael Stüber am <strong>KIT-IAM-AWP</strong>
@@ -143,8 +147,13 @@ export default function InnovationForschung() {
               </li>
             </ul>
           </GradientCard>
-          <div className="rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 aspect-[4/3] flex items-center justify-center text-slate-500">
-            <span className="text-sm">Bildplatzhalter – Kooperation KIT</span>
+          <div className="aspect-[4/3] mt-2 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
+                  <img
+                    src={base + "assets/innovation-forschung.png"}
+              alt="Innovation & Forschung – Kooperation KIT"
+              loading="lazy"
+              className="absolute inset-0 w-full h-full object-contain"
+            />
           </div>
         </div>
       </section>

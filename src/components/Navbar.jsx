@@ -268,7 +268,7 @@ export default function Navbar(){
                 <li key={c.to} className="flex items-center gap-2">
                   <span aria-hidden>›</span>
                   {idx < crumbs.length - 1 ? (
-                    <Link to={c.to} className="hover:text-slate-900">{c.name}</Link>
+                    <Link to={idx === 0 ? "/" : c.to} className="hover:text-slate-900">{c.name}</Link>
                   ) : (
                     <span aria-current="page" className="font-medium text-slate-900">{c.name}</span>
                   )}

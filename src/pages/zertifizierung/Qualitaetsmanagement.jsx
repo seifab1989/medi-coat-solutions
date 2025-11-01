@@ -37,7 +37,7 @@ export default function Qualitaetsmanagement() {
 
       {/* Einleitender Abschnitt – Text/Bild-Layout */}
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-12">
           <h2 className="text-2xl md:text-3xl font-semibold">Unser Anspruch: Sicherheit und Zuverlässigkeit</h2>
           <GradientBar />
           <p className="text-slate-700 leading-relaxed">
@@ -48,11 +48,6 @@ export default function Qualitaetsmanagement() {
             Wir sind nach <strong>DIN EN ISO 13485</strong> zertifiziert – der internationalen Norm für
             Qualitätsmanagementsysteme in der Medizintechnik.
           </p>
-        </div>
-        <div className="lg:col-span-5">
-          <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
-            <span className="text-sm">Bildplatzhalter – QM / Audit</span>
-          </div>
         </div>
       </section>
 
