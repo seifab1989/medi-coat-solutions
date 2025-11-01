@@ -33,7 +33,7 @@ export default function Arbeiten() {
 
       {/* Einleitender Abschnitt mit Text links, Visual rechts */}
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-center">
-        <div className="lg:col-span-7">
+        <div className="lg:col-span-12">
           <h3 className="text-2xl md:text-3xl font-semibold">Was dich bei uns erwartet</h3>
           <GradientBar />
           <div className="text-slate-700 leading-relaxed space-y-4">
@@ -64,11 +64,6 @@ export default function Arbeiten() {
                 return <li key={i} dangerouslySetInnerHTML={{ __html: text }} />;
               })}
             </ul>
-          </div>
-        </div>
-        <div className="lg:col-span-5">
-          <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
-            <span className="text-sm">Bildplatzhalter – Arbeiten bei uns</span>
           </div>
         </div>
       </section>
