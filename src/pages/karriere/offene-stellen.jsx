@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Container from "../../components/Container";
 import GradientBar from "../../components/GradientBar";
 import GradientCard from "../../components/GradientCard";
@@ -25,7 +26,7 @@ export default function OffeneStellen() {
           <p className="text-slate-700 leading-relaxed">
             Hier erscheinen ausgeschriebene Positionen mit Aufgaben & Profil. Bewerbungen bitte über das
             {" "}
-            <a href="/kontakt/formular" className="text-blue-700 underline">Kontaktformular</a>
+            <Link to="/kontakt/formular" className="text-blue-700 underline">Kontaktformular</Link>
             {" "}
             oder per E‑Mail einreichen.
           </p>
@@ -52,14 +53,14 @@ export default function OffeneStellen() {
 
       {/* Stellenliste */}
       <section className="mt-12">
-        <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Ausschreibungen</h2>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Ausschreibungen</h2>
+  <GradientBar className="mt-3 mb-5" />
 
         {jobs.length === 0 ? (
           <GradientCard borderWidth={4}>
             <p className="text-slate-700">
               Derzeit sind keine Stellen ausgeschrieben. Schauen Sie gerne später erneut vorbei oder senden Sie uns eine
-              <a href="/kontakt/formular" className="text-blue-700 underline ml-1">Initiativbewerbung</a>.
+              <Link to="/kontakt/formular" className="text-blue-700 underline ml-1">Initiativbewerbung</Link>.
             </p>
           </GradientCard>
         ) : (
@@ -74,7 +75,7 @@ export default function OffeneStellen() {
                   <div className="mt-1 text-slate-500 text-sm">📍 {job.location}</div>
                   <p className="mt-3 text-slate-700">{job.desc}</p>
                   <div className="mt-4">
-                    <a href="/kontakt/formular" className="text-blue-700 underline">Jetzt bewerben</a>
+                    <Link to="/kontakt/formular" className="text-blue-700 underline">Jetzt bewerben</Link>
                   </div>
                 </article>
               </GradientCard>
