@@ -1,28 +1,9 @@
 import React from "react";
+import Container from "../../components/Container";
+import GradientBar from "../../components/GradientBar";
+import GradientCard from "../../components/GradientCard";
 
 export default function Messeauftritte() {
-  // Lokale UI-Hilfselemente – an das Design von UeberUns angelehnt
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      style={{
-        border: "4px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children ? children : null}
-    </div>
-  );
-
   const EventCard = ({ title, date, location, children }) => (
     <GradientCard>
       <h3 className="text-xl font-semibold">{title}</h3>
@@ -35,7 +16,7 @@ export default function Messeauftritte() {
   );
 
   return (
-    <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="messe-title">
+    <Container as="main" role="main" aria-labelledby="messe-title">
       {/* Titel & Intro (volle Breite) */}
       <h1 id="messe-title" className="text-3xl md:text-4xl font-semibold">Messeauftritte</h1>
       <section className="mt-6 grid lg:grid-cols-12 gap-8 items-center">
@@ -86,7 +67,7 @@ export default function Messeauftritte() {
           </div>
         </GradientCard>
       </section>
-    </main>
+    </Container>
   );
 }
 

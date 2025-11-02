@@ -1,10 +1,13 @@
 import React from 'react'
+import Container from '../../components/Container'
+import GradientBar from '../../components/GradientBar'
+import GradientCard from '../../components/GradientCard'
 
 function Section({ icon, title, kicker, children, id }){
   return (
     <section id={id}>
       <h2 className="text-2xl md:text-3xl font-semibold flex items-center gap-2">{title}</h2>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <GradientBar />
       {kicker && <p className="text-slate-600 max-w-3xl">{kicker}</p>}
       <div className="mt-4 text-slate-700 leading-relaxed max-w-4xl">{children}</div>
     </section>
@@ -16,30 +19,8 @@ function Bullet({ children }){
 }
 
 function Overview(){
-  // Reuse the GradientCard style from Biokompatibilitaet for consistent look
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl hover:shadow-md transition"
-      style={{
-        border: "2px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#0f172a",
-      }}
-    >
-      {children}
-    </div>
-  );
-
   const Card = ({ title, desc }) => (
-    <GradientCard>
+    <GradientCard className="hover:shadow-md transition">
       <h3 className="font-semibold inline-flex items-center gap-1">{title}</h3>
       {desc ? <p className="text-sm text-slate-700 mt-1">{desc}</p> : null}
     </GradientCard>
@@ -55,7 +36,7 @@ function Overview(){
 
 export default function Dienstleistungen(){
   return (
-    <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="page-title">
+    <Container as="main" role="main" aria-labelledby="page-title">
       <h1 id="page-title" className="text-3xl md:text-4xl font-semibold">Dienstleistungen</h1>
       <div className="space-y-12 mt-8">
         <Overview />
@@ -79,6 +60,6 @@ export default function Dienstleistungen(){
           <p>Wir beraten Unternehmen bei der Gestaltung und Optimierung von Prozessen im Bereich Oberflächenveredelung – von der Auswahl geeigneter Verfahren bis hin zur Integration in bestehenden Abläufen.</p>
         </Section>
       </div>
-    </main>
+    </Container>
   )
 }

@@ -1,19 +1,13 @@
 import React from "react";
+import Container from "../../components/Container";
+import GradientBar from "../../components/GradientBar";
+import GradientCard from "../../components/GradientCard";
+import { assetUrl } from "../../utils/assetUrl";
 
 function About() {
-  // Respect Vite base path; ensure trailing slash for safe concatenation
-  const rawBase = import.meta.env.BASE_URL || "/";
-  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
   return (
-    <div
-      className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
-      role="main"
-      aria-labelledby="about-title"
-    >
-      <h2
-        id="about-title"
-        className="text-3xl md:text-4xl font-semibold"
-      >
+    <Container as="main" role="main" aria-labelledby="about-title">
+      <h2 id="about-title" className="text-3xl md:text-4xl font-semibold">
         Über uns
       </h2>
 
@@ -29,7 +23,7 @@ function About() {
           <h3 className="text-2xl md:text-3xl font-semibold">
             Innovation trifft Präzision
           </h3>
-          <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+          <GradientBar />
           <p className="text-slate-700 leading-relaxed">
             Unser Unternehmen wurde <strong>2025</strong> von{" "}
             <strong>Dr. Fabian Seifried</strong> gegründet – mit der Vision, die
@@ -49,7 +43,7 @@ function About() {
         <div className="lg:col-span-5">
           <div className="aspect-[4/3] rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative">
             <img
-              src={base + "assets/about.jpg"}
+              src={assetUrl("assets/about.jpg")}
               alt="MediCoat Solutions – Über uns"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"
@@ -62,7 +56,7 @@ function About() {
         <h3 className="text-2xl md:text-3xl font-semibold">
           Erfahrung und Kompetenz
         </h3>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <GradientBar />
         <p className="text-slate-700 leading-relaxed mt-3 max-w-4xl">
           Dr. Seifried bringt seine langjährige industrielle und wissenschaftliche
           Expertise in der Beschichtungs- und Werkstofftechnologie in das
@@ -74,8 +68,8 @@ function About() {
       </section>
 
       <section className="mt-12">
-  <h3 className="text-2xl md:text-3xl font-semibold">Unser Anspruch</h3>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <h3 className="text-2xl md:text-3xl font-semibold">Unser Anspruch</h3>
+        <GradientBar />
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
             {
@@ -91,36 +85,24 @@ function About() {
               text: "Enge Zusammenarbeit mit Kunden für maßgeschneiderte Lösungen.",
             },
           ].map((item) => (
-            <div
-              key={item.title}
-              className="bg-white p-6 rounded-3xl"
-              style={{
-                border: "1.5px solid transparent",
-                borderRadius: "1.5rem",
-                backgroundImage:
-                  "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-                backgroundOrigin: "border-box",
-                backgroundClip: "padding-box, border-box",
-                color: "#000000",
-              }}
-            >
+            <GradientCard key={item.title}>
               <h4 className="font-semibold">{item.title}</h4>
               <p className="text-sm mt-2">{item.text}</p>
-            </div>
+            </GradientCard>
           ))}
         </div>
       </section>
 
       <section className="mt-12">
-  <h3 className="text-2xl md:text-3xl font-semibold">Unser Ziel</h3>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <h3 className="text-2xl md:text-3xl font-semibold">Unser Ziel</h3>
+        <GradientBar />
         <p className="text-slate-700 leading-relaxed mt-3 max-w-4xl">
           Wir wollen die Zukunft der Medizintechnik mitgestalten – durch
           zuverlässige, präzise und nachhaltige Beschichtungslösungen, die einen
           echten Mehrwert für Patienten und Hersteller schaffen.
         </p>
       </section>
-    </div>
+    </Container>
   );
 }
 
