@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Container from "../../components/Container";
+import GradientCard from "../../components/GradientCard";
 
 export default function KarteAnfahrt() {
    const standorte = [
@@ -10,28 +12,7 @@ export default function KarteAnfahrt() {
       iframe: "https://www.google.com/maps?q=Ludwig-Wolf-Straße+23,+75249+Kieselbronn&output=embed",
     },
   ];
-
-  // --- UeberUns Look & Feel Helpers ---
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      style={{
-        border: "3px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#0f172a",
-      }}
-    >
-      {children}
-    </div>
-  );
+  
 
   // --- Lightweight Runtime-Checks (als einfache "Tests") ---
   if (typeof window !== "undefined") {
@@ -41,7 +22,7 @@ export default function KarteAnfahrt() {
   }
 
   return (
-  <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+  <Container as="main">
       <header className="mb-8">
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Standortkarte & Anfahrt</h1>
         
@@ -98,6 +79,6 @@ export default function KarteAnfahrt() {
           </motion.article>
         ))}
       </section>
-    </main>
+    </Container>
   );
 }

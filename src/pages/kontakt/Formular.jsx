@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Button from '../../components/Button'
+import Container from '../../components/Container'
+import GradientCard from '../../components/GradientCard'
 
 export default function Formular(){
   const [name, setName] = useState('')
@@ -39,59 +41,48 @@ export default function Formular(){
   }
 
   return (
-    <div className="container mx-auto px-6 py-12">
+    <Container as="main" role="main" aria-labelledby="kontakt-form-title">
+      <GradientCard className="max-w-xl mx-auto">
+        <form onSubmit={onSubmit}>
+          <h2 id="kontakt-form-title" className="text-3xl font-bold">Kontakt</h2>
+          <p className="mt-2 text-slate-600">Schreibe uns oder nutze das Formular unten — wir melden uns zeitnah.</p>
+          {errors.length > 0 && (
+            <div className="mb-4 text-sm text-red-700 bg-red-50 p-3 rounded">
+              <ul className="list-disc pl-5">
+                {errors.map((er, i) => <li key={i}>{er}</li>)}
+              </ul>
+            </div>
+          )}
+          {success && (
+            <div className="mb-4 text-sm text-emerald-800 bg-emerald-50 p-3 rounded">Vielen Dank — deine Nachricht wurde (simuliert) gesendet.</div>
+          )}
 
-      <form
-        onSubmit={onSubmit}
-        className="mt-8 max-w-xl bg-white p-6 rounded-3xl mx-auto"
-        style={{
-          border: '5px solid transparent',
-          borderRadius: '1.5rem',
-          backgroundImage:
-            'linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))',
-          backgroundOrigin: 'border-box',
-          backgroundClip: 'padding-box, border-box',
-          color: '#000000',
-        }}
-      >
-        <h2 className="text-3xl font-bold">Kontakt</h2>
-        <p className="mt-2 text-slate-600">Schreibe uns oder nutze das Formular unten — wir melden uns zeitnah.</p>
-        {errors.length > 0 && (
-          <div className="mb-4 text-sm text-red-700 bg-red-50 p-3 rounded">
-            <ul className="list-disc pl-5">
-              {errors.map((er, i) => <li key={i}>{er}</li>)}
-            </ul>
+          <label className="block">
+            <span className="text-sm font-medium">Name</span>
+            <input value={name} onChange={e=>setName(e.target.value)} className="mt-1 block w-full rounded border px-3 py-2" />
+          </label>
+
+          <label className="block mt-4">
+            <span className="text-sm font-medium">E-Mail</span>
+            <input value={email} onChange={e=>setEmail(e.target.value)} type="email" className="mt-1 block w-full rounded border px-3 py-2" />
+          </label>
+
+          <label className="block mt-4">
+            <span className="text-sm font-medium">Nachricht</span>
+            <textarea value={message} onChange={e=>setMessage(e.target.value)} rows={6} className="mt-1 block w-full rounded border px-3 py-2"></textarea>
+          </label>
+
+          <label className="flex items-center gap-2 mt-4 text-sm">
+            <input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)} />
+            <span>Ich stimme der Speicherung meiner Daten zu.</span>
+          </label>
+
+          <div className="mt-6 flex items-center gap-4">
+            <Button type="submit" className="px-5 py-2">Absenden</Button>
+            <button type="button" onClick={() => { setName(''); setEmail(''); setMessage(''); setConsent(false); setErrors([]); setSuccess(false); }} className="px-4 py-2 rounded border">Zurücksetzen</button>
           </div>
-        )}
-        {success && (
-          <div className="mb-4 text-sm text-emerald-800 bg-emerald-50 p-3 rounded">Vielen Dank — deine Nachricht wurde (simuliert) gesendet.</div>
-        )}
-
-        <label className="block">
-          <span className="text-sm font-medium">Name</span>
-          <input value={name} onChange={e=>setName(e.target.value)} className="mt-1 block w-full rounded border px-3 py-2" />
-        </label>
-
-        <label className="block mt-4">
-          <span className="text-sm font-medium">E-Mail</span>
-          <input value={email} onChange={e=>setEmail(e.target.value)} type="email" className="mt-1 block w-full rounded border px-3 py-2" />
-        </label>
-
-        <label className="block mt-4">
-          <span className="text-sm font-medium">Nachricht</span>
-          <textarea value={message} onChange={e=>setMessage(e.target.value)} rows={6} className="mt-1 block w-full rounded border px-3 py-2"></textarea>
-        </label>
-
-        <label className="flex items-center gap-2 mt-4 text-sm">
-          <input type="checkbox" checked={consent} onChange={e=>setConsent(e.target.checked)} />
-          <span>Ich stimme der Speicherung meiner Daten zu.</span>
-        </label>
-
-        <div className="mt-6 flex items-center gap-4">
-          <Button type="submit" className="px-5 py-2">Absenden</Button>
-          <button type="button" onClick={() => { setName(''); setEmail(''); setMessage(''); setConsent(false); setErrors([]); setSuccess(false); }} className="px-4 py-2 rounded border">Zurücksetzen</button>
-        </div>
-      </form>
-    </div>
+        </form>
+      </GradientCard>
+    </Container>
   )
 }

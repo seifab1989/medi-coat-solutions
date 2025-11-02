@@ -1,16 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Container from "../../components/Container";
+import GradientBar from "../../components/GradientBar";
+import GradientCard from "../../components/GradientCard";
 
 export default function KontaktAnsprechpartner() {
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
   return (
-    <main
-      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
-      role="main"
-      aria-labelledby="kontakt-ansprechpartner-title"
-    >
+    <Container as="main" role="main" aria-labelledby="kontakt-ansprechpartner-title">
       {/* Titel & Intro */}
       <h1 id="kontakt-ansprechpartner-title" className="text-3xl md:text-4xl font-semibold">
         Direkte Ansprechpartner
@@ -39,17 +35,17 @@ export default function KontaktAnsprechpartner() {
             >
               E-Mail an Dr. Seifried
             </a>
-            <a
-              href="/kontakt/formular"
+            <Link
+              to="/kontakt/formular"
               className="inline-flex items-center justify-center rounded-full px-5 py-3 bg-white border border-slate-300 text-slate-900 hover:bg-slate-50"
             >
               Kontaktformular
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="lg:col-span-5">
-          <div className="aspect-[4/3] rounded-3xl border border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center text-slate-500">
+          <GradientCard className="flex items-center justify-center text-slate-700 h-full">
             <div className="text-center px-6">
               <div
                 className="mx-auto mb-4 h-24 w-24 rounded-full bg-slate-200"
@@ -64,9 +60,9 @@ export default function KontaktAnsprechpartner() {
                 beratung@medicoat.de
               </a>
             </div>
-          </div>
+          </GradientCard>
         </div>
       </section>
-    </main>
+    </Container>
   );
 }
