@@ -1,37 +1,12 @@
 import React from 'react'
+import Container from '../../components/Container'
+import GradientBar from '../../components/GradientBar'
+import GradientCard from '../../components/GradientCard'
+import { assetUrl } from '../../utils/assetUrl'
 
 export default function Konformitaet() {
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      style={{
-        border: "4px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children}
-    </div>
-  );
-
-  // Base-aware Pfad für statische Assets (berücksichtigt Vite base)
-  const rawBase = import.meta.env.BASE_URL || "/";
-  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
-
   return (
-    <main
-      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
-      role="main"
-      aria-labelledby="regulatorik-title"
-    >
+    <Container as="main" role="main" aria-labelledby="regulatorik-title">
       
       {/* Titel & Intro */}
       <h1 id="regulatorik-title" className="text-3xl md:text-4xl font-semibold">
@@ -70,7 +45,7 @@ export default function Konformitaet() {
         <div className="lg:col-span-5">
           <div className="aspect-[4/3] mt-2 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
             <img
-              src={base + "assets/regulatorische-konformitaet.png"}
+              src={assetUrl('assets/regulatorische-konformitaet.png')}
               alt="Regulatorische Konformität – Darstellung"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-contain"
@@ -84,19 +59,19 @@ export default function Konformitaet() {
   <h3 className="text-2xl md:text-3xl font-semibold">Schwerpunkte</h3>
         <GradientBar />
         <div className="grid md:grid-cols-3 gap-6">
-          <GradientCard>
+          <GradientCard borderWidth={4}>
             <h4 className="font-semibold">REACH &amp; Stoffverbote</h4>
             <p className="text-sm mt-2 text-slate-700">
               Nickel- &amp; PFAS-freie Schichtsysteme, Verzicht auf Chrom(VI) – Fokus auf Biokompatibilität &amp; Umweltverträglichkeit.
             </p>
           </GradientCard>
-          <GradientCard>
+          <GradientCard borderWidth={4}>
             <h4 className="font-semibold">DIN EN ISO 13485</h4>
             <p className="text-sm mt-2 text-slate-700">
               Dokumentierte, auditierbare Prozesse; Risiko‑ &amp; Änderungsmanagement für gleichbleibende Qualität.
             </p>
           </GradientCard>
-          <GradientCard>
+          <GradientCard borderWidth={4}>
             <h4 className="font-semibold">Vertrauen &amp; Nachweis</h4>
             <p className="text-sm mt-2 text-slate-700">
               Kombination aus Material‑Konformität und QM‑System schafft eine belastbare Grundlage für regulatorische Sicherheit.
@@ -104,6 +79,6 @@ export default function Konformitaet() {
           </GradientCard>
         </div>
       </section>
-    </main>
+    </Container>
   );
 }

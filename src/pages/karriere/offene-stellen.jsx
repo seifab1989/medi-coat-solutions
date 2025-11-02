@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import Container from "../../components/Container";
+import GradientBar from "../../components/GradientBar";
+import GradientCard from "../../components/GradientCard";
+import { assetUrl } from "../../utils/assetUrl";
 
 export default function OffeneStellen() {
   // Beispielhafte (zunächst leere) Jobliste – kann später per API/State gefüllt werden
@@ -7,34 +11,10 @@ export default function OffeneStellen() {
     // { id: 2, title: "Qualitätsmanager:in Medizintechnik (m/w/d)", location: "Kieselbronn", type: "Teilzeit/Vollzeit", desc: "Aufbau und Pflege des QM‑Systems, Dokumentation, CAPA, Risiko‑ & Änderungsmanagement." },
   ]);
 
-  // Locally defined helpers
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      style={{
-        border: "4px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children != null ? children : null}
-    </div>
-  );
-
-  // Base-aware Pfad für statische Assets (berücksichtigt Vite base)
-  const rawBase = import.meta.env.BASE_URL || "/";
-  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
+  // Gemeinsame Komponenten & assetUrl werden genutzt
 
   return (
-    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="offene-stellen-title">
+  <Container as="main" role="main" aria-labelledby="offene-stellen-title">
       {/* Titel & Divider wie bei "Messeauftritte" */}
       <h1 id="offene-stellen-title" className="text-3xl md:text-4xl font-semibold">Offene Stellen</h1>
       <GradientBar />
@@ -61,7 +41,7 @@ export default function OffeneStellen() {
         <div className="lg:col-span-5">
           <div className="h-40 sm:h-48 lg:h-56 w-full mt-2 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
             <img
-              src={base + "assets/offene-stellen.png"}
+              src={assetUrl("assets/offene-stellen.png")}
               alt="Karriere – Offene Stellen"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-contain"
@@ -76,7 +56,7 @@ export default function OffeneStellen() {
         <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
 
         {jobs.length === 0 ? (
-          <GradientCard>
+          <GradientCard borderWidth={4}>
             <p className="text-slate-700">
               Derzeit sind keine Stellen ausgeschrieben. Schauen Sie gerne später erneut vorbei oder senden Sie uns eine
               <a href="/kontakt/formular" className="text-blue-700 underline ml-1">Initiativbewerbung</a>.
@@ -102,7 +82,7 @@ export default function OffeneStellen() {
           </div>
         )}
       </section>
-    </main>
+    </Container>
   );
 }
 
