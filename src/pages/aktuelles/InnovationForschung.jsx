@@ -1,27 +1,12 @@
 import React, { useState } from "react";
+import GradientBar from "../../components/GradientBar";
+import GradientCard from "../../components/GradientCard";
+import { assetUrl } from "../../utils/assetUrl";
 
 export default function InnovationForschung() {
   // Lokale UI-Helfer – stilistisch wie in UeberUns
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
 
-  const GradientCard = ({ children, className = "" }) => (
-    <div
-      className={`bg-white p-6 rounded-3xl ${className}`}
-      style={{
-        border: "1px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children}
-    </div>
-  );
+  // Globale GradientBar/GradientCard werden verwendet
 
   // AccordionItem lokal in InnovationForschung definiert
   function AccordionItem({ title, children, defaultOpen = false }) {
@@ -52,8 +37,7 @@ export default function InnovationForschung() {
   }
 
   // Base-aware Pfad für statische Assets (berücksichtigt Vite base)
-  const rawBase = import.meta.env.BASE_URL || "/";
-  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
+  // assetUrl liefert base-aware Pfade
 
   return (
     <div className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
@@ -149,7 +133,7 @@ export default function InnovationForschung() {
           </GradientCard>
           <div className="aspect-[4/3] mt-2 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
                   <img
-                    src={base + "assets/innovation-forschung.png"}
+                src={assetUrl("assets/innovation-forschung.png")}
               alt="Innovation & Forschung – Kooperation KIT"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-contain"

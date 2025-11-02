@@ -1,32 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Container from '../../components/Container'
+import GradientBar from '../../components/GradientBar'
+import GradientCard from '../../components/GradientCard'
+import { assetUrl } from '../../utils/assetUrl'
 
 export default function Biokompatibilitaet() {
-  // Lokale UI‑Helfer (Styling analog zur Originaldatei)
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      // Robuster Gradient-Border (Originaltechnik: doppeltes backgroundImage)
-      style={{
-        border: "2px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children}
-    </div>
-  );
-
   return (
-    <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="bio-title">
+    <Container as="main" role="main" aria-labelledby="bio-title">
       {/* Titel & Intro */}
       <h1 id="bio-title" className="text-3xl md:text-4xl font-semibold">Biokompatibilität</h1>
       <p className="mt-3 text-slate-600 max-w-3xl">
@@ -72,18 +53,16 @@ export default function Biokompatibilitaet() {
           </p>
         </GradientCard>
       </section>
-    </main>
+    </Container>
   );
 }
 
 // Separates Bild-Element mit base-sicherem Pfad, damit Vite base berücksichtigt wird
 function ZytotoxBild(){
-  const rawBase = import.meta.env.BASE_URL || "/";
-  const base = rawBase.endsWith("/") ? rawBase : rawBase + "/";
   return (
     <div className="aspect-[16/9] mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white w-full">
       <img
-        src={base + "assets/biokompatibilitaet.png"}
+        src={assetUrl('assets/biokompatibilitaet.png')}
         alt="Zytotoxizität – Prüfung nach DIN EN ISO 10993-5"
         loading="lazy"
         className="absolute inset-0 w-full h-full object-cover"
