@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Container from "../../components/Container";
+import GradientBar from "../../components/GradientBar";
+import GradientCard from "../../components/GradientCard";
 
 export default function Blog() {
   // --- Daten aus der Originaldatei extrahiert / vorbereitet ---
@@ -62,23 +65,7 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
     },
   ];
 
-  // --- UeberUns look helper card ---
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      style={{
-        border: "3px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children}
-    </div>
-  );
+  // Use shared GradientCard
 
   // --- Title policy (card only) ---
   const TITLE_MAX = 60;
@@ -178,10 +165,10 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
 
   // --- Page layout (UeberUns-style) ---
   return (
-    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <Container as="main">
       {/* Title & divider */}
       <h1 className="text-3xl md:text-4xl font-semibold">Blog & Artikel</h1>
-  <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <GradientBar />
       <p className="mt-6 text-slate-700 leading-relaxed w-full">
         In unserem Blog finden Sie aktuelle Informationen und Fachbeiträge rund um PVD‑Schichten in der Medizintechnik. Wir berichten
         über Entwicklungen, Forschungsergebnisse und Innovationen.Wir verbinden praxisrelevante Einblicke aus Beschichtungstechnik, Qualitätssicherung und Regulierung. Beiträge sind kompakt,
@@ -234,7 +221,7 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
       {/* Cards grid */}
       <section className="mt-12">
         <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Beiträge</h2>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <GradientBar />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPosts.map((post, idx) => (
             <GradientCard key={post.id}>
@@ -243,6 +230,6 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
           ))}
         </div>
       </section>
-    </main>
+    </Container>
   );
 }

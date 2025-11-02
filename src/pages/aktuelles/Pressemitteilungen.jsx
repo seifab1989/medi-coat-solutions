@@ -1,28 +1,13 @@
 import React, { useState } from "react";
+import Container from "../../components/Container";
+import GradientCard from "../../components/GradientCard";
+import GradientBar from "../../components/GradientBar";
 
 export default function Pressemitteilungen() {
  const [open, setOpen] = useState(false);
 
-  const GradientCard = ({ children, onClick }) => (
-    <div
-      className={`bg-white p-6 rounded-3xl ${onClick ? "cursor-pointer" : ""}`}
-      style={{
-        border: "4px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-      onClick={onClick}
-    >
-      {children}
-    </div>
-  );
-
   return (
-    <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <Container as="main">
       <h1 className="text-3xl md:text-4xl font-semibold">Pressemitteilungen</h1>
       {/* Intro-Section */}
       <section className="mt-10">
@@ -39,8 +24,9 @@ export default function Pressemitteilungen() {
 
       {/* Pressemitteilung mit ein-/ausklappbarem Inhalt */}
       <section className="mt-12">
-        <h3 className="text-2xl md:text-3xl font-semibold mb-4">Aktuelle Mitteilungen</h3>
-        <GradientCard onClick={() => setOpen(!open)}>
+        <h3 className="text-2xl md:text-3xl font-semibold">Aktuelle Mitteilungen</h3>
+        <GradientBar />
+        <GradientCard onClick={() => setOpen(!open)} className="cursor-pointer">
           {/* Nur Überschrift sichtbar; Klick toggelt den Inhalt */}
           <h4 className="text-lg font-semibold underline">
             MediCoat Solutions präsentiert innovative PVD-Schichten für minimalinvasive Instrumente
@@ -62,7 +48,7 @@ export default function Pressemitteilungen() {
           )}
         </GradientCard>
       </section>
-    </section>
+    </Container>
   );
 }
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Container from "../../components/Container";
 import GradientBar from "../../components/GradientBar";
 import GradientCard from "../../components/GradientCard";
 import { assetUrl } from "../../utils/assetUrl";
@@ -40,7 +41,7 @@ export default function InnovationForschung() {
   // assetUrl liefert base-aware Pfade
 
   return (
-    <div className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <Container as="main">
       <h1 className="text-3xl md:text-4xl font-semibold">Innovation & Forschung</h1>
 
       {/* Intro-Section jetzt über volle Breite */}
@@ -141,6 +142,6 @@ export default function InnovationForschung() {
           </div>
         </div>
       </section>
-    </div>
+    </Container>
   );
 }

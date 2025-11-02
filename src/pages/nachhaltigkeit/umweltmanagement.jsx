@@ -1,9 +1,12 @@
 import React from 'react'
+import Container from '../../components/Container'
+import GradientBar from '../../components/GradientBar'
+import GradientCard from '../../components/GradientCard'
 
 export default function Umweltmanagement() {
   return (
-    <main
-      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
+    <Container
+      as="main"
       role="main"
       aria-labelledby="umwelt-title"
     >
@@ -19,8 +22,8 @@ export default function Umweltmanagement() {
 
       {/* Intro-Section ohne Bildplatzhalter */}
       <section className="mt-10">
-        <h2 className="text-2xl md:text-3xl font-semibold">PVD – ökologisch im Vorteil</h2>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  <h2 className="text-2xl md:text-3xl font-semibold">PVD – ökologisch im Vorteil</h2>
+  <GradientBar />
         <p className="text-slate-700 leading-relaxed">
           Unsere eingesetzte PVD‑Technologie (Physical Vapor Deposition) kommt ohne krebserzeugende Stoffe wie Chrom(VI) und ohne
           umweltschädliche Prozesschemikalien aus. Es fallen keine giftigen Abwässer an, die entsorgt oder aufwendig behandelt
@@ -35,8 +38,8 @@ export default function Umweltmanagement() {
 
       {/* Leitlinien / Prinzipien – Karten wie in UeberUns */}
       <section className="mt-12">
-  <h2 className="text-2xl md:text-3xl font-semibold">Unser Anspruch</h2>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <h2 className="text-2xl md:text-3xl font-semibold">Unser Anspruch</h2>
+        <GradientBar />
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[
             {
@@ -55,30 +58,18 @@ export default function Umweltmanagement() {
                 "Langlebige Schichten und Recycling‑Konzepte für Medien und Verpackungen.",
             },
           ].map((item) => (
-            <div
-              key={item.title}
-              className="bg-white p-6 rounded-3xl"
-              style={{
-                border: "4px solid transparent",
-                borderRadius: "1.5rem",
-                backgroundImage:
-                  "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-                backgroundOrigin: "border-box",
-                backgroundClip: "padding-box, border-box",
-                color: "#000000",
-              }}
-            >
+            <GradientCard key={item.title} borderWidth={4}>
               <h3 className="font-semibold">{item.title}</h3>
               <p className="text-sm mt-2">{item.text}</p>
-            </div>
+            </GradientCard>
           ))}
         </div>
       </section>
 
       {/* Konkrete Maßnahmen – Liste wie typografische Abschnitte in UeberUns */}
       <section className="mt-12">
-  <h2 className="text-2xl md:text-3xl font-semibold">Konkrete Maßnahmen</h2>
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+        <h2 className="text-2xl md:text-3xl font-semibold">Konkrete Maßnahmen</h2>
+        <GradientBar />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li>
             Verzicht auf Chrom(VI) und andere umweltschädliche Prozesschemikalien in der Schichtabscheidung.
@@ -94,6 +85,6 @@ export default function Umweltmanagement() {
           </li>
         </ul>
       </section>
-    </main>
+    </Container>
   );
 }

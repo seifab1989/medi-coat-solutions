@@ -1,4 +1,6 @@
 import React from 'react'
+import Container from '../../components/Container'
+import GradientBar from '../../components/GradientBar'
 import { COATINGS, STORAGE_KEY } from './coatings.data'
 
 // Minimal local FrameCard and SpecLine to avoid shared/ui dependency
@@ -29,9 +31,9 @@ export default function Portfolio(){
   const shown = COATINGS[shownIdx] ?? COATINGS[0]
 
   return (
-    <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+    <Container as="main">
       <h1 className="text-3xl md:text-4xl font-semibold">Portfolio an PVD-Schichten</h1>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <GradientBar />
 
       <section className="mt-10 grid lg:grid-cols-12 gap-6 items-start">
         <div ref={listRef} className="lg:col-span-5 space-y-3"
@@ -63,7 +65,7 @@ export default function Portfolio(){
         <div className="lg:col-span-7">
           <FrameCard>
             <h3 className="text-2xl md:text-3xl font-semibold">{shown.name}</h3>
-            <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-20 rounded-full mt-3 mb-5" />
+            <GradientBar className="opacity-20" />
             <div className="mt-2 space-y-2">
               <SpecLine label="Farbe:" value={shown.color} />
               <SpecLine label="Härte:" value={shown.hardness} />
@@ -89,6 +91,6 @@ export default function Portfolio(){
           </div>
         </div>
       </section>
-    </main>
+    </Container>
   )
 }

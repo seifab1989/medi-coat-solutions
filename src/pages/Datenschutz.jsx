@@ -1,8 +1,11 @@
+import Container from "../components/Container";
+import GradientBar from "../components/GradientBar";
+
 export default function Datenschutz(){
   return (
-    <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="datenschutz-title">
+    <Container as="main" role="main" aria-labelledby="datenschutz-title">
       <h1 id="datenschutz-title" className="text-3xl md:text-4xl font-semibold">Datenschutzerklärung</h1>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <GradientBar />
       <article className="prose prose-slate max-w-none">
         <p><strong>Stand:</strong> 25.09.2025</p>
         <p>Diese Datenschutzerklärung informiert Sie darüber, wie die MediCoat Solutions GmbH (nachfolgend „wir" oder „MediCoat") personenbezogene Daten verarbeitet. Sie richtet sich an Besucher unserer Website, Interessenten, Kunden, Lieferanten, Dienstleister sowie Bewerberinnen und Bewerber.</p>
@@ -122,6 +125,6 @@ export default function Datenschutz(){
         </ul>
         <p><em>Tipp:</em> Fügen Sie am Cookie‑Banner einen Link „Cookie‑Einstellungen“ ein und führen Sie in einer separaten Cookie‑Übersicht jede Kategorie/Einzel‑Cookie mit Anbieter, Zweck, Laufzeit und Rechtsgrundlage auf.</p>
       </article>
-    </main>
+    </Container>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function GradientCard({ children, className = "", borderWidth = 2, radiusRem = 1.5, style = {} }) {
+export default function GradientCard({ children, className = "", borderWidth = 2, radiusRem = 1.5, style = {}, ...rest }) {
   const bw = Number(borderWidth) || 2;
   const radius = Number(radiusRem) || 1.5;
   return (
@@ -16,6 +16,7 @@ export default function GradientCard({ children, className = "", borderWidth = 2
         color: "#000000",
         ...style,
       }}
+      {...rest}
     >
       {children}
     </div>

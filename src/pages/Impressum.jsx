@@ -1,8 +1,11 @@
+import Container from "../components/Container";
+import GradientBar from "../components/GradientBar";
+
 export default function Impressum(){
   return (
-    <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="impressum-title">
+    <Container as="main" role="main" aria-labelledby="impressum-title">
       <h1 id="impressum-title" className="text-3xl md:text-4xl font-semibold">Impressum</h1>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <GradientBar />
       <article className="prose prose-slate max-w-none">
         <h2>Angaben gemäß § 5 TMG</h2>
         <p>Max Mustermann<br/>Musterstraße 1<br/>12345 Musterstadt<br/>Deutschland</p>
@@ -33,6 +36,6 @@ export default function Impressum(){
           <li>Falls es sich um eine journalistisch-redaktionelle Seite handelt, muss ein Verantwortlicher nach § 55 RStV genannt werden.</li>
         </ul>
       </article>
-    </main>
+    </Container>
   )
 }
