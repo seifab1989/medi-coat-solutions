@@ -1,31 +1,12 @@
 import React from 'react'
+import Container from '../../components/Container'
+import GradientBar from '../../components/GradientBar'
+import GradientCard from '../../components/GradientCard'
 
 export default function Qualitaetsmanagement() {
-  const GradientBar = () => (
-    <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-  );
-
-  // Robuste Gradient-Border-Karte (identische Technik wie im Quellfile)
-  const GradientCard = ({ children }) => (
-    <div
-      className="bg-white p-6 rounded-3xl"
-      style={{
-        border: "1px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#000000",
-      }}
-    >
-      {children}
-    </div>
-  );
-
   return (
-    <main
-      className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16"
+    <Container
+      as="main"
       role="main"
       aria-labelledby="qm-title"
     >
@@ -84,6 +65,6 @@ export default function Qualitaetsmanagement() {
           <li><strong>Ritztest</strong> zur Prüfung der Haftfestigkeit</li>
         </ul>
       </section>
-    </main>
+    </Container>
   );
 }
