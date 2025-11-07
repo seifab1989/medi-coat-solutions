@@ -22,56 +22,72 @@ export default function Navbar(){
 
 // Breadcrumb Setup (liest aktuelle URL aus dem Router)
   const location = useLocation()
-  const pathnames = location.pathname.split('/').filter(Boolean)
+  const pathnamesRaw = location.pathname.split('/').filter(Boolean)
+  // Breadcrumb: aufeinanderfolgende Duplikate (z. B. "patientensicherheit/patientensicherheit") entfernen
+  const pathnames = pathnamesRaw.reduce((acc, seg) => {
+    if (acc.length === 0) return [seg]
+    const prev = acc[acc.length - 1]
+    if (String(prev).toLowerCase() === String(seg).toLowerCase()) return acc
+    return [...acc, seg]
+  }, [])
+  // Einheitliches Mapping: URL-Segmente (immer lowercase) -> sichtbare Labels (mit Umlauten & korrekter Schreibweise)
   const labelMap = {
-    'UnternehmenIndex': 'Unternehmen',
+    // Root-Level
+    'unternehmen': 'Unternehmen',
+    'produkte': 'Produkte',
+    'patientensicherheit': 'PVD & Patientensicherheit',
+    'zertifizierung': 'Zertifizierung',
+    'nachhaltigkeit': 'Nachhaltigkeit',
+    'aktuelles': 'Aktuelles',
+    'karriere': 'Karriere',
+    'kontakt': 'Kontakt',
+
+    // Unternehmen
     'team': 'Team',
     'about': 'Über uns',
-    'Standorte': 'Standorte',
+    'standorte': 'Standorte',
 
-
-    'ProdukteIndex': 'Produkte',
-    'Herstellung': 'Herstellung PVD-Schichten',
+    // Produkte
+    'herstellung': 'Herstellung PVD-Schichten',
     'portfolio': 'Portfolio',
     'dienstleistungen': 'Dienstleistungen',
     'downloadcenter': 'Downloadcenter',
 
+    // Zertifizierung
+    'qualitaetsmanagement': 'Qualitätsmanagement',
+    'biokompatibilitaet': 'Biokompatibilität',
+    'zertifikate': 'Zertifikate',
 
-    'patientensicherheit': 'PVD & Patientensicherheit',
-
-
-    'ZertifizierungIndex': 'Zertifizierung',
-    'Qualitaetsmanagement': 'Qualitätsmanagement',
-    'Biokompatibilitaet': 'Biokompatibilität',
-    'Zertifikate': 'Zertifikate',
-
-
-    'NachhaltigkeitIndex': 'Nachhaltigkeit',
+    // Nachhaltigkeit
     'konformitaet': 'Konformität',
     'soziale-verantwortung': 'Soziale Verantwortung',
     'umweltmanagement': 'Umweltmanagement',
 
+    // Aktuelles
+    'messeauftritte': 'Messeauftritte',
+    'pressemitteilungen': 'Pressemitteilungen',
+    'innovation-forschung': 'Innovation / Forschung',
+    'blog': 'Blog',
 
-    'AktuellesIndex': 'Aktuelles',
-    'Messeauftritte': 'Messeauftritte',
-    'Pressemitteilungen': 'Pressemitteilungen',
-    'InnovationForschung': 'Innovation / Forschung',
-    'Blog': 'Blog',
-
-
-    'KarriereIndex': 'Karriere',
+    // Karriere
     'offene-stellen': 'Offene Stellen',
     'ausbildung': 'Ausbildung / Praktika',
     'arbeiten': 'Arbeiten bei uns',
 
+    // Kontakt
+    'ansprechpartner': 'Direkter Ansprechpartner',
+    'formular': 'Kontaktformular',
+    'karteanfahrt': 'Standortkarte & Anfahrt',
 
-  'KontaktIndex': 'Kontakt',
-  'Ansprechpartner': 'Direkter Ansprechpartner',
-  'Formular': 'Kontaktformular',
-  'karteanfahrt': 'Standortkarte & Anfahrt'
- }
+    // Rechtliches
+    'impressum': 'Impressum',
+    'datenschutz': 'Datenschutz',
+  }
 
-  const toTitle = (seg) => labelMap[seg.toLowerCase()] || decodeURIComponent(seg).replace(/-/g, ' ')
+  const toTitle = (seg) => {
+    const key = seg.toLowerCase()
+    return labelMap[key] || decodeURIComponent(seg).replace(/-/g, ' ')
+  }
   const crumbs = pathnames.map((seg, idx) => ({name: toTitle(seg), to: '/' + pathnames.slice(0, idx + 1).join('/')}))
 
 
@@ -141,7 +157,7 @@ export default function Navbar(){
 
              <div className="relative">
                 <Link to="patientensicherheit/patientensicherheit" className="flex items-center gap-2 hover:text-slate-900">
-                PVD & Patientensicherheit ▾
+                PVD & Patientensicherheit
                 </Link>
               </div>
 
@@ -239,7 +255,7 @@ export default function Navbar(){
 
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:block ml-6 md:ml-8 shrink-0">
           <Button to="/kontakt/formular" className="px-4 py-2">Beratung anfragen</Button>
         </div>
 
@@ -308,7 +324,7 @@ export default function Navbar(){
 
                <div>
                  <Link to="/patientensicherheit/patientensicherheit" className="w-full block text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => { setOpenMobile(false); }}>
-                  PVD & Patientensicherheit ▾
+                  PVD & Patientensicherheit
                  </Link>
                </div>
 

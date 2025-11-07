@@ -19,17 +19,32 @@ function Bullet({ children }){
 }
 
 function Overview(){
-  const Card = ({ title, desc }) => (
-    <GradientCard className="hover:shadow-md transition">
+  const scrollTo = (id) => {
+    const el = document.getElementById(id)
+    if(!el) return
+    // Sticky header offset (approx. 80px) – adjust if header height changes
+    const y = el.getBoundingClientRect().top + window.scrollY - 80
+    window.history.replaceState(null, '', `#${id}`) // update hash without full jump
+    window.scrollTo({ top: y, behavior: 'smooth' })
+  }
+  const Card = ({ title, desc, target }) => (
+    <GradientCard
+      role="link"
+      tabIndex={0}
+      aria-label={`Zum Abschnitt: ${title}`}
+      onClick={() => scrollTo(target)}
+      onKeyDown={(e) => { if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); scrollTo(target) } }}
+      className="cursor-pointer hover:shadow-md transition focus:outline-none"
+    >
       <h3 className="font-semibold inline-flex items-center gap-1">{title}</h3>
       {desc ? <p className="text-sm text-slate-700 mt-1">{desc}</p> : null}
     </GradientCard>
   )
   return (
     <div className="grid md:grid-cols-3 gap-6">
-      <Card title="PVD-Beschichten" desc="Unser Kerngeschäft: präzise, reproduzierbare Funktionsschichten." />
-      <Card title="Strahlen zur Oberflächenoptimierung" desc="Perfekte Vorbereitung" />
-      <Card title="Strategieberatung" desc="Prozessgestaltung von der Auswahl bis zur Integration." />
+      <Card target="pvd" title="PVD-Beschichten" desc="Unser Kerngeschäft: präzise, reproduzierbare Funktionsschichten." />
+      <Card target="strahlen" title="Strahlen zur Oberflächenoptimierung" desc="Perfekte Vorbereitung" />
+      <Card target="strategie" title="Strategieberatung" desc="Prozessgestaltung von der Auswahl bis zur Integration." />
     </div>
   )
 }
