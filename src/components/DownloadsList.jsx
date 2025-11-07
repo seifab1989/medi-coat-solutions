@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import GradientBar from './GradientBar'
 
 function formatSize(bytes) {
   if (!bytes || typeof bytes !== 'number') return ''
@@ -42,7 +43,7 @@ function Section({ title, children }) {
   return (
     <section className="mt-12">
       <h3 className="text-2xl md:text-3xl font-semibold">{title}</h3>
-      <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+      <GradientBar />
       {children}
     </section>
   )
@@ -111,7 +112,7 @@ export default function DownloadsList({
   return (
     <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="downloads-title">
       <h2 id="downloads-title" className="text-3xl md:text-4xl font-semibold">{title}</h2>
-      <div className="h bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+  <GradientBar />
       {intro && <p className="mt-3 text-slate-600 max-w-3xl">{intro}</p>}
 
       <Section title="Dokumente zum Download">

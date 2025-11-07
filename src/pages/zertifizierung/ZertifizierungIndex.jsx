@@ -1,7 +1,6 @@
 import React from 'react'
-import Biokompatibilitaet from '../../components/Zertifizierungen/Biokompatibilität'
-import Qualitaetsmanagement from '../../components/Zertifizierungen/Qualitaetsmanagement'
-import Zertifikate from '../../components/Zertifizierungen/Zertifikate'
+import { Link } from 'react-router-dom'
+import GradientBar from '../../components/GradientBar'
 
 export default function ZertifizierungIndex(){
   return (
@@ -10,12 +9,21 @@ export default function ZertifizierungIndex(){
       <p className="text-slate-600 mt-3 max-w-3xl">Informationen zu Biokompatibilität, Qualitätsmanagement und unseren Zertifikaten.</p>
 
       <div className="space-y-8 mt-8">
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-        <Biokompatibilitaet />
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-        <Qualitaetsmanagement />
-        <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
-        <Zertifikate />
+        <section>
+          <h2 className="text-xl font-semibold">Biokompatibilität</h2>
+          <GradientBar />
+          <p className="text-slate-600">Details: <Link to="/zertifizierung/biokompatibilitaet" className="text-blue-700 underline">zur Seite</Link></p>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold">Qualitätsmanagement</h2>
+          <GradientBar />
+          <p className="text-slate-600">Details: <Link to="/zertifizierung/qualitaetsmanagement" className="text-blue-700 underline">zur Seite</Link></p>
+        </section>
+        <section>
+          <h2 className="text-xl font-semibold">Zertifikate</h2>
+          <GradientBar />
+          <p className="text-slate-600">Details: <Link to="/zertifizierung/zertifikate" className="text-blue-700 underline">zur Seite</Link></p>
+        </section>
       </div>
     </main>
   )

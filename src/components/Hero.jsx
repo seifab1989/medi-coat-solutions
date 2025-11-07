@@ -1,4 +1,5 @@
 import React from 'react'
+import GradientBar from './GradientBar'
 
 export default function Hero(){
   // Ensure base ends with a trailing slash so concatenations like base + 'assets/..' work
@@ -23,7 +24,7 @@ export default function Hero(){
                   Zertifizierte Oberflächenveredelung für sichere Medizinprodukte.
                 </span>
               </h1>
-              <div className="h-1 w-full bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full my-6"></div>
+              <GradientBar height="h-1" className="my-6" />
               <p className="text-lg text-slate-600 max-w-2xl">
                 Biokompatible PVD-Schichten für die Medizintechnik mit klarer Dokumentation und regulatorischer Absicherung.
               </p>
@@ -55,7 +56,7 @@ export default function Hero(){
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
               Warum PVD-Schichten in der Medizintechnik?
             </h2>
-            <div className="h-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 opacity-30 rounded-full mt-3 mb-5" />
+            <GradientBar />
             <p className="mt-2 text-slate-600">
               PVD-Schichten verbessern die Funktion, Langlebigkeit und Sicherheit von Medizinprodukten.
             </p>
