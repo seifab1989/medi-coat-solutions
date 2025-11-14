@@ -15,7 +15,7 @@ export default function Umweltmanagement() {
       <h1 id="umwelt-title" className="text-3xl md:text-4xl font-semibold">
         Umweltmanagement
       </h1>
-      <p className="mt-3 text-slate-600 max-w-3xl">
+      <p className="mt-3 text-slate-600">
         Programm zur Reduktion von Energie- und Medienverbrauch sowie Recycling. Auch ohne formale Zertifizierung legen wir
         großen Wert auf einen verantwortungsvollen Umgang mit Umwelt und Ressourcen.
       </p>
@@ -58,7 +58,7 @@ export default function Umweltmanagement() {
                 "Langlebige Schichten und Recycling‑Konzepte für Medien und Verpackungen.",
             },
           ].map((item) => (
-            <GradientCard key={item.title} borderWidth={4}>
+            <GradientCard key={item.title} borderWidth={2}>
               <h3 className="font-semibold">{item.title}</h3>
               <p className="text-sm mt-2">{item.text}</p>
             </GradientCard>
@@ -75,7 +75,7 @@ export default function Umweltmanagement() {
             Verzicht auf Chrom(VI) und andere umweltschädliche Prozesschemikalien in der Schichtabscheidung.
           </li>
           <li>
-            Keine Entstehung giftiger Abwässer; Medienkreisläufe werden minimiert und wo möglich geschlossen.
+            Keine Entstehung giftiger Abwässer.
           </li>
           <li>
             Elektrische Energie als alleiniger Prozess‑Energieträger – aus erneuerbaren Quellen skalierbar.

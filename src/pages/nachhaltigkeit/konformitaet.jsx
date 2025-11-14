@@ -59,19 +59,19 @@ export default function Konformitaet() {
   <h3 className="text-2xl md:text-3xl font-semibold">Schwerpunkte</h3>
         <GradientBar />
         <div className="grid md:grid-cols-3 gap-6">
-          <GradientCard borderWidth={4}>
+          <GradientCard borderWidth={2}>
             <h4 className="font-semibold">REACH &amp; Stoffverbote</h4>
             <p className="text-sm mt-2 text-slate-700">
               Nickel- &amp; PFAS-freie Schichtsysteme, Verzicht auf Chrom(VI) – Fokus auf Biokompatibilität und Umweltverträglichkeit.
             </p>
           </GradientCard>
-          <GradientCard borderWidth={4}>
+          <GradientCard borderWidth={2}>
             <h4 className="font-semibold">DIN EN ISO 13485</h4>
             <p className="text-sm mt-2 text-slate-700">
               Dokumentierte, auditierbare Prozesse; Risiko‑ und Änderungsmanagement für gleichbleibende Qualität.
             </p>
           </GradientCard>
-          <GradientCard borderWidth={4}>
+          <GradientCard borderWidth={2}>
             <h4 className="font-semibold">Vertrauen &amp; Nachweis</h4>
             <p className="text-sm mt-2 text-slate-700">
               Kombination aus Material‑Konformität und QM‑System schafft eine belastbare Grundlage für regulatorische Sicherheit.

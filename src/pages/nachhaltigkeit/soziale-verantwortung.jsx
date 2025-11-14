@@ -18,13 +18,14 @@ export default function SozialeVerantwortung() {
         <GradientBar />
         <div className="text-slate-700 leading-relaxed space-y-4">
           <p>Wir schaffen sichere Arbeitsbedingungen, setzen auf kontinuierliche Qualifizierung und achten auf Fairness in der gesamten Wertschöpfungskette.</p>
-          <p>Als Unternehmen möchten wir unseren Beitrag zu einem fairen, respektvollen und transparenten Miteinander leisten.Dazu gehört, unseren Mitarbeitenden ein sicheres und wertschätzendes Arbeitsumfeld zu bieten. Wir setzen auf offene Kommunikation, klare Strukturen und faire Arbeitsbedingungen. Ebenso wichtig ist uns der <strong>partnerschaftliche Umgang</strong> mit Kunden und Zulieferern, der auf Vertrauen und Verlässlichkeit basiert.</p>
+          <p>Als Unternehmen möchten wir unseren Beitrag zu einem fairen, respektvollen und transparenten Miteinander leisten. Dazu gehört, unseren Mitarbeitenden ein sicheres und wertschätzendes Arbeitsumfeld zu bieten. Wir setzen auf offene Kommunikation, klare Strukturen und faire Arbeitsbedingungen. Ebenso wichtig ist uns der <strong>partnerschaftliche Umgang</strong> mit Kunden und Zulieferern, der auf Vertrauen und Verlässlichkeit basiert.</p>
         </div>
       </section>
 
       {/* Handlungsfelder – Karten im Stil von "Unser Anspruch" */}
       <section className="mt-12">
         <h3 className="text-2xl md:text-3xl font-semibold">Unsere Handlungsfelder</h3>
+        <GradientBar />
         <div className="mt-6 grid md:grid-cols-3 gap-6">
           {[{
             title: "Arbeits- & Gesundheitsschutz",
