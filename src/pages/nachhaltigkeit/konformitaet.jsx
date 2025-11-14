@@ -12,7 +12,7 @@ export default function Konformitaet() {
       <h1 id="regulatorik-title" className="text-3xl md:text-4xl font-semibold">
         Regulatorische Konformität
       </h1>
-      <p className="mt-3 text-slate-600 max-w-3xl">
+      <p className="mt-3 text-slate-600">
         Einhaltung von REACH, RoHS und medizintechnischen Regularien – kombiniert mit einem
         zertifizierten Qualitätsmanagementsystem nach DIN EN ISO 13485.
       </p>
@@ -37,7 +37,7 @@ export default function Konformitaet() {
             </p>
             <p>
               Mit dieser Kombination aus materialbezogener Konformität (REACH, Nickelfreiheit; PFAS-Freiheit) und prozessorientierten
-              Qualitätsstandards (DIN EN ISO 13485) schaffen wir eine solide Basis für regulatorische Sicherheit und das Vertrauen in die
+              Qualitätsstandards (DIN EN ISO 13485) schaffen wir eine solide Basis für regulatorische Sicherheit und das <strong>Vertrauen</strong> in die
               PVD-Technologie.
             </p>
           </div>
@@ -62,13 +62,13 @@ export default function Konformitaet() {
           <GradientCard borderWidth={4}>
             <h4 className="font-semibold">REACH &amp; Stoffverbote</h4>
             <p className="text-sm mt-2 text-slate-700">
-              Nickel- &amp; PFAS-freie Schichtsysteme, Verzicht auf Chrom(VI) – Fokus auf Biokompatibilität &amp; Umweltverträglichkeit.
+              Nickel- &amp; PFAS-freie Schichtsysteme, Verzicht auf Chrom(VI) – Fokus auf Biokompatibilität und Umweltverträglichkeit.
             </p>
           </GradientCard>
           <GradientCard borderWidth={4}>
             <h4 className="font-semibold">DIN EN ISO 13485</h4>
             <p className="text-sm mt-2 text-slate-700">
-              Dokumentierte, auditierbare Prozesse; Risiko‑ &amp; Änderungsmanagement für gleichbleibende Qualität.
+              Dokumentierte, auditierbare Prozesse; Risiko‑ und Änderungsmanagement für gleichbleibende Qualität.
             </p>
           </GradientCard>
           <GradientCard borderWidth={4}>

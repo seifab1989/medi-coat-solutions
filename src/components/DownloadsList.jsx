@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import GradientBar from './GradientBar'
+import { assetUrl } from '../utils/assetUrl'
 
 function formatSize(bytes) {
   if (!bytes || typeof bytes !== 'number') return ''
@@ -116,7 +117,7 @@ export default function DownloadsList({
     {showHeadingGradient && <GradientBar />}
       {intro && <p className="mt-3 text-slate-600 max-w-3xl">{intro}</p>}
 
-      <Section title="Dokumente zum Download">
+      <Section title="Zertifikate / Bescheinigungen zum Download">
         {shown === null && !error && (<div className="mt-6">Lade Dokumentliste…</div>)}
         {error && (<div className="mt-6 text-sm text-rose-600">Konnte Download-Liste nicht laden. Die statische Liste wird angezeigt.</div>)}
 
@@ -124,7 +125,7 @@ export default function DownloadsList({
           <div className="grid md:grid-cols-2 gap-6">
             <CategoryHeading>Datenblätter</CategoryHeading>
             {shown.filter(f => /datenblatt/i.test(f.filename)).map(f => (
-              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={`/downloads/${f.filename}`} size={f.size} />
+              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
             ))}
           </div>
         )}
@@ -133,7 +134,7 @@ export default function DownloadsList({
           <div className="grid md:grid-cols-2 gap-6 mt-8">
             <CategoryHeading>Sonstige Dokumente</CategoryHeading>
             {shown.filter(f => !/datenblatt/i.test(f.filename)).map(f => (
-              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={`/downloads/${f.filename}`} size={f.size} />
+              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
             ))}
           </div>
         )}
@@ -141,7 +142,7 @@ export default function DownloadsList({
         {shown && !splitByDataSheet && (
           <div className="grid md:grid-cols-2 gap-6">
             {shown.map(f => (
-              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={`/downloads/${f.filename}`} size={f.size} />
+              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
             ))}
           </div>
         )}
@@ -150,22 +151,21 @@ export default function DownloadsList({
           <>
             <div className="grid md:grid-cols-2 gap-6">
               <CategoryHeading>Datenblätter</CategoryHeading>
-              {defaultItems.dataSheets && defaultItems.dataSheets.map((d, i) => (
-                <DocLink key={i} title={d.title} desc={d.desc} href={d.href} />
-              ))}
+              {defaultItems.dataSheets && defaultItems.dataSheets.map((d, i) => {
+                const href = /^https?:\/\//i.test(d.href) ? d.href : assetUrl(String(d.href || '').replace(/^\//, ''))
+                return (<DocLink key={i} title={d.title} desc={d.desc} href={href} />)
+              })}
             </div>
             <div className="grid md:grid-cols-2 gap-6 mt-8">
               <CategoryHeading>Sonstige Dokumente</CategoryHeading>
-              {defaultItems.others && defaultItems.others.map((d, i) => (
-                <DocLink key={i} title={d.title} desc={d.desc} href={d.href} />
-              ))}
+              {defaultItems.others && defaultItems.others.map((d, i) => {
+                const href = /^https?:\/\//i.test(d.href) ? d.href : assetUrl(String(d.href || '').replace(/^\//, ''))
+                return (<DocLink key={i} title={d.title} desc={d.desc} href={href} />)
+              })}
             </div>
           </>
         )}
-
       </Section>
-
-      <p className="mt-10 text-slate-700">Alle Dokumente stehen Ihnen als PDF zum Download zur Verfügung.</p>
     </main>
   )
 }

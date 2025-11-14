@@ -7,13 +7,14 @@ export default function Zertifikate(){
   return (
     <DownloadsList
       title="Zertifikate"
-      intro="Hier finden Sie unsere relevanten Zertifikate zum Download."
+      intro="Hier stehen Ihnen unsere relevanten Zertifikate als PDF zum Download bereit."
       includePattern={certPattern}
       splitByDataSheet={false}
+      showHeadingGradient={false}
       defaultItems={{
         dataSheets: null,
         others: [
-          { title: 'Beispiel-Zertifikat (Fallback)', href: '/downloads/zertifikat-beispiel.pdf' }
+          { title: 'Beispiel-Zertifikat (Fallback)', href: 'downloads/zertifikat-beispiel.pdf' }
         ]
       }}
     />
