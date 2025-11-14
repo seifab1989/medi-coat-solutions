@@ -12,8 +12,8 @@ export default function Qualitaetsmanagement() {
     >
       {/* Titel & Intro */}
       <h1 id="qm-title" className="text-3xl md:text-4xl font-semibold">Qualitätsmanagement</h1>
-      <p className="mt-3 text-slate-600 max-w-3xl">
-        Dokumentierte, validierte Abfolge von Entwicklung bis Serie; Abweichungs- und Änderungssteuerung (CAPA).
+      <p className="mt-3 text-slate-600">
+        Dokumentierte, validierte Prozesse von Entwicklung bis Serie; Abweichungs- und Änderungssteuerung (CAPA).
       </p>
 
       {/* Einleitender Abschnitt – Text/Bild-Layout */}
@@ -23,7 +23,7 @@ export default function Qualitaetsmanagement() {
           <GradientBar />
           <p className="text-slate-700 leading-relaxed">
             MediCoat Solutions legt größten Wert auf die Qualität der Produkte und Prozesse. Unsere PVD‑Schichten
-            erfüllen höchste Anforderungen an Biokompatibilität, Langlebigkeit und Präzision.
+            erfüllen höchste Anforderungen an Biokompatibilität, Langlebigkeit, Hygiene und Korrosionsbeständigkeit.
           </p>
           <p className="text-slate-700 leading-relaxed mt-4">
             Wir sind nach <strong>DIN EN ISO 13485</strong> zertifiziert – der internationalen Norm für
@@ -46,24 +46,11 @@ export default function Qualitaetsmanagement() {
         <GradientCard>
           <h3 className="text-xl font-semibold">Prozesssicherheit & CAPA</h3>
           <ul className="list-disc pl-5 space-y-2 text-slate-700 mt-3">
-            <li>Risikomanagement nach ISO 14971 und FMEAs</li>
+            <li>Risikomanagement nach DIN EN ISO 14971 und FMEAs</li>
             <li>Abweichungsmanagement, Korrektur- & Vorbeugemaßnahmen</li>
             <li>SPC‑Überwachung, Freigaben und Änderungssteuerung</li>
           </ul>
         </GradientCard>
-      </section>
-
-      {/* Prüf- und Validierungsmethoden */}
-      <section className="mt-12">
-  <h3 className="text-2xl md:text-3xl font-semibold">Prüf- und Validierungsmethoden</h3>
-        <GradientBar />
-        <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
-          <li><strong>RFA/EDX</strong> zur Bestimmung der chemischen Zusammensetzung</li>
-          <li><strong>Röntgenbeugung (XRD)</strong> zur Untersuchung der Mikrostruktur</li>
-          <li><strong>Profilometrie</strong> für Schichtdicke & Oberflächenrauheit</li>
-          <li><strong>Kalottenschliff</strong> zur Bestimmung der Schichtarchitektur</li>
-          <li><strong>Ritztest</strong> zur Prüfung der Haftfestigkeit</li>
-        </ul>
       </section>
     </Container>
   );
