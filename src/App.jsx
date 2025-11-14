@@ -1,5 +1,6 @@
 import React from 'react'
 import { HashRouter, Routes, Route } from 'react-router-dom'
+import ScrollToTop from './components/ScrollToTop'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -42,6 +43,7 @@ import AGB from './pages/AGB'
 export default function App(){
   return (
   <HashRouter>
+    <ScrollToTop />
       <div className="backdrop-blur bg-white/60 sticky top-0 z-50">
       <section className="bg-gradient-to-r from-blue-900/10 via-blue-600/10 to-green-500/10">
         <Navbar />
