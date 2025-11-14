@@ -64,6 +64,7 @@ export default function DownloadsList({
   excludePattern = null, // string or null - files matching this will be excluded
   splitByDataSheet = true, // show data sheets separated from others
   defaultItems = null, // fallback array of { filename, size }
+  showHeadingGradient = true, // controls gradient bar under main title
 }) {
   const [files, setFiles] = useState(null)
   const [error, setError] = useState(null)
@@ -111,8 +112,8 @@ export default function DownloadsList({
 
   return (
     <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="downloads-title">
-      <h2 id="downloads-title" className="text-3xl md:text-4xl font-semibold">{title}</h2>
-  <GradientBar />
+    <h2 id="downloads-title" className="text-3xl md:text-4xl font-semibold">{title}</h2>
+    {showHeadingGradient && <GradientBar />}
       {intro && <p className="mt-3 text-slate-600 max-w-3xl">{intro}</p>}
 
       <Section title="Dokumente zum Download">

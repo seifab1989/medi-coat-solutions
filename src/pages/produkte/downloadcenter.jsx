@@ -9,6 +9,7 @@ export default function Downloadcenter() {
       splitByDataSheet={true}
       // exclude certificate files so they only appear on the Zertifikate page
       excludePattern={'zertifikat|certificate|certificat|cert|attest|zeugnis|bescheinigung|reach|zertifikat_'}
+      showHeadingGradient={false}
     />
   )
 }
