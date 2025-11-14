@@ -16,9 +16,9 @@ export default function Patientensicherheit() {
       <h2 id="patientensicherheit-title" className="text-3xl md:text-4xl font-semibold">
         PVD & Patientensicherheit
       </h2>
-      <p className="mt-3 text-slate-600 max-w-3xl">
+      <p className="mt-3 text-slate-600">
         Validierte Prozesse mit Risikoanalyse und statistischer Kontrolle (SPC). Nachweise zur
-        Biokompatibilität und Sterilisationsbeständigkeit gemäß relevanter Normen.
+        Biokompatibilität gemäß relevanter Normen.
       </p>
 
       {/* Intro-Section */}
@@ -28,7 +28,7 @@ export default function Patientensicherheit() {
           <GradientBar />
           <p className="text-slate-700 leading-relaxed">
             Medizinprodukte sind hohen Belastungen ausgesetzt: Korrosion, Verschleiß (z. B. Abrieb) und hygienische
-            Risiken können die Patientensicherheit gefährden. PVD-Schichten können die Risiken durch hohe Belastungen
+            Risiken können die Patientensicherheit gefährden. PVD-Schichten können Risiken, die durch diese Belastungen entstehen,
             minimieren und tragen aktiv zur Patientensicherheit bei.
           </p>
         </div>
@@ -40,18 +40,18 @@ export default function Patientensicherheit() {
         <GradientBar />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li>
-            <span className="font-medium">Biokompatibilität nach DIN EN ISO 10993:</span> Schichten verhindern allergische
+            <span className="font-medium"><strong>Biokompatibilität</strong> nach DIN EN ISO 10993:</span> PVD-Schichten verhindern allergische
             Reaktionen (z. B. Nickel-Sperrschichten).
           </li>
           <li>
-            <span className="font-medium">Korrosionsschutz:</span> Kein Austreten von Metallionen in den Körper.
+            <span className="font-medium"><strong>Korrosionsschutz</strong>:</span> Kein Austreten von Metallionen in den Körper.
           </li>
           <li>
-            <span className="font-medium">Hygiene:</span> Glatte, verschleißarme Oberflächen → weniger Mikrorisse, geringeres
+            <span className="font-medium"><strong>Hygiene</strong>:</span> Glatte, verschleißarme Oberflächen → weniger Mikrorisse, geringeres
             Risiko von Keimanhaftung.
           </li>
           <li>
-            <span className="font-medium">Langlebigkeit:</span> Weniger Verschleiß → weniger Bruch- oder Ausfallrisiko während einer
+            <span className="font-medium"><strong>Langlebigkeit</strong>:</span> Weniger Verschleiß → weniger Bruch- oder Ausfallrisiko während einer
             Behandlung.
           </li>
         </ul>
@@ -73,21 +73,21 @@ export default function Patientensicherheit() {
             Unbeschichteter vs. CrN-mod beschichteter Eisen-Prüfkörper, der mit Kupfersulfat (CuSO₄) beträufelt wurde.
           </p>
           <ul className="list-disc pl-5 space-y-2 text-slate-700">
-            <li>Unbeschichteter und beschichteter Eisen-basierter Prüfkörper wird mit Kupfersulfat (CuSO₄) beträufelt.</li>
+            <li>Unbeschichteter und beschichteter Eisen-basierter Prüfkörper wird mit Kupfersulfat-Lösung (CuSO₄) beträufelt.</li>
             <li>
-              Beim unbeschichteten Prüfkörper kann das Eisen durch Kupfer ersetzt werden – punktuelle kupferfarbige
-              Verfärbung (siehe Abbildung zur Korrosionsbeständigkeit).
+              Beim unbeschichteten Prüfkörper (links) kann das Eisen durch Kupfer ersetzt werden – punktuelle kupferfarbige
+              Verfärbung.
             </li>
             <li>
-              Der mit <strong>CrN-mod</strong> beschichtete Prüfkörper zeigt keine punktuellen kupferfarbigen Verfärbungen,
+              Der mit <strong>CrN-mod</strong> beschichtete Prüfkörper (rechts) zeigt keine punktuellen kupferfarbigen Verfärbungen,
               weil die CrN-mod-Schicht das Eisen schützt. Die CrN-mod-Schicht von MediCoat Solutions reagiert zudem nicht mit der
-              Kupfersulfat-Lösung und ist somit beständig gegen Korrosion (siehe Abbildung zur Korrosionsbeständigkeit).
+              Kupfersulfat-Lösung und ist somit beständig gegen Korrosion.
             </li>
           </ul>
         </GradientCard>
 
         <GradientCard>
-          <h4 className="font-semibold">Beispiel 2: Verschleißschutz</h4>
+          <h4 className="font-semibold">Beispiel 2: Langlebigkeit</h4>
           <div className="aspect-[16/9] mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
             <img
               src={assetUrl('assets/verschleissschutz.png')}
@@ -100,11 +100,11 @@ export default function Patientensicherheit() {
             Prüfkörper lokal mit PROMAT-Schleifvlies (K180) beansprucht – unbeschichtet vs. TiN-mod.
           </p>
           <ul className="list-disc pl-5 space-y-2 text-slate-700">
-            <li>Unbeschichteter und beschichteter Bereich eines Prüfkörpers wurden mit PROMAT-Schleifvlies (K180) beansprucht.</li>
-            <li>Unbeschichteter Bereich: deutliche Kratzer und Riefen – abrasiver Verschleiß (siehe Abbildung Verschleißschutz).</li>
+            <li>Die rechte Seite des Prüfkörpers ist der unbeschichtete und die linke Seite ist der TiN-mod beschichtete Bereich.</li>
+            <li>Unbeschichteter und TiN-mod beschichteter Bereich des Prüfkörpers wurden mit einem PROMAT-Schleifvlies (K180) beansprucht.</li>
+            <li>Unbeschichteter Bereich: deutliche Kratzer und Riefen – abrasiver Verschleiß.</li>
             <li>
-              <strong>TiN-mod</strong> Beschichtung reduziert signifikant Kratzer/Riefen und schützt so vor abrasivem Verschleiß (siehe
-              Abbildung Verschleißschutz).
+              <strong>TiN-mod</strong> Beschichtung reduziert signifikant Kratzer / Riefen und verlängert so die Lebensdauer von Medizinprodukten.
             </li>
           </ul>
         </GradientCard>
@@ -115,7 +115,7 @@ export default function Patientensicherheit() {
         <GradientCard>
           <div className="flex items-center gap-4 flex-wrap">
             <p className="text-slate-900 font-medium m-0">
-              Erfahren Sie, wie unsere PVD-Schichten Ihre Medizintechnikprodukte sicherer machen.
+              Erfahren Sie, wie unsere PVD-Schichten Ihre Medizinprodukte sicherer machen.
             </p>
             <a
               href="#kontakt"
