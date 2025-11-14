@@ -22,7 +22,8 @@ export default function MediCoatLogo() {
           <stop offset="100%" style={{ stopColor: "#4A90E2", stopOpacity: 0.6 }} />
         </linearGradient>
       </defs>
-      <g transform="translate(20, 25)">
+      {/* remove left padding to align with page left edge */}
+      <g transform="translate(0, 25)">
         <text x="0" y="30" fontFamily="Arial, sans-serif" fontSize="36" fontWeight="bold" fill="url(#mediGradient)">Medi</text>
         <text x="85" y="30" fontFamily="Arial, sans-serif" fontSize="36" fontWeight="bold" fill="url(#coatGradient)">C</text>
         <g transform="translate(123, 18)">
