@@ -11,7 +11,7 @@ export default function Biokompatibilitaet() {
       {/* Titel & Intro */}
       <h1 id="bio-title" className="text-3xl md:text-4xl font-semibold">Biokompatibilität</h1>
       <p className="mt-3 text-slate-600 max-w-3xl">
-        Bewertung von Materialien und Schichten gemäß DIN EN ISO 10993.
+        Bewertung von PVD-Schichten gemäß DIN EN ISO 10993.
       </p>
 
       {/* Merkmalskarten – angelehnt an UeberUns */}
@@ -49,7 +49,7 @@ export default function Biokompatibilitaet() {
           </p>
           <p className="text-slate-700 leading-relaxed mt-3">
             Die Zertifikate, welche die Biokompatibilität bestätigen, stehen im Bereich
-            <Link to="/zertifizierung/zertifikate" className="text-blue-700 underline ml-1">Zertifikate</Link> zum Download bereit.
+            <Link to="/zertifizierung/zertifikate" className="text-blue-700 underline ml-1 font-semibold">Zertifikate</Link> zum Download bereit.
           </p>
         </GradientCard>
       </section>
