@@ -17,7 +17,7 @@ export default function Hero(){
           <div className="grid lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-7">
               <span className="inline-block text-xs font-medium text-slate-500 uppercase tracking-widest">
-                Dünne, dichte Funktionsschichten
+                Dünne Funktionsschichten mit geringer Porosität
               </span>
               <h1 className="mt-2 text-3xl md:text-5xl font-semibold leading-tight">
                 <span className="inline-block bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 bg-clip-text text-transparent">
@@ -26,7 +26,7 @@ export default function Hero(){
               </h1>
               <GradientBar height="h-1" className="my-6" />
               <p className="text-lg text-slate-600 max-w-2xl">
-                Biokompatible PVD-Schichten für die Medizintechnik mit klarer Dokumentation und regulatorischer Absicherung.
+                Biokompatible PVD-Schichten für die Medizintechnik mit klarer Dokumentation und verbesserter Patientensicherheit.
               </p>
             </div>
 

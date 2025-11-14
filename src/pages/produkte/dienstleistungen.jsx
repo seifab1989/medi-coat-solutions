@@ -8,8 +8,8 @@ function Section({ icon, title, kicker, children, id }){
     <section id={id}>
       <h2 className="text-2xl md:text-3xl font-semibold flex items-center gap-2">{title}</h2>
       <GradientBar />
-      {kicker && <p className="text-slate-600 max-w-3xl">{kicker}</p>}
-      <div className="mt-4 text-slate-700 leading-relaxed max-w-4xl">{children}</div>
+      {kicker && <p className="text-slate-600">{kicker}</p>}
+      <div className="mt-4 text-slate-700 leading-relaxed">{children}</div>
     </section>
   )
 }
@@ -43,7 +43,7 @@ function Overview(){
   return (
     <div className="grid md:grid-cols-3 gap-6">
       <Card target="pvd" title="PVD-Beschichten" desc="Unser Kerngeschäft: präzise, reproduzierbare Funktionsschichten." />
-      <Card target="strahlen" title="Strahlen zur Oberflächenoptimierung" desc="Perfekte Vorbereitung" />
+      <Card target="strahlen" title="Strahlen zur Oberflächenoptimierung" desc="Perfekte Vor- und Nachbereitung." />
       <Card target="strategie" title="Strategieberatung" desc="Prozessgestaltung von der Auswahl bis zur Integration." />
     </div>
   )
@@ -64,7 +64,7 @@ export default function Dienstleistungen(){
             <Bullet>Reproduzierbare Ergebnisse für Serien- und Sonderfertigungen</Bullet>
           </ul>
         </Section>
-        <Section id="strahlen" title="Strahlen zur Oberflächenoptimierung – die perfekte Vorbereitung" kicker="Vor der Beschichtung bieten wir bei Bedarf ein präzises Strahlen an, um die Bauteile optimal auf den PVD-Prozess vorzubereiten.">
+        <Section id="strahlen" title="Strahlen zur Oberflächenoptimierung – die optimale Vor- und Nachbereitung" kicker="Vor und nach der Beschichtung bieten wir Ihnen bei Bedarf ein präzises Strahlen an, um die Bauteile bestmöglich zu veredeln.">
           <ul className="space-y-2">
             <Bullet>Abtragen / Reinigen: Entfernen von Verunreinigungen</Bullet>
             <Bullet>Verdichten: Schaffen einer homogenen Oberflächenstruktur</Bullet>
@@ -72,7 +72,7 @@ export default function Dienstleistungen(){
           </ul>
         </Section>
         <Section id="strategie" title="Strategieberatung – Ihr Weg zur optimalen Prozessgestaltung" kicker="Neben den technischen Dienstleistungen begleiten wir unsere Kunden auch auf einer strategischen Ebene.">
-          <p>Wir beraten Unternehmen bei der Gestaltung und Optimierung von Prozessen im Bereich Oberflächenveredelung – von der Auswahl geeigneter Verfahren bis hin zur Integration in bestehenden Abläufen.</p>
+          <p>Wir beraten Unternehmen bei der Gestaltung und Optimierung von Prozessen im Bereich Oberflächenveredelung – von der Auswahl geeigneter Verfahren bis hin zur Integration in bestehende Abläufe.</p>
         </Section>
       </div>
     </Container>

@@ -11,7 +11,7 @@ function About() {
         Über uns
       </h2>
 
-      <p className="mt-3 text-slate-600 max-w-3xl">
+      <p className="mt-3 text-slate-600">
         MediCoat Solutions steht für präzise, reproduzierbare PVD-Beschichtungen
         für die Medizintechnik. Unsere Mission: Funktion und Patientensicherheit
         zusammenbringen – durch validierte Prozesse, Transparenz und
@@ -34,7 +34,7 @@ function About() {
             Wir sind spezialisiert auf <strong>PVD-Schichten</strong>, die
             höchste Qualitäts- und Sicherheitsstandards erfüllen. Unsere Prozesse
             sind nach <strong>DIN EN ISO 13485</strong> zertifiziert. Mit unserem
-            Know-how unterstützen wir Medizintechnikhersteller dabei, Produkte zu
+            Fachwissen unterstützen wir Medizintechnikhersteller dabei, Produkte zu
             entwickeln, die den steigenden Anforderungen an Funktionalität,
             Haltbarkeit und Biokompatibilität gerecht werden.
           </p>
@@ -49,6 +49,9 @@ function About() {
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
+          <p className="text-xs text-slate-500 mt-2 text-center">
+            PVD-Beschichtungsanlage der Firma Oerlikon Balzers zur Herstellung modernster PVD-Schichten für Medizintechnikanwendungen.
+          </p>
         </div>
       </section>
 
@@ -57,8 +60,8 @@ function About() {
           Erfahrung und Kompetenz
         </h3>
         <GradientBar />
-        <p className="text-slate-700 leading-relaxed mt-3 max-w-4xl">
-          Dr. Seifried bringt seine langjährige industrielle und wissenschaftliche
+        <p className="text-slate-700 leading-relaxed mt-3">
+          Dr. Fabian Seifried bringt seine langjährige industrielle und wissenschaftliche
           Expertise in der Beschichtungs- und Werkstofftechnologie in das
           Unternehmen ein. Diese Kombination aus Forschungstiefe und
           Praxiserfahrung bildet das Fundament für unsere innovativen Lösungen und
@@ -82,7 +85,7 @@ function About() {
             },
             {
               title: "Partnerschaft",
-              text: "Enge Zusammenarbeit mit Kunden für maßgeschneiderte Lösungen.",
+              text: "Enge Zusammenarbeit mit Kunden und Lieferanten für maßgeschneiderte Lösungen.",
             },
           ].map((item) => (
             <GradientCard key={item.title}>
@@ -96,7 +99,7 @@ function About() {
       <section className="mt-12">
         <h3 className="text-2xl md:text-3xl font-semibold">Unser Ziel</h3>
         <GradientBar />
-        <p className="text-slate-700 leading-relaxed mt-3 max-w-4xl">
+        <p className="text-slate-700 leading-relaxed mt-3">
           Wir wollen die Zukunft der Medizintechnik mitgestalten – durch
           zuverlässige, präzise und nachhaltige Beschichtungslösungen, die einen
           echten Mehrwert für Patienten und Hersteller schaffen.

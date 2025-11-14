@@ -31,6 +31,7 @@ import KarteAnfahrt from './pages/kontakt/KarteAnfahrt'
 import Demo from './pages/Demo'
 import Impressum from './pages/Impressum'
 import Datenschutz from './pages/Datenschutz'
+import AGB from './pages/AGB'
 
 
 
@@ -75,6 +76,7 @@ export default function App(){
             <Route path="demo" element={<Demo/>} />
             <Route path="impressum" element={<Impressum/>} />
             <Route path="datenschutz" element={<Datenschutz/>} />
+            <Route path="agb" element={<AGB/>} />
           </Routes>
         </main>
         <Footer />

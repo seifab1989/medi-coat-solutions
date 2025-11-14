@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
 import GradientBar from '../../components/GradientBar'
 import { COATINGS, STORAGE_KEY } from './coatings.data'
@@ -86,7 +87,7 @@ export default function Portfolio(){
         <div className="rounded-3xl p-[2px] bg-gradient-to-r from-blue-800/30 via-blue-600/30 to-green-500/30 hover:shadow-md transition">
           <div className="bg-white rounded-3xl p-6">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-              <p className="text-slate-700">Bitte wählen Sie die passende PVD-Schicht und laden Sie das entsprechende Datenblatt herunter oder lassen Sie sich von uns beraten.</p>
+              <p className="text-slate-700">Bitte wählen Sie die passende PVD-Schicht aus und laden Sie das entsprechende <Link to="/produkte/downloadcenter" className="font-semibold text-blue-700 underline">Datenblatt</Link> herunter oder lassen Sie sich von uns beraten.</p>
             </div>
           </div>
         </div>

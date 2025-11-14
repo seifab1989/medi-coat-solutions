@@ -17,7 +17,8 @@ export default function Footer(){
           <div className="text-sm text-slate-600">Kontakt: info@medineu.example</div>
           <div className="text-sm text-slate-600">
             <Link to="/impressum" className="underline mr-3">Impressum</Link>
-            <Link to="/datenschutz" className="underline">Datenschutz</Link>
+            <Link to="/datenschutz" className="underline mr-3">Datenschutz</Link>
+            <Link to="/agb" className="underline">AGB</Link>
           </div>
         </div>
       </div>

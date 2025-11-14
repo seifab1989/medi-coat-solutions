@@ -82,6 +82,7 @@ export default function Navbar(){
     // Rechtliches
     'impressum': 'Impressum',
     'datenschutz': 'Datenschutz',
+      'agb': 'AGB'
   }
 
   const toTitle = (seg) => {
