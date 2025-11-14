@@ -7,8 +7,8 @@ export default function SozialeVerantwortung() {
   return (
     <Container as="main" role="main" aria-labelledby="soziale-title">
       {/* Titel & Intro im Stil von UeberUns */}
-      <h1 id="soziale-title" className="text-3xl md:text-4xl font-semibold mb-6">Soziale Verantwortung</h1>
-      <div className="text-slate-700 leading-relaxed space-y-4">
+      <h1 id="soziale-title" className="text-3xl md:text-4xl font-semibold">Soziale Verantwortung</h1>
+      <div className="mt-3 text-slate-700 leading-relaxed space-y-4">
         <p>Nachhaltigkeit umfasst für uns nicht nur ökologische, sondern auch gesellschaftliche Aspekte. Soziale Verantwortung verstehen wir als einen kontinuierlichen Prozess, den wir aktiv gestalten und stetig weiterentwickeln.</p>
       </div>
 

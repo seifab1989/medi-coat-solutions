@@ -10,7 +10,7 @@ export default function Pressemitteilungen() {
     <Container as="main">
       <h1 className="text-3xl md:text-4xl font-semibold">Pressemitteilungen</h1>
       {/* Intro-Section */}
-      <section className="mt-10">
+      <section className="mt-3">
         <p className="text-slate-700 leading-relaxed mt-4">
           Als junges Unternehmen im Bereich Medizintechnik und PVD-Schichten veröffentlichen wir nur ausgewählte
           Pressemitteilungen – immer dann, wenn es wirklich wichtige Neuigkeiten gibt. Hier finden Sie offizielle

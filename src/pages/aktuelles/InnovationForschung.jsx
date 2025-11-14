@@ -45,7 +45,7 @@ export default function InnovationForschung() {
       <h1 className="text-3xl md:text-4xl font-semibold">Innovation & Forschung</h1>
 
       {/* Intro-Section jetzt über volle Breite */}
-      <section className="mt-10">
+      <section className="mt-3">
         <p className="text-slate-700 leading-relaxed max-w-none">
           Unsere Stärke liegt in der Entwicklung und wissenschaftlichen Fundierung innovativer PVD-Schichten für die
           Medizintechnik. Auf dieser Seite präsentieren wir ausschließlich Ergebnisse, die direkt von unserem Unternehmen

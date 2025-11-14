@@ -19,7 +19,7 @@ export default function Messeauftritte() {
     <Container as="main" role="main" aria-labelledby="messe-title">
       {/* Titel & Intro (volle Breite) */}
       <h1 id="messe-title" className="text-3xl md:text-4xl font-semibold">Messeauftritte</h1>
-      <section className="mt-6 grid lg:grid-cols-12 gap-8 items-center">
+      <section className="mt-3 grid lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-12">
           <p className="text-slate-600 leading-relaxed">
             Wir sind auf ausgewählten Fachmessen vertreten, um unsere PVD-Beschichtungslösungen für die Medizintechnik vorzustellen
