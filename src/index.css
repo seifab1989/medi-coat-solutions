@@ -21,7 +21,5 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 
 
 /* Prevent layout shift when pages toggle vertical scrollbar
    Ensures space is always reserved for the scrollbar width */
-html { scrollbar-gutter: stable both-edges; }
-@supports not (scrollbar-gutter: stable) {
-  html { overflow-y: scroll; }
-}
+/* Always reserve vertical scrollbar width to avoid right-side gutter */
+html { overflow-y: scroll; }

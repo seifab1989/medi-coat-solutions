@@ -43,9 +43,9 @@ import AGB from './pages/AGB'
 export default function App(){
   return (
   <HashRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <div className="backdrop-blur bg-white/60 sticky top-0 z-50">
-      <section className="bg-gradient-to-r from-blue-900/10 via-blue-600/10 to-green-500/10">
+      <section className="bg-gradient-to-r from-blue-900/10 via-blue-600/10 to-green-500/10 min-h-screen">
         <Navbar />
         <main className="py-8">
           <Routes>
