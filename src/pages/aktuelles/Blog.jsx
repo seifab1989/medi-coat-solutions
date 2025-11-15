@@ -18,16 +18,12 @@ export default function Blog() {
       short: `Modern entwickelte PVD‑Schichten (z. B. CrN‑Modifikationen und DLC‑Systeme) reduzieren Abrieb und Korrosion
 an hochbeanspruchten Kontaktflächen chirurgischer Instrumente. Durch verbesserte Haftung, optimierte Schichtarchitektur und
 sterilisationsbeständige Oberflächen sinken Reibung und Partikelabgabe, was die Funktion und Aufbereitbarkeit nachhaltig
-verbessert. Gleichzeitig unterstützen dokumentierte Prozesse nach DIN EN ISO 13485 die Reproduzierbarkeit im Serienbetrieb.
-In Validierungen unter praxisnahen Lastkollektiven wurden signifikante Zugewinne der Standzeit beobachtet – bei stabiler
-Biokompatibilität und gleichbleibender Schnittqualität.`.trim(),
+verbessert. `.trim(),
       full: `PVD‑Beschichtungen (Physical Vapour Deposition) ermöglichen dünne, dichte und harte Funktionsschichten mit
 definierter Chemie und Mikrostruktur. In aktuellen Untersuchungen wurden mehrlagige Systeme mit Gradientenzonen und
 gezielter Eigenspannung entwickelt, um Mikrorissbildung zu hemmen und Kantenstabilität zu erhöhen. Das Ergebnis sind
 gerigere Verschleißraten in Gleitlagern und Gelenken sowie zuverlässigere Korrosionsbeständigkeit nach wiederholten
-Reinigungs‑ und Sterilisationszyklen. Neben der Verlängerung der Lebensdauer um bis zu 30 % wurde eine bessere
-Prozesssicherheit in der Aufbereitung beobachtet, da glattere, hydrophobe Oberflächen Restschmutz reduzieren können.
-Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filigranen Mechaniken.`.trim(),
+Reinigungs‑ und Sterilisationszyklen.`.trim(),
       imgCredit: "📷 Bildquelle: Unsplash / Author",
       textCredit: "📝 Textquelle: Journal of Coating Technology, 2024",
     },
@@ -142,7 +138,7 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
         </div>
         {/* Hover/Click Overlay with full content & credits */}
         {isExpanded && (
-          <div className="absolute inset-0 bg-white/95 backdrop-blur-sm p-5 flex flex-col justify-between" {...testId("blog-overlay")}>
+          <div className="absolute inset-0 bg-white/95 backdrop-blur-sm p-5 flex flex-col justify-between overflow-y-auto" {...testId("blog-overlay")}>
             <div>
               <div className="flex items-center gap-2 text-xs text-slate-500">
                 <span>{formatDate(post.date)}</span>
@@ -166,10 +162,9 @@ Diese Effekte sind besonders relevant für minimalinvasive Instrumente mit filig
   // --- Page layout (UeberUns-style) ---
   return (
     <Container as="main">
-      {/* Title & divider */}
-      <h1 className="text-3xl md:text-4xl font-semibold">Blog & Artikel</h1>
-      <GradientBar />
-      <p className="mt-6 text-slate-700 leading-relaxed w-full">
+      {/* Title */}
+      <h1 className="text-3xl md:text-4xl font-semibold">Blog und Artikel</h1>
+      <p className="mt-3 text-slate-700 leading-relaxed w-full">
         In unserem Blog finden Sie aktuelle Informationen und Fachbeiträge rund um PVD‑Schichten in der Medizintechnik. Wir berichten
         über Entwicklungen, Forschungsergebnisse und Innovationen.Wir verbinden praxisrelevante Einblicke aus Beschichtungstechnik, Qualitätssicherung und Regulierung. Beiträge sind kompakt,
             nachvollziehbar und auf medizintechnische Anwendungen fokussiert.
