@@ -45,7 +45,7 @@ export default function Formular(){
       <GradientCard className="max-w-xl mx-auto">
         <form onSubmit={onSubmit}>
           <h2 id="kontakt-form-title" className="text-3xl font-bold">Kontakt</h2>
-          <p className="mt-2 text-slate-600">Schreibe uns oder nutze das Formular unten — wir melden uns zeitnah.</p>
+          <p className="mt-2 text-slate-600">Schreiben Sie uns oder nutzen Sie das Formular unten — wir melden uns zeitnah bei Ihnen.</p>
           {errors.length > 0 && (
             <div className="mb-4 text-sm text-red-700 bg-red-50 p-3 rounded">
               <ul className="list-disc pl-5">

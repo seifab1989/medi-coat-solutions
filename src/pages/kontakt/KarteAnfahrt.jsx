@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Container from "../../components/Container";
 import GradientCard from "../../components/GradientCard";
+import GradientBar from "../../components/GradientBar";
 
 export default function KarteAnfahrt() {
    const standorte = [
@@ -24,7 +25,8 @@ export default function KarteAnfahrt() {
   return (
   <Container as="main">
       <header className="mb-8">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Standortkarte & Anfahrt</h1>
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Standortkarte und Anfahrt</h1>
+        <GradientBar />
         
         <p className="mt-3 text-slate-600 max-w-3xl">Finden Sie unsere Standorte und planen Sie Ihre Anreise.</p>
       </header>
