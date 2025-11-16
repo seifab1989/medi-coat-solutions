@@ -12,7 +12,7 @@ export default function Team(){
   };
   return (
     <Container as="main" role="main" aria-labelledby="team-title">
-      <h2 id="team-title" className="text-3xl md:text-4xl font-semibold">Team / Ansprechpartner</h2>
+      <h2 id="team-title" className="text-3xl md:text-4xl font-semibold">Team</h2>
       <p className="mt-3 text-slate-600 max-w-3xl">Wir sind für Sie da. Sprechen Sie uns an – direkt und ohne Umwege.</p>
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-center">
         <div className="lg:col-span-7">

@@ -20,25 +20,19 @@ function Ausbildung() {
   return (
     <Container as="main" role="main" aria-labelledby="ausbildung-title">
       <h2 id="ausbildung-title" className="text-3xl md:text-4xl font-semibold">
-        Ausbildung & Praktika
+        Ausbildung / Praktika
       </h2>
       <p className="mt-3 text-slate-600 max-w-3xl">
-        Programme für Auszubildende und Studierende – mit Fokus auf
-        Medizintechnik und PVD-Schichten.
-      </p>
+        Programme für Auszubildende und Studierende – mit dem Fokus auf die Medizintechnik und PVD-Schichten.</p>
 
       <section className="mt-10 grid lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-12">
-          <h3 className="text-2xl md:text-3xl font-semibold">
-            Ausbildung und Nachwuchsförderung
-          </h3>
+          <h3 className="text-2xl md:text-3xl font-semibold">Nachwuchsförderung</h3>
           <GradientBar />
           <p className="text-slate-700 leading-relaxed">
             Ausbildung und Nachwuchsförderung sind uns wichtig. Derzeit können
             wir jedoch <strong>keine Ausbildungs- oder Praktikumsplätze</strong>{" "}
-            anbieten. Da wir ein kleines Unternehmen sind, richten wir unser
-            Angebot nach Bedarf aus.
-          </p>
+            anbieten. Als kleines Unternehmen gestalten wir unser Angebot flexibel nach Bedarf.</p>
           <p className="text-slate-700 leading-relaxed mt-4">
             Bitte schau zu einem späteren Zeitpunkt noch einmal vorbei – sobald
             neue Möglichkeiten entstehen, veröffentlichen wir sie hier.
@@ -59,7 +53,7 @@ function Ausbildung() {
             </p>
           </GradientCard>
           <GradientCard>
-            <h4 className="font-semibold">Lernen & Mentoring</h4>
+            <h4 className="font-semibold">Lernen und Mentoring</h4>
             <p className="text-sm mt-2 text-slate-700">
               Klare Lernziele, direkte Zusammenarbeit, ehrliches Feedback.
             </p>
@@ -67,8 +61,8 @@ function Ausbildung() {
           <GradientCard>
             <h4 className="font-semibold">Praxisnähe</h4>
             <p className="text-sm mt-2 text-slate-700">
-              Arbeiten an echten Projekten in Beschichtung, Produktion und
-              Qualitätssicherung.
+              Arbeiten an echten Projekten in Einkauf, Vertrieb, Beschichtung und
+              Qualitätsmanagement.
             </p>
           </GradientCard>
         </div>

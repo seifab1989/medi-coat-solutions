@@ -6,7 +6,6 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/unternehmen/About'
 import Standorte from './pages/unternehmen/Standorte'
-import Team from './pages/unternehmen/Team'
 import Herstellung from './pages/produkte/Herstellung'
 import Portfolio from './pages/produkte/portfolio'
 import Dienstleistungen from './pages/produkte/dienstleistungen'
@@ -52,7 +51,6 @@ export default function App(){
             <Route path="/" element={<Home/>} />
             <Route path="unternehmen/about" element={<About/>} />
             <Route path="unternehmen/standorte" element={<Standorte/>} />
-            <Route path="unternehmen/team" element={<Team/>} />
             <Route path="produkte/herstellung" element={<Herstellung/>} />
             <Route path="produkte/download" element={<Download/>} />
             <Route path="produkte/portfolio" element={<Portfolio/>} />

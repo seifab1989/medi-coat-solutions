@@ -43,7 +43,6 @@ export default function Navbar(){
     'kontakt': 'Kontakt',
 
     // Unternehmen
-    'team': 'Team',
     'about': 'Über uns',
     'standorte': 'Standorte',
 
@@ -130,7 +129,6 @@ export default function Navbar(){
             </button>
                 {UnternehmenOpen && (
                   <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="unternehmen/team" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Team</Link>
                 <Link to="unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
                 <Link to="unternehmen/standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
               </div>
@@ -302,7 +300,6 @@ export default function Navbar(){
             <div>
               <div className="font-medium">Unternehmen</div>
               <div className="mt-2 flex flex-col pl-3">
-                <Link to="unternehmen/team" onClick={() => setOpenMobile(false)} className="py-1">Team</Link>
                 <Link to="unternehmen/about" onClick={() => setOpenMobile(false)} className="py-1">Über uns</Link>
                 <Link to="unternehmen/Standorte" onClick={() => setOpenMobile(false)} className="py-1">Standorte</Link>
               </div>

@@ -31,7 +31,7 @@ export default function OffeneStellen() {
             oder per E‑Mail einreichen.
           </p>
           <p className="text-slate-700 leading-relaxed mt-4">
-            Wir sind ein kleines, wachsendes Unternehmen im Bereich Medizintechnik. Da wir unser Team bewusst schlank und
+            Wir sind ein kleines, wachsendes Unternehmen im Bereich der Medizintechnik. Da wir unser Team bewusst schlank und
             persönlich halten, haben wir aktuell <strong>keine offenen Stellen</strong> zu besetzen.
           </p>
           <p className="text-slate-700 leading-relaxed mt-4">
@@ -57,10 +57,9 @@ export default function OffeneStellen() {
   <GradientBar className="mt-3 mb-5" />
 
         {jobs.length === 0 ? (
-          <GradientCard borderWidth={4}>
+          <GradientCard borderWidth={2}>
             <p className="text-slate-700">
-              Derzeit sind keine Stellen ausgeschrieben. Schauen Sie gerne später erneut vorbei oder senden Sie uns eine
-              <Link to="/kontakt/formular" className="text-blue-700 underline ml-1">Initiativbewerbung</Link>.
+              Derzeit sind keine Stellen ausgeschrieben. Schauen Sie gerne später erneut vorbei.
             </p>
           </GradientCard>
         ) : (
