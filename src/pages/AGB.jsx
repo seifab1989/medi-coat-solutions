@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Container from "../components/Container";
 import GradientBar from "../components/GradientBar";
 
@@ -44,7 +45,7 @@ export default function AGB() {
         <p>Sofern eine Abnahme vereinbart ist, gilt die Leistung als abgenommen, wenn Sie sie innerhalb von 7 Tagen nach Anzeige nicht unter konkreter Mängelbezeichnung schriftlich rügen.</p>
 
         <h2>12. Datenschutz</h2>
-        <p>Die Verarbeitung personenbezogener Daten erfolgt gemäß unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+        <p>Die Verarbeitung personenbezogener Daten erfolgt gemäß unserer <Link to="/datenschutz">Datenschutzerklärung</Link>.</p>
 
         <h2>13. Gerichtsstand und anwendbares Recht</h2>
         <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gerichtsstand ist – soweit zulässig – unser Sitz.</p>

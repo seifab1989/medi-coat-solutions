@@ -129,8 +129,8 @@ export default function Navbar(){
             </button>
                 {UnternehmenOpen && (
                   <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
-                <Link to="unternehmen/standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
+                <Link to="/unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
+                <Link to="/unternehmen/standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
               </div>
             )}
           </div>
@@ -155,7 +155,7 @@ export default function Navbar(){
           </div>
 
              <div className="relative">
-                <Link to="patientensicherheit/patientensicherheit" className="flex items-center gap-2 hover:text-slate-900">
+                <Link to="/patientensicherheit/patientensicherheit" className="flex items-center gap-2 hover:text-slate-900">
                 PVD & Patientensicherheit
                 </Link>
               </div>
@@ -207,10 +207,10 @@ export default function Navbar(){
             </button>
             {AktuellesOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="aktuelles/messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
-                <Link to="aktuelles/pressemitteilungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Pressemitteilungen</Link>
-                <Link to="aktuelles/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
-                <Link to="aktuelles/blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Blog</Link>                
+                <Link to="/aktuelles/messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
+                <Link to="/aktuelles/pressemitteilungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Pressemitteilungen</Link>
+                <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
+                <Link to="/aktuelles/blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Blog</Link>                
               </div>
             )}
           </div>
@@ -300,14 +300,14 @@ export default function Navbar(){
             <div>
               <div className="font-medium">Unternehmen</div>
               <div className="mt-2 flex flex-col pl-3">
-                <Link to="unternehmen/about" onClick={() => setOpenMobile(false)} className="py-1">Über uns</Link>
-                <Link to="unternehmen/Standorte" onClick={() => setOpenMobile(false)} className="py-1">Standorte</Link>
+                <Link to="/unternehmen/about" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Über uns</Link>
+                <Link to="/unternehmen/standorte" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Standorte</Link>
               </div>
             </div>
 
             <div>
               <button 
-              className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" 
+              className="w-full text-left px-2 py-3 rounded hover:bg-slate-50" 
               onClick={() => setProdukteOpen(v => !v)}
               >Produkte ▾</button>
               {ProdukteOpen && (
@@ -321,82 +321,82 @@ export default function Navbar(){
             </div>
 
                <div>
-                 <Link to="/patientensicherheit/patientensicherheit" className="w-full block text-left px-2 py-2 rounded hover:bg-slate-50" onClick={() => { setOpenMobile(false); }}>
+                 <Link to="/patientensicherheit/patientensicherheit" className="w-full block text-left px-2 py-3 rounded hover:bg-slate-50" onClick={() => { setOpenMobile(false); }}>
                   PVD & Patientensicherheit
                  </Link>
                </div>
 
             <div>
               <button 
-              className="w-full text-left px-2 py-2 rounded hover:bg-slate-50" 
+              className="w-full text-left px-2 py-3 rounded hover:bg-slate-50" 
               onClick={() => setZertifizierungOpen(v => !v)}
               >Zertifizierungen ▾</button>
               {ZertifizierungOpen && (
                 <div className="pl-4">
-                  <Link to="/zertifizierung/qualitaetsmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
-                  <Link to="/zertifizierung/biokompatibilitaet" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Biokompatibilität</Link>
-                  <Link to="/zertifizierung/zertifikate" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Zertifikate</Link>
+                  <Link to="/zertifizierung/qualitaetsmanagement" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
+                  <Link to="/zertifizierung/biokompatibilitaet" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Biokompatibilität</Link>
+                  <Link to="/zertifizierung/zertifikate" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Zertifikate</Link>
                 </div>
               )}
             </div>
 
               <div>
                 <button
-                  className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                  className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
                   onClick={() => setNachhaltigkeitOpen(v => !v)}
                 >Nachhaltigkeit ▾</button>
                 {NachhaltigkeitOpen && (
                   <div className="pl-4">
-                    <Link to="/nachhaltigkeit/konformitaet" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Konformität</Link>
-                    <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Soziale Verantwortung</Link>
-                    <Link to="/nachhaltigkeit/umweltmanagement" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Umweltmanagement</Link>
+                    <Link to="/nachhaltigkeit/konformitaet" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Konformität</Link>
+                    <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Soziale Verantwortung</Link>
+                    <Link to="/nachhaltigkeit/umweltmanagement" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Umweltmanagement</Link>
                   </div>
                 )}
               </div>
 
             <div>
               <button
-                className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
                 onClick={() => setAktuellesOpen(v => !v)}
               >Aktuelles ▾</button>
               {AktuellesOpen && (
                 <div className="pl-4">
-                    <Link to="aktuelles/messeauftritte" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Messeauftritte</Link>
-                  <Link to="aktuelles/pressemitteilungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Pressemitteilungen</Link>
-                  <Link to="aktuelles/innovation-forschung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
-                  <Link to="aktuelles/blog" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Blog</Link>
+                    <Link to="/aktuelles/messeauftritte" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Messeauftritte</Link>
+                  <Link to="/aktuelles/pressemitteilungen" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Pressemitteilungen</Link>
+                  <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
+                  <Link to="/aktuelles/blog" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Blog</Link>
                 </div>
               )}
             </div>
 
               <div>
                 <button
-                  className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                  className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
                   onClick={() => setKarriereOpen(v => !v)}
                 >
                   Karriere ▾
                 </button>
                 {KarriereOpen && (
                   <div className="pl-4">
-                    <Link to="/karriere/offene-stellen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Offene Stellen</Link>
-                    <Link to="/karriere/ausbildung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Ausbildung / Praktika</Link>
-                    <Link to="/karriere/arbeiten" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Arbeiten bei uns</Link>
+                    <Link to="/karriere/offene-stellen" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Offene Stellen</Link>
+                    <Link to="/karriere/ausbildung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Ausbildung / Praktika</Link>
+                    <Link to="/karriere/arbeiten" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Arbeiten bei uns</Link>
                   </div>
                 )}
               </div>
 
               <div>
                 <button
-                  className="w-full text-left px-2 py-2 rounded hover:bg-slate-50"
+                  className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
                   onClick={() => setKontaktOpen(v => !v)}
                 >
                   Kontakt ▾
                 </button>
                 {KontaktOpen && (
                   <div className="pl-4">
-                    <Link to="/kontakt/ansprechpartner" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
-                    <Link to="/kontakt/formular" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
-                    <Link to="/kontakt/karteanfahrt" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
+                    <Link to="/kontakt/ansprechpartner" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
+                    <Link to="/kontakt/formular" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
+                    <Link to="/kontakt/karteanfahrt" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
                   </div>
                 )}
               </div>

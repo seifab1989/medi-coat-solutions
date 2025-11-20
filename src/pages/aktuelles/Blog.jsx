@@ -139,6 +139,14 @@ Reinigungs‑ und Sterilisationszyklen.`.trim(),
         {/* Hover/Click Overlay with full content & credits */}
         {isExpanded && (
           <div className="absolute inset-0 bg-white/95 backdrop-blur-sm p-5 flex flex-col justify-between overflow-y-auto" {...testId("blog-overlay")}>
+            <button
+              type="button"
+              aria-label="Beitrag schließen"
+              className="absolute top-3 right-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 w-9 h-9 flex items-center justify-center shadow"
+              onClick={(e) => { e.stopPropagation(); setOpen(false); setHover(false); }}
+            >
+              ✕
+            </button>
             <div>
               <div className="flex items-center gap-2 text-xs text-slate-500">
                 <span>{formatDate(post.date)}</span>
