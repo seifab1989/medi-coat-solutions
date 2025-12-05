@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import Container from '../../components/Container'
 import GradientBar from '../../components/GradientBar'
 import GradientCard from '../../components/GradientCard'
@@ -40,18 +41,23 @@ export default function Patientensicherheit() {
         <GradientBar />
         <ul className="list-disc pl-6 space-y-2 text-slate-700 max-w-4xl">
           <li>
-            <span className="font-medium"><strong>Biokompatibilität</strong> nach DIN EN ISO 10993:</span> PVD-Schichten verhindern allergische
-            Reaktionen (z. B. Nickel-Sperrschichten).
+            <span className="font-medium">
+              <Link to="/zertifizierung/biokompatibilitaet" className="font-semibold underline text-blue-700">
+                Biokompatibilität
+              </Link>
+              {' '}nach DIN EN ISO 10993:
+            </span>
+            {' '}PVD-Schichten verhindern allergische Reaktionen (z. B. Nickel-Sperrschichten).
           </li>
           <li>
             <span className="font-medium"><strong>Korrosionsschutz</strong>:</span> Kein Austreten von Metallionen in den Körper.
           </li>
           <li>
-            <span className="font-medium"><strong>Hygiene</strong>:</span> Glatte, verschleißarme Oberflächen → weniger Mikrorisse, geringeres
-            Risiko von Keimanhaftung.
+            <span className="font-medium"><strong>Hygiene</strong>:</span> Glatte, verschleißarme Oberflächen führen zu weniger Mikrorissen, geringerem
+            Risiko von Keimanhaftungen.
           </li>
           <li>
-            <span className="font-medium"><strong>Langlebigkeit</strong>:</span> Weniger Verschleiß → weniger Bruch- oder Ausfallrisiko während einer
+            <span className="font-medium"><strong>Langlebigkeit</strong>:</span> Weniger Verschleiß bedeutet weniger Bruch- oder Ausfallrisiko während einer
             Behandlung.
           </li>
         </ul>
@@ -87,7 +93,7 @@ export default function Patientensicherheit() {
         </GradientCard>
 
         <GradientCard>
-          <h4 className="font-semibold">Beispiel 2: Langlebigkeit</h4>
+          <h4 className="font-semibold">Beispiel 2: Hygiene und Langlebigkeit</h4>
           <div className="aspect-[16/9] mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white">
             <img
               src={assetUrl('assets/verschleissschutz.png')}
