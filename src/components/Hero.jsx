@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import GradientBar from './GradientBar'
 
 export default function Hero(){
@@ -26,7 +27,7 @@ export default function Hero(){
               </h1>
               <GradientBar height="h-1" className="my-6" />
               <p className="text-lg text-slate-600 max-w-2xl">
-                Biokompatible PVD-Schichten für die Medizintechnik mit klarer Dokumentation und verbesserter Patientensicherheit.
+                Unsere PVD-Schichten schützen Ihre Produkte vor Verschleiß und Korrosion. Dank vollständiger Dokumentation und Rückverfolgbarkeit erfüllen Sie regulatorische Anforderungen einfacher – und erhöhen gleichzeitig die Sicherheit Ihrer Patienten.
               </p>
             </div>
 
@@ -67,16 +68,19 @@ export default function Hero(){
               icon={<span className="w-[18px] h-[18px] inline-block">🛡️</span>}
               title="Gesteigerte Patientensicherheit"
               points={["Geringere Partikelabgabe", "Beständigkeit gegen Sterilisation"]}
+              to="/patientensicherheit/patientensicherheit"
             />
             <AdvCard
               icon={<span className="w-[18px] h-[18px] inline-block">⚗️</span>}
               title="Biokompatibilität"
               points={["Nachweise nach relevanten Normen (z. B. DIN EN ISO 10993-5)", "Glatte, leicht zu reinigende Oberflächen"]}
+              to="/zertifizierung/biokompatibilitaet"
             />
             <AdvCard
               icon={<span className="w-[18px] h-[18px] inline-block">🏆</span>}
               title="DIN EN ISO 13485"
               points={["Lückenlose Dokumentation und Nachverfolgbarkeit", "Risiko- & Änderungsmanagement"]}
+              to="/zertifizierung/zertifikate"
             />
             <AdvCard
               icon={<span className="w-[18px] h-[18px] inline-block">⚙️</span>}
@@ -88,6 +92,7 @@ export default function Hero(){
                 "Sterilisationsbeständig",
                 "Biokompatibel und patientensicher"
               ]}
+              to="/patientensicherheit/patientensicherheit"
             />
           </div>
         </div>
@@ -96,32 +101,35 @@ export default function Hero(){
   )
 }
 
-function AdvCard({ icon, title, points }){
+function AdvCard({ icon, title, points, to }){
   return (
-    <div
-      className="bg-white p-6 rounded-3xl hover:shadow-md transition"
-      style={{
-        border: "2px solid transparent",
-        borderRadius: "1.5rem",
-        backgroundImage:
-          "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
-        backgroundOrigin: "border-box",
-        backgroundClip: "padding-box, border-box",
-        color: "#0f172a",
-      }}
-    >
-      <div className="flex items-start gap-3 mb-4">
-        <div className="flex-none">{icon}</div>
-        <h3 className="font-semibold text-slate-900">{title}</h3>
+    <Link to={to} className="group block h-full" aria-label={`${title} – weitere Informationen`}>
+      <div
+        className="bg-white p-6 rounded-3xl hover:shadow-md transition h-full flex flex-col"
+        style={{
+          border: "2px solid transparent",
+          borderRadius: "1.5rem",
+          backgroundImage:
+            "linear-gradient(#ffffff, #ffffff), linear-gradient(to right, rgba(30,58,138,0.3), rgba(37,99,235,0.3), rgba(34,197,94,0.3))",
+          backgroundOrigin: "border-box",
+          backgroundClip: "padding-box, border-box",
+          color: "#0f172a",
+        }}
+      >
+        <div className="flex items-start gap-3 mb-4">
+          <div className="flex-none">{icon}</div>
+          <h3 className="font-semibold text-slate-900">{title}</h3>
+        </div>
+        <ul className="space-y-2">
+          {points.map((point, idx) => (
+            <li key={idx} className="flex items-start gap-2 text-sm text-slate-600">
+              <span className="flex-none select-none text-blue-500">•</span>
+              <span>{point}</span>
+            </li>
+          ))}
+        </ul>
+        <div className="mt-4 text-sm text-blue-700 underline group-hover:no-underline">Weitere Informationen</div>
       </div>
-      <ul className="space-y-2">
-        {points.map((point, idx) => (
-          <li key={idx} className="flex items-start gap-2 text-sm text-slate-600">
-            <span className="flex-none select-none text-blue-500">•</span>
-            <span>{point}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+    </Link>
   )
 }
