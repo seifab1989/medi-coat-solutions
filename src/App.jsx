@@ -22,6 +22,7 @@ import Messeauftritte from './pages/aktuelles/Messeauftritte'
 import Pressemitteilungen from './pages/aktuelles/Pressemitteilungen'
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
 import Blog from './pages/aktuelles/Blog'
+import BlogPost from './pages/aktuelles/BlogPost'
 import OffeneStellen from './pages/karriere/offene-stellen'
 import Ausbildung from './pages/karriere/ausbildung'
 import Arbeiten from './pages/karriere/arbeiten'
@@ -67,6 +68,7 @@ export default function App(){
             <Route path="aktuelles/pressemitteilungen" element={<Pressemitteilungen/>} />
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
             <Route path="aktuelles/blog" element={<Blog/>} />
+            <Route path="aktuelles/blog/:id" element={<BlogPost/>} />
             <Route path="karriere/offene-stellen" element={<OffeneStellen/>} />
             <Route path="karriere/ausbildung" element={<Ausbildung/>} />
             <Route path="karriere/arbeiten" element={<Arbeiten/>} />

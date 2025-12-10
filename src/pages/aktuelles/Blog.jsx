@@ -1,65 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Container from "../../components/Container";
 import GradientBar from "../../components/GradientBar";
 import GradientCard from "../../components/GradientCard";
+import { posts } from "./posts";
 
 export default function Blog() {
-  // --- Daten aus der Originaldatei extrahiert / vorbereitet ---
-    const posts = [
-    {
-      id: "pvd-30",
-      date: "2025-03-12",
-      author: { name: "Dr. Fabian Seifried", role: "Gründer / Geschäftsführer" },
-      title:
-        "Neue PVD-Schichten verlängern die Lebensdauer chirurgischer Instrumente um bis zu 30 %.",
-      image:
-        "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=60",
-      imageAlt: "Symbolbild chirurgische Instrumente mit Beschichtung",
-      short: `Modern entwickelte PVD‑Schichten (z. B. CrN‑Modifikationen und DLC‑Systeme) reduzieren Abrieb und Korrosion
-an hochbeanspruchten Kontaktflächen chirurgischer Instrumente. Durch verbesserte Haftung, optimierte Schichtarchitektur und
-sterilisationsbeständige Oberflächen sinken Reibung und Partikelabgabe, was die Funktion und Aufbereitbarkeit nachhaltig
-verbessert. `.trim(),
-      full: `PVD‑Beschichtungen (Physical Vapour Deposition) ermöglichen dünne, dichte und harte Funktionsschichten mit
-definierter Chemie und Mikrostruktur. In aktuellen Untersuchungen wurden mehrlagige Systeme mit Gradientenzonen und
-gezielter Eigenspannung entwickelt, um Mikrorissbildung zu hemmen und Kantenstabilität zu erhöhen. Das Ergebnis sind
-gerigere Verschleißraten in Gleitlagern und Gelenken sowie zuverlässigere Korrosionsbeständigkeit nach wiederholten
-Reinigungs‑ und Sterilisationszyklen.`.trim(),
-      imgCredit: "📷 Bildquelle: Unsplash / Author",
-      textCredit: "📝 Textquelle: Journal of Coating Technology, 2024",
-    },
-    // Beispiel 2 – weiterer Beitrag
-    {
-      id: "biokomp-10993",
-      date: "2025-05-30",
-      author: { name: "Dr. Sven Ulrich", role: "Leitung Qualität & Regulierung" },
-      title: "Biokompatibilität: Prüfansätze nach DIN EN ISO 10993 im Überblick",
-      image:
-        "https://images.unsplash.com/photo-1582719478400-77106b8f0f6d?auto=format&fit=crop&w=1600&q=60",
-      imageAlt: "Labor-Setup für Materialtests",
-      short:
-        "Welche Prüfschritte für PVD‑Schichten bei Medizinprodukten typischerweise relevant sind – von Zytotoxizität bis Chemikalienbeständigkeit.",
-      full:
-        "Kurzer Überblick über Prüfpläne und sinnvolle Sequenzen für Entwicklungs‑ und Serienphase einschließlich SPC‑Begleitung.",
-      imgCredit: "📷 Bildquelle: Unsplash / Lab Photographer",
-      textCredit: "📝 Textquelle: Interner Leitfaden, 2025",
-    },
-    // Beispiel 3 – weiterer Beitrag
-    {
-      id: "nachhaltigkeit-pvd",
-      date: "2025-07-18",
-      author: { name: "Dr. Michael Stüber", role: "F&E Beschichtungssysteme" },
-      title: "Nachhaltigkeit in der PVD: Energieverbrauch senken, Qualität sichern",
-      image:
-        "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1600&q=60",
-      imageAlt: "PVD-Anlage im Betrieb",
-      short:
-        "Wie sich Zykluszeiten, Chargenplanung und Vorbehandlung auf die CO₂‑Bilanz auswirken – Praxisnotizen.",
-      full:
-        "Erfahrungen mit Lastmanagement, Vakuumperformance und Wiederverwendbarkeit von Prozessmedien.",
-      imgCredit: "📷 Bildquelle: Unsplash / Industry",
-      textCredit: "📝 Textquelle: Workshop-Dokumentation, 2025",
-    },
-  ];
 
   // Use shared GradientCard
 
@@ -103,66 +49,33 @@ Reinigungs‑ und Sterilisationszyklen.`.trim(),
 
   // --- Reusable blog card ---
   const BlogCard = ({ post, index }) => {
-    const [open, setOpen] = React.useState(false);
-    const [hover, setHover] = React.useState(false);
-    const isExpanded = open || hover;
     const testId = (base) => (index === 0 ? { [`data-testid`]: base } : {});
 
     return (
       <article
-        className="relative group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition cursor-pointer"
-        onClick={() => setOpen((v) => !v)}
-        onMouseEnter={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        aria-expanded={isExpanded}
+        className="relative group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition"
         {...(index === 0 ? { "data-testid": "blog-card" } : {})}
       >
-        {/* Header-Bild */}
-        <div className="aspect-[16/9] w-full overflow-hidden">
-          <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
-        </div>
-        {/* Body */}
-        <div className="p-5">
-          <div className="flex items-center gap-2 text-xs text-slate-500">
-            <span>{formatDate(post.date)}</span>
-            <span>•</span>
-            <span>{post.author?.name}</span>
-            {post.author?.role && <span className="text-slate-400">({post.author.role})</span>}
+        <Link to={`/aktuelles/blog/${post.id}`} className="block">
+          <div className="aspect-[16/9] w-full overflow-hidden">
+            <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
           </div>
-          <h3 className="mt-2 font-semibold text-lg leading-snug" {...testId("blog-title")}>
-            {truncateTitle(post.title)}
-          </h3>
-          <p className="mt-2 text-sm text-slate-700 line-clamp-6" {...testId("blog-short")}>
-            {post.short}
-          </p>
-        </div>
-        {/* Hover/Click Overlay with full content & credits */}
-        {isExpanded && (
-          <div className="absolute inset-0 bg-white/95 backdrop-blur-sm p-5 flex flex-col justify-between overflow-y-auto" {...testId("blog-overlay")}>
-            <button
-              type="button"
-              aria-label="Beitrag schließen"
-              className="absolute top-3 right-3 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 w-9 h-9 flex items-center justify-center shadow"
-              onClick={(e) => { e.stopPropagation(); setOpen(false); setHover(false); }}
-            >
-              ✕
-            </button>
-            <div>
-              <div className="flex items-center gap-2 text-xs text-slate-500">
-                <span>{formatDate(post.date)}</span>
-                <span>•</span>
-                <span>{post.author?.name}</span>
-                {post.author?.role && <span className="text-slate-400">({post.author.role})</span>}
-              </div>
-              <h3 className="mt-2 font-semibold text-lg leading-snug">{post.title}</h3>
-              <p className="mt-3 text-sm text-slate-700 whitespace-pre-line">{post.full}</p>
+          <div className="p-5">
+            <div className="flex items-center gap-2 text-xs text-slate-500">
+              <span>{formatDate(post.date)}</span>
+              <span>•</span>
+              <span>{post.author?.name}</span>
+              {post.author?.role && <span className="text-slate-400">({post.author.role})</span>}
             </div>
-            <div className="mt-4 text-xs text-slate-600">
-              <div>{post.imgCredit}</div>
-              <div>{post.textCredit}</div>
-            </div>
+            <h3 className="mt-2 font-semibold text-lg leading-snug" {...testId("blog-title")}>
+              {truncateTitle(post.title)}
+            </h3>
+            <p className="mt-2 text-sm text-slate-700 line-clamp-6" {...testId("blog-short")}>
+              {post.short}
+            </p>
+            <span className="mt-3 inline-block text-sm font-medium text-blue-700">Weiterlesen</span>
           </div>
-        )}
+        </Link>
       </article>
     );
   };
