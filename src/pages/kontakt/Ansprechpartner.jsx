@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Container from "../../components/Container";
 import GradientBar from "../../components/GradientBar";
 import GradientCard from "../../components/GradientCard";
+import { assetUrl } from "../../utils/assetUrl";
 
 export default function KontaktAnsprechpartner() {
   return (
@@ -47,9 +48,11 @@ export default function KontaktAnsprechpartner() {
         <div className="lg:col-span-5">
           <GradientCard className="flex items-center justify-center text-slate-700 h-full">
             <div className="text-center px-6">
-              <div
-                className="mx-auto mb-4 h-24 w-24 rounded-full bg-slate-200"
-                aria-label="Foto von Gründer & Geschäftsführer"
+              <img
+                src={assetUrl("assets/Passbild.jpg")}
+                alt="Portrait von Dr. Fabian Seifried"
+                className="mx-auto mb-4 h-32 w-32 rounded-full object-cover object-[50%_5%]"
+                loading="lazy"
               />
               <h3 className="font-semibold text-slate-900">Dr. Fabian Seifried</h3>
               <p className="text-sm text-slate-600">Gründer &amp; Geschäftsführer</p>
