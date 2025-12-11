@@ -18,10 +18,38 @@ function beautifyFilename(filename) {
   name = name.replace(/\b(crn)\b/i, 'CrN')
   name = name.replace(/\b(zrn)\b/i, 'ZrN')
   name = name.replace(/\b(dlc)\b/i, 'DLC')
-  name = name.replace(/\breach\b/i, 'REACH')
+  name = name.replace(/\breach[- ]bescheinigung/i, 'REACH-Bescheinigung')
+  name = name.replace(/biokompatibilitaet/i, 'Biokompatibilität')
   name = name.replace(/datenschutzerklaerung/i, 'Datenschutzerklärung')
   name = name.replace(/anforderungen[-_ ]beschichtungsgut/i, 'Anforderungen an das Beschichtungsgut')
   name = name.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
+  // Post-format fixes for proper casing and phrasing
+  name = name.replace(/^Agbs$/i, 'AGBs')
+  name = name.replace(/Anforderungen An Das Beschichtungsgut/i, 'Anforderungen an das Beschichtungsgut')
+  name = name.replace(/Begleitschein Beschichtungsgut/i, 'Begleitschein für Beschichtungsgut')
+  // Specific hyphenation for variants (e.g., Mod, MC)
+  name = name.replace(/\bCrN Mc\b/g, 'CrN-MC')
+  name = name.replace(/\bCrN Mod\b/g, 'CrN-Mod')
+  name = name.replace(/\bTiN Mod\b/g, 'TiN-Mod')
+  name = name.replace(/\bZrN Mod\b/g, 'ZrN-Mod')
+  // Optional material clarifications in parentheses
+  // Specific: CrN-MC is Chromoxinitrid
+  if (/\bCrN-MC\b/.test(name) && !/\(Chromoxinitrid\)/.test(name)) {
+    name = name.replace(/\bCrN-MC\b/, 'CrN-MC') + ' (Chromoxinitrid)'
+  }
+  // Generic CrN mapping only when not MC variant
+  else if (/\bCrN\b/.test(name) && !/\(Chromnitrid\)/.test(name)) {
+    name = name.replace(/\bCrN\b/, 'CrN') + ' (Chromnitrid)'
+  }
+  if (/\bTiN\b/.test(name) && !/\(Titannitrid\)/.test(name)) {
+    name = name.replace(/\bTiN\b/, 'TiN') + ' (Titannitrid)'
+  }
+  if (/\bZrN\b/.test(name) && !/\(Zirkonnitrid\)/.test(name)) {
+    name = name.replace(/\bZrN\b/, 'ZrN') + ' (Zirkonnitrid)'
+  }
+  if (/\bDLC\b/.test(name) && !/\(Diamantähnliche Kohlenstoffschicht\)/.test(name)) {
+    name = name.replace(/\bDLC\b/, 'DLC') + ' (Diamantähnlicher Kohlenstoff)'
+  }
   return name
 }
 

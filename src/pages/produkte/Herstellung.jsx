@@ -16,7 +16,7 @@ export default function Herstellung() {
     >
     
   {/* Zusatz-Inhalt: Erklärungen mit Bildplatzhaltern */}
-  <section className="mt-0">
+  <section className="mt-0 overflow-x-hidden">
         <h2 className="text-3xl md:text-4xl font-semibold">Herstellung von PVD-Schichten</h2>
   <GradientBar />
         <p className="text-slate-700 leading-relaxed">
@@ -24,9 +24,9 @@ export default function Herstellung() {
         </p>
 
         {/* Methoden im Card-Stil */}
-        <div className="mt-6 grid md:grid-cols-2 gap-6">
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           <GradientCard className="h-full">
-            <h3 className="text-xl font-semibold">Lichtbogenverdampfen (Cathodic Arc Evaporation)</h3>
+            <h3 className="text-xl font-semibold break-words" style={{ hyphens: 'auto' }}>Lichtbogenverdampfen (Cathodic Arc Evaporation)</h3>
             <div className="aspect-[4/3] mt-4 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative">
               <img
                 src={assetUrl("assets/arc.jpg")}
@@ -41,7 +41,7 @@ export default function Herstellung() {
           </GradientCard>
 
           <GradientCard className="h-full">
-            <h3 className="text-xl font-semibold">Hochleistungskathodenzerstäuben (Magnetron Sputtering)</h3>
+            <h3 className="text-xl font-semibold break-normal whitespace-normal leading-tight">Hochleistungskathodenzerst&auml;u&shy;ben (Magnetron Sputtering)</h3>
             <div className="aspect-[4/3] mt-4 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative">
               <img
                 src={assetUrl("assets/sputtern.jpg")}

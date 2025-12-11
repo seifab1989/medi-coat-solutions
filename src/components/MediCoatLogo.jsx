@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function MediCoatLogo() {
   return (
-    <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg" aria-label="MediCoat Solutions Logo" role="img" className="h-16 md:h-20">
+    <svg viewBox="0 0 400 80" xmlns="http://www.w3.org/2000/svg" aria-label="MediCoat Solutions Logo" role="img" className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto">
       <defs>
         <linearGradient id="mediGradient" x1="0%" y1="0%" x2="100%" y2="0%">
           <stop offset="0%" style={{ stopColor: "#1E3A8A", stopOpacity: 1 }} />

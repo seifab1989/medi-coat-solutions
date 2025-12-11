@@ -103,6 +103,16 @@ export default function Navbar(){
     return () => document.removeEventListener('mousedown', onDocClick)
   }, [])
 
+  // Close mobile menu and submenus on route change to ensure navigation works reliably
+  useEffect(() => {
+    setOpenMobile(false)
+    setUnternehmenOpen(false)
+    setProdukteOpen(false)
+    setZertifizierungOpen(false)
+    setAktuellesOpen(false)
+    setKontaktOpen(false)
+  }, [location.pathname])
+
   return (
     <header className="backdrop-blur bg-gradient-to-r from-blue-900/0 via-blue-600/0 to-green-500/0 backdrop-blur sticky top-0 z-50">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
@@ -113,7 +123,7 @@ export default function Navbar(){
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex gap-6 text-slate-700 items-center">
+        <nav className="hidden lg:flex gap-6 text-slate-700 items-center">
           <div className="relative" ref={UnternehmenRef}>
             <button
               onClick={() => setUnternehmenOpen(v => !v)}
@@ -220,12 +230,12 @@ export default function Navbar(){
 
         </nav>
 
-        <div className="hidden md:block ml-6 md:ml-8 shrink-0">
+        <div className="hidden lg:block ml-6 lg:ml-8 shrink-0">
           <Button to="/kontakt/formular" className="px-4 py-2">Beratung anfragen</Button>
         </div>
 
         {/* Mobile toggle */}
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <button
             onClick={() => setOpenMobile(v => !v)}
             aria-expanded={openMobile}
@@ -261,15 +271,20 @@ export default function Navbar(){
 
       {/* Mobile menu */}
       {openMobile && (
-        <div className="md:hidden bg-white/80 backdrop-blur border-t">
+        <div className="lg:hidden bg-white/80 backdrop-blur border-t" onMouseDown={(e)=>e.stopPropagation()}>
           <div className="px-4 py-3 space-y-2">
             <div>
-              <div className="font-medium">Unternehmen</div>
-              <div className="mt-2 flex flex-col pl-3">
-                <Link to="/unternehmen/about" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Über uns</Link>
-                <Link to="/unternehmen/standorte" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Standorte</Link>
-                <Link to="/unternehmen/nachhaltigkeit" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Nachhaltigkeit</Link>
-              </div>
+              <button 
+                className="w-full text-left px-2 py-3 rounded hover:bg-slate-50 font-medium" 
+                onClick={() => setUnternehmenOpen(v => !v)}
+              >Unternehmen</button>
+              {UnternehmenOpen && (
+                <div className="mt-1 flex flex-col pl-4" onMouseDown={(e)=>e.stopPropagation()}>
+                  <Link to="/unternehmen/about" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2">Über uns</Link>
+                  <Link to="/unternehmen/standorte" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2">Standorte</Link>
+                  <Link to="/unternehmen/nachhaltigkeit" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2">Nachhaltigkeit</Link>
+                </div>
+              )}
             </div>
 
             <div>
@@ -278,7 +293,7 @@ export default function Navbar(){
               onClick={() => setProdukteOpen(v => !v)}
               >Produkte</button>
               {ProdukteOpen && (
-                <div className="pl-4">
+                <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                   <Link to="/produkte/herstellung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Herstellung PVD-Schichten</Link>
                   <Link to="/produkte/portfolio" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Portfolio</Link>
                   <Link to="/produkte/dienstleistungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Dienstleistungen</Link>
@@ -299,7 +314,7 @@ export default function Navbar(){
               onClick={() => setZertifizierungOpen(v => !v)}
               >Zertifizierungen</button>
               {ZertifizierungOpen && (
-                <div className="pl-4">
+                <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                   <Link to="/zertifizierung/qualitaetsmanagement" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
                   <Link to="/zertifizierung/biokompatibilitaet" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Biokompatibilität</Link>
                   <Link to="/zertifizierung/zertifikate" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Zertifikate</Link>
@@ -315,7 +330,7 @@ export default function Navbar(){
                 onClick={() => setAktuellesOpen(v => !v)}
               >Aktuelles</button>
               {AktuellesOpen && (
-                <div className="pl-4">
+                <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                     {/* Messeauftritte nur unter Kontakt */}
                   {/* Pressemitteilungen entfernt */}
                   <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
@@ -334,7 +349,7 @@ export default function Navbar(){
                   Kontaktmöglichkeiten
                 </button>
                 {KontaktOpen && (
-                  <div className="pl-4">
+                  <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                     <Link to="/kontakt/ansprechpartner" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
                     <Link to="/kontakt/messeauftritte" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Messeauftritte</Link>
                     <Link to="/kontakt/formular" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
