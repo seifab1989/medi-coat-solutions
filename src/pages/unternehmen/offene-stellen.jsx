@@ -6,28 +6,20 @@ import GradientCard from "../../components/GradientCard";
 import { assetUrl } from "../../utils/assetUrl";
 
 export default function OffeneStellen() {
-  // Beispielhafte (zunächst leere) Jobliste – kann später per API/State gefüllt werden
-  const [jobs] = useState([
-    // { id: 1, title: "Prozessingenieur:in PVD (m/w/d)", location: "Kieselbronn", type: "Vollzeit", desc: "Entwicklung, Validierung und Serienbetreuung von PVD‑Prozessen im regulierten Umfeld (ISO 13485)." },
-    // { id: 2, title: "Qualitätsmanager:in Medizintechnik (m/w/d)", location: "Kieselbronn", type: "Teilzeit/Vollzeit", desc: "Aufbau und Pflege des QM‑Systems, Dokumentation, CAPA, Risiko‑ & Änderungsmanagement." },
-  ]);
+  const [jobs] = useState([]);
 
-  // Gemeinsame Komponenten & assetUrl werden genutzt
-
+  // Seite komplett ausblenden (Route bleibt bestehen)
   return (
-  <Container as="main" role="main" aria-labelledby="offene-stellen-title">
-      {/* Titel & Divider wie bei "Messeauftritte" */}
+    <div className="hidden">
+    <Container as="main" role="main" aria-labelledby="offene-stellen-title">
       <h1 id="offene-stellen-title" className="text-3xl md:text-4xl font-semibold">Offene Stellen</h1>
       <GradientBar />
 
-      {/* Intro-Section analog zu Messeauftritte: Text links, Visual rechts */}
       <section className="mt-6 grid lg:grid-cols-12 gap-8 items-start">
         <div className="lg:col-span-7">
           <p className="text-slate-700 leading-relaxed">
-            Hier erscheinen ausgeschriebene Positionen mit Aufgaben & Profil. Bewerbungen bitte über das
-            {" "}
-            <Link to="/kontakt/formular" className="text-blue-700 underline">Kontaktformular</Link>
-            {" "}
+            Hier erscheinen ausgeschriebene Positionen mit Aufgaben & Profil. Bewerbungen bitte über das{" "}
+            <Link to="/kontakt/formular" className="text-blue-700 underline">Kontaktformular</Link>{" "}
             oder per E‑Mail einreichen.
           </p>
           <p className="text-slate-700 leading-relaxed mt-4">
@@ -51,10 +43,9 @@ export default function OffeneStellen() {
         </div>
       </section>
 
-      {/* Stellenliste */}
       <section className="mt-12">
-  <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Ausschreibungen</h2>
-  <GradientBar className="mt-3 mb-5" />
+        <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Ausschreibungen</h2>
+        <GradientBar className="mt-3 mb-5" />
 
         {jobs.length === 0 ? (
           <GradientCard borderWidth={2}>
@@ -83,6 +74,6 @@ export default function OffeneStellen() {
         )}
       </section>
     </Container>
+    </div>
   );
 }
-

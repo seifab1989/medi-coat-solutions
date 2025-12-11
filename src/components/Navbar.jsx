@@ -8,14 +8,12 @@ export default function Navbar(){
   const [UnternehmenOpen, setUnternehmenOpen] = useState(false)
   const [AktuellesOpen, setAktuellesOpen] = useState(false)
   const [ProdukteOpen, setProdukteOpen] = useState(false)
-  const [KarriereOpen, setKarriereOpen] = useState(false)
   const [NachhaltigkeitOpen, setNachhaltigkeitOpen] = useState(false)
   const [ZertifizierungOpen, setZertifizierungOpen] = useState(false)
   const [KontaktOpen, setKontaktOpen] = useState(false)
   const UnternehmenRef = useRef(null)
   const AktuellesRef = useRef(null)
   const ProdukteRef = useRef(null)
-  const KarriereRef = useRef(null)
   const NachhaltigkeitRef = useRef(null)
   const ZertifizierungRef = useRef(null)
   const KontaktRef = useRef(null)
@@ -24,7 +22,10 @@ export default function Navbar(){
   const location = useLocation()
   const pathnamesRaw = location.pathname.split('/').filter(Boolean)
   // Breadcrumb: aufeinanderfolgende Duplikate (z. B. "patientensicherheit/patientensicherheit") entfernen
-  const pathnames = pathnamesRaw.reduce((acc, seg) => {
+  const pathnames = pathnamesRaw
+    // Gewünschte Ausblendungen aus Breadcrumb
+    .filter(seg => seg.toLowerCase() !== 'offene-stellen')
+    .reduce((acc, seg) => {
     if (acc.length === 0) return [seg]
     const prev = acc[acc.length - 1]
     if (String(prev).toLowerCase() === String(seg).toLowerCase()) return acc
@@ -69,7 +70,6 @@ export default function Navbar(){
     'blog': 'Blog',
 
     // Karriere
-    'offene-stellen': 'Offene Stellen',
     'ausbildung': 'Ausbildung / Praktika',
     'arbeiten': 'Arbeiten bei uns',
 
@@ -98,7 +98,6 @@ export default function Navbar(){
       }
       if (AktuellesRef.current && !AktuellesRef.current.contains(e.target)) setAktuellesOpen(false)
       if (ProdukteRef.current && !ProdukteRef.current.contains(e.target)) setProdukteOpen(false)
-      if (KarriereRef.current && !KarriereRef.current.contains(e.target)) setKarriereOpen(false)
       if (NachhaltigkeitRef.current && !NachhaltigkeitRef.current.contains(e.target)) setNachhaltigkeitOpen(false)
       if (ZertifizierungRef.current && !ZertifizierungRef.current.contains(e.target)) setZertifizierungOpen(false)
       if (KontaktRef.current && !KontaktRef.current.contains(e.target)) setKontaktOpen(false)
@@ -216,23 +215,7 @@ export default function Navbar(){
           </div>
 
           
-          <div className="relative" ref={KarriereRef}>
-            <button
-              onClick={() => setKarriereOpen(v => !v)}
-              aria-expanded={KarriereOpen}
-              aria-haspopup="menu"
-              className="flex items-center gap-2 hover:text-slate-900"
-            >
-              Karriere ▾
-            </button>
-            {KarriereOpen && (
-              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="/karriere/offene-stellen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Offene Stellen</Link>
-                <Link to="/karriere/ausbildung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Ausbildung / Praktika</Link>
-                <Link to="/karriere/arbeiten" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKarriereOpen(false)}>Arbeiten bei uns</Link>
-              </div>
-            )}
-          </div>
+          {/* Karriere Menü entfernt */}
 
           <div className="relative" ref={KontaktRef}>
             <button
@@ -369,21 +352,7 @@ export default function Navbar(){
               )}
             </div>
 
-              <div>
-                <button
-                  className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
-                  onClick={() => setKarriereOpen(v => !v)}
-                >
-                  Karriere ▾
-                </button>
-                {KarriereOpen && (
-                  <div className="pl-4">
-                    <Link to="/karriere/offene-stellen" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Offene Stellen</Link>
-                    <Link to="/karriere/ausbildung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Ausbildung / Praktika</Link>
-                    <Link to="/karriere/arbeiten" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKarriereOpen(false); }}>Arbeiten bei uns</Link>
-                  </div>
-                )}
-              </div>
+              {/* Karriere Menü mobil entfernt */}
 
               <div>
                 <button

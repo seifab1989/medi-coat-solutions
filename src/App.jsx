@@ -23,9 +23,8 @@ import Pressemitteilungen from './pages/aktuelles/Pressemitteilungen'
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
 import Blog from './pages/aktuelles/Blog'
 import BlogPost from './pages/aktuelles/BlogPost'
-import OffeneStellen from './pages/karriere/offene-stellen'
-import Ausbildung from './pages/karriere/ausbildung'
-import Arbeiten from './pages/karriere/arbeiten'
+// OffeneStellen vorübergehend deaktiviert
+// Karriere-Seiten entfernt
 import Ansprechpartner from './pages/kontakt/Ansprechpartner'
 import Formular from './pages/kontakt/Formular'
 import KarteAnfahrt from './pages/kontakt/KarteAnfahrt'
@@ -69,9 +68,8 @@ export default function App(){
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
             <Route path="aktuelles/blog" element={<Blog/>} />
             <Route path="aktuelles/blog/:id" element={<BlogPost/>} />
-            <Route path="karriere/offene-stellen" element={<OffeneStellen/>} />
-            <Route path="karriere/ausbildung" element={<Ausbildung/>} />
-            <Route path="karriere/arbeiten" element={<Arbeiten/>} />
+            {/* Route unternehmen/offene-stellen vorübergehend entfernt */}
+            {/* Karriere-Routen entfernt */}
             <Route path="kontakt/ansprechpartner" element={<Ansprechpartner/>} />
             <Route path="kontakt/formular" element={<Formular/>} />
             <Route path="kontakt/karteanfahrt" element={<KarteAnfahrt/>} />          
