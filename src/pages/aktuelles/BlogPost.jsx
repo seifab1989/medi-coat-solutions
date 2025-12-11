@@ -13,8 +13,8 @@ export default function BlogPost() {
     return (
       <Container as="main">
         <h1 className="text-2xl md:text-3xl font-semibold">Beitrag nicht gefunden</h1>
-        <p className="mt-3 text-slate-700">Der angeforderte Blogbeitrag existiert nicht oder wurde verschoben.</p>
-        <Link to="/aktuelles/blog" className="mt-6 inline-block px-4 py-2 rounded-xl bg-slate-800 text-white">Zurück zur Übersicht</Link>
+        <p className="mt-3 text-slate-700">Der angeforderte Artikel existiert nicht oder wurde verschoben.</p>
+        <Link to="/aktuelles/praxiswissen" className="mt-6 inline-block px-4 py-2 rounded-xl bg-slate-800 text-white">Zurück zur Übersicht</Link>
       </Container>
     );
   }
@@ -30,7 +30,7 @@ export default function BlogPost() {
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": "Article",
     headline: post.title,
     datePublished: post.date,
     author: {
@@ -55,7 +55,7 @@ export default function BlogPost() {
     };
 
     const url = `${window.location.origin}${window.location.pathname}${window.location.hash}`;
-    document.title = `${post.title} | Blog`;
+    document.title = `${post.title} | Praxiswissen`;
     ensureMeta("og:type", "article");
     ensureMeta("og:title", post.title);
     ensureMeta("og:description", post.short);
@@ -76,7 +76,7 @@ export default function BlogPost() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav className="text-sm text-slate-600">
         <Link to="/" className="hover:underline">Start</Link> <span>/</span>{" "}
-        <Link to="/aktuelles/blog" className="hover:underline">Blog</Link> <span>/</span>{" "}
+        <Link to="/aktuelles/praxiswissen" className="hover:underline">Praxiswissen</Link> <span>/</span>{" "}
         <span className="text-slate-800">{post.title}</span>
       </nav>
 
@@ -90,32 +90,44 @@ export default function BlogPost() {
       </div>
 
       {/* Inhalt über dem Bild */}
-      {post.short && (
+      {/* Unified layout: text (summary + article) left, single image right */}
+      {(post.short || post.full) && (
         <section className="mt-5">
-          <h2 className="text-xl font-semibold text-slate-900">Zusammenfassung</h2>
-          <p className="mt-2 text-slate-700 leading-relaxed">{post.short}</p>
+          <div className="grid grid-cols-1 md:grid-cols-12 md:gap-6 items-start">
+            <div className="md:col-span-7">
+              {post.short && (
+                <div>
+                  <h2 className="text-xl font-semibold text-slate-900">Zusammenfassung</h2>
+                  <p className="mt-2 text-slate-700 leading-relaxed">{post.short}</p>
+                </div>
+              )}
+              {post.full && (
+                <div className="mt-6">
+                  <h2 className="text-xl font-semibold text-slate-900">Artikel</h2>
+                  <article className="mt-2 prose prose-slate max-w-none">
+                    <p className="whitespace-pre-line">{post.full}</p>
+                  </article>
+                </div>
+              )}
+            </div>
+            <figure className="mt-6 md:mt-0 md:self-start md:col-span-5">
+              <img
+                src={post.image}
+                alt={post.imageAlt}
+                loading="lazy"
+                className="w-full rounded-2xl object-cover"
+              />
+              <figcaption className="mt-2 text-xs text-slate-600">{post.imgCredit}</figcaption>
+            </figure>
+          </div>
         </section>
       )}
 
-      {post.full && (
-        <section className="mt-6">
-          <h2 className="text-xl font-semibold text-slate-900">Artikel</h2>
-          <article className="mt-2 prose prose-slate max-w-none">
-            <p className="whitespace-pre-line">{post.full}</p>
-          </article>
-        </section>
-      )}
-
-      {/* Textquelle direkt unterhalb des Textes */}
+      {/* Textquelle directly below content */}
       <div className="mt-4 text-xs text-slate-600">{post.textCredit}</div>
 
-      <figure className="mt-6">
-        <img src={post.image} alt={post.imageAlt} loading="lazy" className="w-full rounded-2xl" />
-        <figcaption className="mt-2 text-xs text-slate-600">{post.imgCredit}</figcaption>
-      </figure>
-
       <div className="mt-8">
-        <Button to="/aktuelles/blog">Zurück zur Übersicht</Button>
+        <Button to="/aktuelles/praxiswissen">Zurück zur Übersicht</Button>
       </div>
     </Container>
   );

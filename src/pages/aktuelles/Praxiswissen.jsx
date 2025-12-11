@@ -5,15 +5,11 @@ import GradientBar from "../../components/GradientBar";
 import GradientCard from "../../components/GradientCard";
 import { posts } from "./posts";
 
-export default function Blog() {
+export default function Praxiswissen() {
 
-  // Use shared GradientCard
-
-  // --- Title policy (card only) ---
   const TITLE_MAX = 60;
   const truncateTitle = (t) => (t.length > TITLE_MAX ? t.slice(0, TITLE_MAX - 3) + "…" : t);
 
-  // --- Date formatter (local) + Filters ---
   const formatDate = (iso) => {
     try {
       const d = new Date(`${iso}T00:00:00`);
@@ -47,16 +43,15 @@ export default function Blog() {
     return matchesQuery && matchesAuthor && matchesYear;
   });
 
-  // --- Reusable blog card ---
-  const BlogCard = ({ post, index }) => {
-    const testId = (base) => (index === 0 ? { [`data-testid`]: base } : {});
+  const Card = ({ post, index }) => {
+    const testId = (base) => (index === 0 ? { ["data-testid"]: base } : {});
 
     return (
       <article
         className="relative group rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:shadow-md transition"
-        {...(index === 0 ? { "data-testid": "blog-card" } : {})}
+        {...(index === 0 ? { "data-testid": "praxiswissen-card" } : {})}
       >
-        <Link to={`/aktuelles/blog/${post.id}`} className="block">
+        <Link to={`/aktuelles/praxiswissen/${post.id}`} className="block">
           <div className="aspect-[16/9] w-full overflow-hidden">
             <img src={post.image} alt={post.imageAlt} className="h-full w-full object-cover" />
           </div>
@@ -67,10 +62,10 @@ export default function Blog() {
               <span>{post.author?.name}</span>
               {post.author?.role && <span className="text-slate-400">({post.author.role})</span>}
             </div>
-            <h3 className="mt-2 font-semibold text-lg leading-snug" {...testId("blog-title")}>
+            <h3 className="mt-2 font-semibold text-lg leading-snug" {...testId("praxiswissen-title")}>
               {truncateTitle(post.title)}
             </h3>
-            <p className="mt-2 text-sm text-slate-700 line-clamp-6" {...testId("blog-short")}>
+            <p className="mt-2 text-sm text-slate-700 line-clamp-6" {...testId("praxiswissen-short")}>
               {post.short}
             </p>
             <span className="mt-3 inline-block text-sm font-medium text-blue-700">Weiterlesen</span>
@@ -80,18 +75,13 @@ export default function Blog() {
     );
   };
 
-  // --- Page layout (UeberUns-style) ---
   return (
     <Container as="main">
-      {/* Title */}
-      <h1 className="text-3xl md:text-4xl font-semibold">Blog und Artikel</h1>
+      <h1 className="text-3xl md:text-4xl font-semibold">Praxiswissen</h1>
       <p className="mt-3 text-slate-700 leading-relaxed w-full">
-        In unserem Blog finden Sie aktuelle Informationen und Fachbeiträge rund um PVD‑Schichten in der Medizintechnik. Wir berichten
-        über Entwicklungen, Forschungsergebnisse und Innovationen.Wir verbinden praxisrelevante Einblicke aus Beschichtungstechnik, Qualitätssicherung und Regulierung. Beiträge sind kompakt,
-            nachvollziehbar und auf medizintechnische Anwendungen fokussiert.
+        Schwerpunkt auf PVD‑Schichten in der Medizintechnik: fundierte Fachbeiträge, praxisnahe Einblicke und verständlich aufbereitete Forschungsergebnisse sowie Innovationen.
       </p>
 
-      {/* Filter bar */}
       <section className="mt-8">
         <div className="grid md:grid-cols-4 gap-3">
           <input
@@ -134,14 +124,13 @@ export default function Blog() {
         </div>
       </section>
 
-      {/* Cards grid */}
       <section className="mt-12">
-        <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Beiträge</h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">Aktuelle Artikel</h2>
         <GradientBar />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredPosts.map((post, idx) => (
             <GradientCard key={post.id}>
-              <BlogCard post={post} index={idx} />
+              <Card post={post} index={idx} />
             </GradientCard>
           ))}
         </div>

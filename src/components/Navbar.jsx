@@ -64,7 +64,7 @@ export default function Navbar(){
     'messeauftritte': 'Messeauftritte',
     'pressemitteilungen': 'Pressemitteilungen',
     'innovation-forschung': 'Innovation / Forschung',
-    'blog': 'Blog',
+    'praxiswissen': 'Praxiswissen',
 
     // Karriere
     'ausbildung': 'Ausbildung / Praktika',
@@ -191,7 +191,7 @@ export default function Navbar(){
                 {/* Messeauftritte nur unter Kontakt */}
                 {/* Pressemitteilungen entfernt */}
                 <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
-                <Link to="/aktuelles/blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Blog</Link>                
+                <Link to="/aktuelles/praxiswissen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Praxiswissen</Link>                
               </div>
             )}
           </div>
@@ -319,7 +319,7 @@ export default function Navbar(){
                     {/* Messeauftritte nur unter Kontakt */}
                   {/* Pressemitteilungen entfernt */}
                   <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
-                  <Link to="/aktuelles/blog" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Blog</Link>
+                  <Link to="/aktuelles/praxiswissen" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Praxiswissen</Link>
                 </div>
               )}
             </div>

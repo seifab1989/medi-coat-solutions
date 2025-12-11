@@ -20,7 +20,7 @@ import Nachhaltigkeit from './pages/unternehmen/nachhaltigkeit'
 import Messeauftritte from './pages/kontakt/Messeauftritte'
 // Pressemitteilungen entfernt
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
-import Blog from './pages/aktuelles/Blog'
+import Praxiswissen from './pages/aktuelles/Praxiswissen'
 import BlogPost from './pages/aktuelles/BlogPost'
 // OffeneStellen vorübergehend deaktiviert
 // Karriere-Seiten entfernt
@@ -65,8 +65,8 @@ export default function App(){
             <Route path="kontakt/messeauftritte" element={<Messeauftritte/>} />
             {/* Pressemitteilungen Route entfernt */}
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
-            <Route path="aktuelles/blog" element={<Blog/>} />
-            <Route path="aktuelles/blog/:id" element={<BlogPost/>} />
+            <Route path="aktuelles/praxiswissen" element={<Praxiswissen/>} />
+            <Route path="aktuelles/praxiswissen/:id" element={<BlogPost/>} />
             {/* Route unternehmen/offene-stellen vorübergehend entfernt */}
             {/* Karriere-Routen entfernt */}
             <Route path="kontakt/ansprechpartner" element={<Ansprechpartner/>} />
