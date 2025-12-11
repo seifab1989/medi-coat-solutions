@@ -8,13 +8,13 @@ export default function Navbar(){
   const [UnternehmenOpen, setUnternehmenOpen] = useState(false)
   const [AktuellesOpen, setAktuellesOpen] = useState(false)
   const [ProdukteOpen, setProdukteOpen] = useState(false)
-  const [NachhaltigkeitOpen, setNachhaltigkeitOpen] = useState(false)
+  // Nachhaltigkeit entfernt
   const [ZertifizierungOpen, setZertifizierungOpen] = useState(false)
   const [KontaktOpen, setKontaktOpen] = useState(false)
   const UnternehmenRef = useRef(null)
   const AktuellesRef = useRef(null)
   const ProdukteRef = useRef(null)
-  const NachhaltigkeitRef = useRef(null)
+  // Nachhaltigkeit entfernt
   const ZertifizierungRef = useRef(null)
   const KontaktRef = useRef(null)
 
@@ -38,7 +38,6 @@ export default function Navbar(){
     'produkte': 'Produkte',
     'patientensicherheit': 'PVD & Patientensicherheit',
     'zertifizierung': 'Zertifizierung',
-    'nachhaltigkeit': 'Nachhaltigkeit',
     'aktuelles': 'Aktuelles',
     'karriere': 'Karriere',
     'kontakt': 'Kontakt',
@@ -58,10 +57,8 @@ export default function Navbar(){
     'biokompatibilitaet': 'Biokompatibilität',
     'zertifikate': 'Zertifikate',
 
-    // Nachhaltigkeit
-    'konformitaet': 'Konformität',
-    'soziale-verantwortung': 'Soziale Verantwortung',
-    'umweltmanagement': 'Umweltmanagement',
+    // Nachhaltigkeit als Unterpunkt Unternehmen
+    'nachhaltigkeit': 'Nachhaltigkeit',
 
     // Aktuelles
     'messeauftritte': 'Messeauftritte',
@@ -98,7 +95,7 @@ export default function Navbar(){
       }
       if (AktuellesRef.current && !AktuellesRef.current.contains(e.target)) setAktuellesOpen(false)
       if (ProdukteRef.current && !ProdukteRef.current.contains(e.target)) setProdukteOpen(false)
-      if (NachhaltigkeitRef.current && !NachhaltigkeitRef.current.contains(e.target)) setNachhaltigkeitOpen(false)
+      // Nachhaltigkeit entfernt
       if (ZertifizierungRef.current && !ZertifizierungRef.current.contains(e.target)) setZertifizierungOpen(false)
       if (KontaktRef.current && !KontaktRef.current.contains(e.target)) setKontaktOpen(false)
     }
@@ -130,6 +127,7 @@ export default function Navbar(){
                   <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="/unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
                 <Link to="/unternehmen/standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
+                <Link to="/unternehmen/nachhaltigkeit" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Nachhaltigkeit</Link>
               </div>
             )}
           </div>
@@ -177,23 +175,7 @@ export default function Navbar(){
             )}
           </div>
 
-            <div className="relative" ref={NachhaltigkeitRef}>
-            <button
-              onClick={() => setNachhaltigkeitOpen(v => !v)}
-              aria-expanded={NachhaltigkeitOpen}
-              aria-haspopup="menu"
-              className="flex items-center gap-2 hover:text-slate-900"
-            >
-              Nachhaltigkeit ▾
-            </button>
-            {NachhaltigkeitOpen && (
-              <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
-                <Link to="/nachhaltigkeit/konformitaet" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Konformität</Link>
-                <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Soziale Verantwortung</Link>
-                <Link to="/nachhaltigkeit/umweltmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setNachhaltigkeitOpen(false)}>Umweltmanagement</Link>
-              </div>
-            )}
-          </div>
+            {/* Nachhaltigkeit Menü entfernt */}
 
           <div className="relative" ref={AktuellesRef}>
             <button
@@ -285,6 +267,7 @@ export default function Navbar(){
               <div className="mt-2 flex flex-col pl-3">
                 <Link to="/unternehmen/about" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Über uns</Link>
                 <Link to="/unternehmen/standorte" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Standorte</Link>
+                <Link to="/unternehmen/nachhaltigkeit" onClick={() => setOpenMobile(false)} className="block px-2 py-3">Nachhaltigkeit</Link>
               </div>
             </div>
 
@@ -323,19 +306,7 @@ export default function Navbar(){
               )}
             </div>
 
-              <div>
-                <button
-                  className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
-                  onClick={() => setNachhaltigkeitOpen(v => !v)}
-                >Nachhaltigkeit ▾</button>
-                {NachhaltigkeitOpen && (
-                  <div className="pl-4">
-                    <Link to="/nachhaltigkeit/konformitaet" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Konformität</Link>
-                    <Link to="/nachhaltigkeit/soziale-verantwortung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Soziale Verantwortung</Link>
-                    <Link to="/nachhaltigkeit/umweltmanagement" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setNachhaltigkeitOpen(false); }}>Umweltmanagement</Link>
-                  </div>
-                )}
-              </div>
+              {/* Nachhaltigkeit Menü mobil entfernt */}
 
             <div>
               <button

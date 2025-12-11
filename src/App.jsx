@@ -15,9 +15,8 @@ import Patientensicherheit from './pages/patientensicherheit/Patientensicherheit
 import Qualitaetsmanagement from './pages/zertifizierung/Qualitaetsmanagement'
 import Biokompatibilitaet from './pages/zertifizierung/Biokompatibilitaet'
 import Zertifikate from './pages/zertifizierung/Zertifikate'
-import Umweltmanagement from './pages/nachhaltigkeit/umweltmanagement'
-import SozialeVerantwortung from './pages/nachhaltigkeit/soziale-verantwortung'
-import Konformitaet from './pages/Nachhaltigkeit/konformitaet'
+// Nachhaltigkeit vorübergehend entfernt
+import Nachhaltigkeit from './pages/unternehmen/nachhaltigkeit'
 import Messeauftritte from './pages/aktuelles/Messeauftritte'
 import Pressemitteilungen from './pages/aktuelles/Pressemitteilungen'
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
@@ -60,9 +59,8 @@ export default function App(){
             <Route path="zertifizierung/qualitaetsmanagement" element={<Qualitaetsmanagement/>} />
             <Route path="zertifizierung/biokompatibilitaet" element={<Biokompatibilitaet/>} />
             <Route path="zertifizierung/zertifikate" element={<Zertifikate/>} />
-            <Route path="nachhaltigkeit/umweltmanagement" element={<Umweltmanagement/>} />
-            <Route path="nachhaltigkeit/soziale-verantwortung" element={<SozialeVerantwortung/>} />
-            <Route path="nachhaltigkeit/konformitaet" element={<Konformitaet/>} />
+            {/* Nachhaltigkeit-Routen entfernt */}
+            <Route path="unternehmen/nachhaltigkeit" element={<Nachhaltigkeit/>} />
             <Route path="aktuelles/messeauftritte" element={<Messeauftritte/>} />
             <Route path="aktuelles/pressemitteilungen" element={<Pressemitteilungen/>} />
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
