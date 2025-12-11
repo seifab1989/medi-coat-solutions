@@ -121,7 +121,7 @@ export default function Navbar(){
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Unternehmen ▾
+              Unternehmen
             </button>
                 {UnternehmenOpen && (
                   <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
@@ -139,7 +139,7 @@ export default function Navbar(){
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Produkte ▾
+              Produkte
             </button>
             {ProdukteOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
@@ -152,8 +152,8 @@ export default function Navbar(){
           </div>
 
              <div className="relative">
-                <Link to="/patientensicherheit/patientensicherheit" className="flex items-center gap-2 hover:text-slate-900">
-                PVD & Patientensicherheit
+                <Link to="/patientensicherheit/patientensicherheit" className="flex items-center gap-2 hover:text-slate-900 whitespace-nowrap">
+                  PVD & Patientensicherheit
                 </Link>
               </div>
 
@@ -164,7 +164,7 @@ export default function Navbar(){
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Zertifizierung ▾
+              Zertifizierung
             </button>
             {ZertifizierungOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
@@ -184,12 +184,12 @@ export default function Navbar(){
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Aktuelles ▾
+              Aktuelles
             </button>
             {AktuellesOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="/aktuelles/messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
-                <Link to="/aktuelles/pressemitteilungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Pressemitteilungen</Link>
+                {/* Pressemitteilungen entfernt */}
                 <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
                 <Link to="/aktuelles/blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Blog</Link>                
               </div>
@@ -206,7 +206,7 @@ export default function Navbar(){
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Kontakt ▾
+              Kontakt
             </button>
             {KontaktOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
@@ -316,7 +316,7 @@ export default function Navbar(){
               {AktuellesOpen && (
                 <div className="pl-4">
                     <Link to="/aktuelles/messeauftritte" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Messeauftritte</Link>
-                  <Link to="/aktuelles/pressemitteilungen" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Pressemitteilungen</Link>
+                  {/* Pressemitteilungen entfernt */}
                   <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
                   <Link to="/aktuelles/blog" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Blog</Link>
                 </div>

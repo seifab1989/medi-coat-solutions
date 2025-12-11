@@ -18,7 +18,7 @@ import Zertifikate from './pages/zertifizierung/Zertifikate'
 // Nachhaltigkeit vorübergehend entfernt
 import Nachhaltigkeit from './pages/unternehmen/nachhaltigkeit'
 import Messeauftritte from './pages/aktuelles/Messeauftritte'
-import Pressemitteilungen from './pages/aktuelles/Pressemitteilungen'
+// Pressemitteilungen entfernt
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
 import Blog from './pages/aktuelles/Blog'
 import BlogPost from './pages/aktuelles/BlogPost'
@@ -62,7 +62,7 @@ export default function App(){
             {/* Nachhaltigkeit-Routen entfernt */}
             <Route path="unternehmen/nachhaltigkeit" element={<Nachhaltigkeit/>} />
             <Route path="aktuelles/messeauftritte" element={<Messeauftritte/>} />
-            <Route path="aktuelles/pressemitteilungen" element={<Pressemitteilungen/>} />
+            {/* Pressemitteilungen Route entfernt */}
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
             <Route path="aktuelles/blog" element={<Blog/>} />
             <Route path="aktuelles/blog/:id" element={<BlogPost/>} />
