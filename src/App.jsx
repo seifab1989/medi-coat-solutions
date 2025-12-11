@@ -17,7 +17,7 @@ import Biokompatibilitaet from './pages/zertifizierung/Biokompatibilitaet'
 import Zertifikate from './pages/zertifizierung/Zertifikate'
 // Nachhaltigkeit vorübergehend entfernt
 import Nachhaltigkeit from './pages/unternehmen/nachhaltigkeit'
-import Messeauftritte from './pages/aktuelles/Messeauftritte'
+import Messeauftritte from './pages/kontakt/Messeauftritte'
 // Pressemitteilungen entfernt
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
 import Blog from './pages/aktuelles/Blog'
@@ -61,7 +61,8 @@ export default function App(){
             <Route path="zertifizierung/zertifikate" element={<Zertifikate/>} />
             {/* Nachhaltigkeit-Routen entfernt */}
             <Route path="unternehmen/nachhaltigkeit" element={<Nachhaltigkeit/>} />
-            <Route path="aktuelles/messeauftritte" element={<Messeauftritte/>} />
+            {/* Messeauftritte nur unter Kontakt */}
+            <Route path="kontakt/messeauftritte" element={<Messeauftritte/>} />
             {/* Pressemitteilungen Route entfernt */}
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
             <Route path="aktuelles/blog" element={<Blog/>} />

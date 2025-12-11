@@ -188,7 +188,7 @@ export default function Navbar(){
             </button>
             {AktuellesOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                <Link to="/aktuelles/messeauftritte" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
+                {/* Messeauftritte nur unter Kontakt */}
                 {/* Pressemitteilungen entfernt */}
                 <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
                 <Link to="/aktuelles/blog" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Blog</Link>                
@@ -206,11 +206,12 @@ export default function Navbar(){
               aria-haspopup="menu"
               className="flex items-center gap-2 hover:text-slate-900"
             >
-              Kontakt
+              Kontaktmöglichkeiten
             </button>
             {KontaktOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
                 <Link to="/kontakt/ansprechpartner" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Direkter Ansprechpartner</Link>
+                <Link to="/kontakt/messeauftritte" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Messeauftritte</Link>
                 <Link to="/kontakt/formular" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Kontaktformular</Link>
                 <Link to="/kontakt/karteanfahrt" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Standortkarte & Anfahrt</Link>
               </div>
@@ -275,7 +276,7 @@ export default function Navbar(){
               <button 
               className="w-full text-left px-2 py-3 rounded hover:bg-slate-50" 
               onClick={() => setProdukteOpen(v => !v)}
-              >Produkte ▾</button>
+              >Produkte</button>
               {ProdukteOpen && (
                 <div className="pl-4">
                   <Link to="/produkte/herstellung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Herstellung PVD-Schichten</Link>
@@ -296,7 +297,7 @@ export default function Navbar(){
               <button 
               className="w-full text-left px-2 py-3 rounded hover:bg-slate-50" 
               onClick={() => setZertifizierungOpen(v => !v)}
-              >Zertifizierungen ▾</button>
+              >Zertifizierungen</button>
               {ZertifizierungOpen && (
                 <div className="pl-4">
                   <Link to="/zertifizierung/qualitaetsmanagement" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
@@ -312,10 +313,10 @@ export default function Navbar(){
               <button
                 className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
                 onClick={() => setAktuellesOpen(v => !v)}
-              >Aktuelles ▾</button>
+              >Aktuelles</button>
               {AktuellesOpen && (
                 <div className="pl-4">
-                    <Link to="/aktuelles/messeauftritte" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Messeauftritte</Link>
+                    {/* Messeauftritte nur unter Kontakt */}
                   {/* Pressemitteilungen entfernt */}
                   <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
                   <Link to="/aktuelles/blog" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Blog</Link>
@@ -330,11 +331,12 @@ export default function Navbar(){
                   className="w-full text-left px-2 py-3 rounded hover:bg-slate-50"
                   onClick={() => setKontaktOpen(v => !v)}
                 >
-                  Kontakt ▾
+                  Kontaktmöglichkeiten
                 </button>
                 {KontaktOpen && (
                   <div className="pl-4">
                     <Link to="/kontakt/ansprechpartner" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
+                    <Link to="/kontakt/messeauftritte" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Messeauftritte</Link>
                     <Link to="/kontakt/formular" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
                     <Link to="/kontakt/karteanfahrt" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
                   </div>
