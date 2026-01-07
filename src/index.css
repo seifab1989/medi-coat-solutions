@@ -23,3 +23,13 @@ body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', 
    Ensures space is always reserved for the scrollbar width */
 /* Always reserve vertical scrollbar width to avoid right-side gutter */
 html { overflow-y: scroll; }
+
+/* HiDPI laptop-specific tweaks to prevent header overflow without affecting other devices */
+@media (min-width: 1024px) {
+	/* Prefer dppx where supported; include dpi fallback */
+	@media (min-resolution: 2dppx), (min-resolution: 192dpi) {
+		/* Slightly tighten nav spacing and shrink CTA to keep everything visible */
+		.mc-nav { gap: 1rem; }
+		.mc-cta .button-gradient { padding: 0.5rem 0.75rem; font-size: 0.875rem; }
+	}
+}

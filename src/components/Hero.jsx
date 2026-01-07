@@ -53,12 +53,14 @@ export default function Hero(){
       {/* Vorteile */}
       <section className="py-16 bg-white/0">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
-              Warum PVD-Schichten in der Medizintechnik?
-            </h2>
+          <div>
+            <div className="max-w-3xl">
+              <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">
+                Warum PVD-Schichten in der Medizintechnik?
+              </h2>
+            </div>
             <GradientBar />
-            <p className="mt-2 text-slate-600">
+            <p className="mt-2 text-slate-600 max-w-3xl">
               PVD-Schichten verbessern die Funktion, Langlebigkeit und Sicherheit von Medizinprodukten.
             </p>
           </div>

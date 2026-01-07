@@ -123,7 +123,7 @@ export default function Navbar(){
         </div>
 
         {/* Desktop nav */}
-        <nav className="hidden lg:flex gap-6 text-slate-700 items-center">
+        <nav className="mc-nav hidden lg:flex gap-6 text-slate-700 items-center">
           <div className="relative" ref={UnternehmenRef}>
             <button
               onClick={() => setUnternehmenOpen(v => !v)}
@@ -230,7 +230,7 @@ export default function Navbar(){
 
         </nav>
 
-        <div className="hidden lg:block ml-6 lg:ml-8 shrink-0">
+        <div className="mc-cta hidden lg:block ml-6 lg:ml-8 shrink-0">
           <Button to="/kontakt/formular" className="px-4 py-2">Beratung anfragen</Button>
         </div>
 

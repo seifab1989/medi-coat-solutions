@@ -9,7 +9,7 @@ export default function Footer(){
         <div className="flex items-center gap-3">
           <MediCoatLogo />
           <div>
-            <div className="font-semibold">MediCoat Solutions</div>
+            <div className="font-semibold">MediCoat Solutions GmbH</div>
             <div className="text-slate-500 text-sm">© {new Date().getFullYear()} Alle Rechte vorbehalten</div>
           </div>
         </div>
