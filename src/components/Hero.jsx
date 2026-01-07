@@ -51,7 +51,7 @@ export default function Hero(){
       </section>
 
       {/* Vorteile */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white/0">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <h2 className="text-2xl md:text-3xl font-semibold text-slate-900">

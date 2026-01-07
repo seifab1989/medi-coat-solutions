@@ -114,7 +114,7 @@ export default function Navbar(){
   }, [location.pathname])
 
   return (
-    <header className="backdrop-blur bg-gradient-to-r from-blue-900/0 via-blue-600/0 to-green-500/0 backdrop-blur sticky top-0 z-50">
+    <header className="relative backdrop-blur bg-gradient-to-r from-blue-900/0 via-blue-600/0 to-green-500/0 backdrop-blur sticky top-0 z-50">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center gap-3">
@@ -153,10 +153,10 @@ export default function Navbar(){
             </button>
             {ProdukteOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
-                <Link to="/produkte/herstellung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Herstellung PVD-Schichten</Link>
-                <Link to="/produkte/portfolio" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Portfolio</Link>
-                <Link to="/produkte/dienstleistungen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Dienstleistungen</Link>
-                <Link to="/produkte/downloadcenter" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Downloadcenter</Link>
+                <Link to="/produkte/herstellung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Herstellung PVD-Schichten</Link>
+                <Link to="/produkte/portfolio" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Portfolio</Link>
+                <Link to="/produkte/dienstleistungen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Dienstleistungen</Link>
+                <Link to="/produkte/downloadcenter" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setProdukteOpen(false)}>Downloadcenter</Link>
               </div>
             )}
           </div>
@@ -178,9 +178,9 @@ export default function Navbar(){
             </button>
             {ZertifizierungOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-56 py-2">
-                <Link to="/zertifizierung/qualitaetsmanagement" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Qualitätsmanagement</Link>
-                <Link to="/zertifizierung/biokompatibilitaet" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Biokompatibilität</Link>
-                <Link to="/zertifizierung/zertifikate" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Zertifikate</Link>
+                <Link to="/zertifizierung/qualitaetsmanagement" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Qualitätsmanagement</Link>
+                <Link to="/zertifizierung/biokompatibilitaet" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Biokompatibilität</Link>
+                <Link to="/zertifizierung/zertifikate" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setZertifizierungOpen(false)}>Zertifikate</Link>
               </div>
             )}
           </div>
@@ -200,8 +200,8 @@ export default function Navbar(){
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 {/* Messeauftritte nur unter Kontakt */}
                 {/* Pressemitteilungen entfernt */}
-                <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
-                <Link to="/aktuelles/praxiswissen" className="block px-4 py-2 hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Praxiswissen</Link>                
+                <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
+                <Link to="/aktuelles/praxiswissen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Praxiswissen</Link>                
               </div>
             )}
           </div>
@@ -247,10 +247,10 @@ export default function Navbar(){
         </div>
       </div>
 
-        {/* Breadcrumb */}
+        {/* Breadcrumb overlay in header */}
         {location.pathname !== '/' && !openMobile && (
-          <nav aria-label="Breadcrumb" className="relative z-10 bg-white/70 backdrop-blur border-t">
-            <ol className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center gap-2 text-sm text-slate-600">
+          <nav aria-label="Breadcrumb" className="absolute inset-x-0 bottom-0 z-10 bg-transparent">
+            <ol className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-1 flex flex-wrap items-center gap-2 text-sm text-slate-600">
               <li>
                 <Link to="/" className="hover:text-slate-900">Startseite</Link>
               </li>
@@ -280,9 +280,9 @@ export default function Navbar(){
               >Unternehmen</button>
               {UnternehmenOpen && (
                 <div className="mt-1 flex flex-col pl-4" onMouseDown={(e)=>e.stopPropagation()}>
-                  <Link to="/unternehmen/about" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2">Über uns</Link>
-                  <Link to="/unternehmen/standorte" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2">Standorte</Link>
-                  <Link to="/unternehmen/nachhaltigkeit" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2">Nachhaltigkeit</Link>
+                  <Link to="/unternehmen/about" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2 text-sm">Über uns</Link>
+                  <Link to="/unternehmen/standorte" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2 text-sm">Standorte</Link>
+                  <Link to="/unternehmen/nachhaltigkeit" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2 text-sm">Nachhaltigkeit</Link>
                 </div>
               )}
             </div>
@@ -294,10 +294,10 @@ export default function Navbar(){
               >Produkte</button>
               {ProdukteOpen && (
                 <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
-                  <Link to="/produkte/herstellung" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Herstellung PVD-Schichten</Link>
-                  <Link to="/produkte/portfolio" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Portfolio</Link>
-                  <Link to="/produkte/dienstleistungen" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Dienstleistungen</Link>
-                  <Link to="/produkte/downloadcenter" className="block px-2 py-2" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Downloadcenter</Link>
+                  <Link to="/produkte/herstellung" className="block px-2 py-2 text-sm" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Herstellung PVD-Schichten</Link>
+                  <Link to="/produkte/portfolio" className="block px-2 py-2 text-sm" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Portfolio</Link>
+                  <Link to="/produkte/dienstleistungen" className="block px-2 py-2 text-sm" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Dienstleistungen</Link>
+                  <Link to="/produkte/downloadcenter" className="block px-2 py-2 text-sm" onClick={() => { setOpenMobile(false); setProdukteOpen(false); }}>Downloadcenter</Link>
                 </div>
               )}
             </div>
@@ -315,9 +315,9 @@ export default function Navbar(){
               >Zertifizierungen</button>
               {ZertifizierungOpen && (
                 <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
-                  <Link to="/zertifizierung/qualitaetsmanagement" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
-                  <Link to="/zertifizierung/biokompatibilitaet" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Biokompatibilität</Link>
-                  <Link to="/zertifizierung/zertifikate" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Zertifikate</Link>
+                  <Link to="/zertifizierung/qualitaetsmanagement" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Qualitätsmanagement</Link>
+                  <Link to="/zertifizierung/biokompatibilitaet" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Biokompatibilität</Link>
+                  <Link to="/zertifizierung/zertifikate" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setZertifizierungOpen(false); }}>Zertifikate</Link>
                 </div>
               )}
             </div>
@@ -333,8 +333,8 @@ export default function Navbar(){
                 <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                     {/* Messeauftritte nur unter Kontakt */}
                   {/* Pressemitteilungen entfernt */}
-                  <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
-                  <Link to="/aktuelles/praxiswissen" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Praxiswissen</Link>
+                  <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
+                  <Link to="/aktuelles/praxiswissen" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Praxiswissen</Link>
                 </div>
               )}
             </div>
@@ -350,10 +350,10 @@ export default function Navbar(){
                 </button>
                 {KontaktOpen && (
                   <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
-                    <Link to="/kontakt/ansprechpartner" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
-                    <Link to="/kontakt/messeauftritte" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Messeauftritte</Link>
-                    <Link to="/kontakt/formular" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
-                    <Link to="/kontakt/karteanfahrt" className="block px-2 py-3" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
+                    <Link to="/kontakt/ansprechpartner" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
+                    <Link to="/kontakt/messeauftritte" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Messeauftritte</Link>
+                    <Link to="/kontakt/formular" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
+                    <Link to="/kontakt/karteanfahrt" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
                   </div>
                 )}
               </div>
