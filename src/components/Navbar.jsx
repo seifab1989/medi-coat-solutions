@@ -136,7 +136,6 @@ export default function Navbar(){
                 {UnternehmenOpen && (
                   <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
                 <Link to="/unternehmen/about" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Über uns</Link>
-                <Link to="/unternehmen/standorte" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Standorte</Link>
                 <Link to="/unternehmen/nachhaltigkeit" onClick={() => setUnternehmenOpen(false)} className="block px-4 py-2 text-sm hover:bg-slate-50">Nachhaltigkeit</Link>
               </div>
             )}
@@ -198,10 +197,11 @@ export default function Navbar(){
             </button>
             {AktuellesOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-64 py-2">
-                {/* Messeauftritte nur unter Kontakt */}
+                {/* Messeauftritte jetzt hier unter Aktuelles */}
                 {/* Pressemitteilungen entfernt */}
                 <Link to="/aktuelles/innovation-forschung" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Innovation / Forschung</Link>
-                <Link to="/aktuelles/praxiswissen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Praxiswissen</Link>                
+                <Link to="/aktuelles/praxiswissen" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Praxiswissen</Link>
+                <Link to="/aktuelles/messeauftritte" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setAktuellesOpen(false)}>Messeauftritte</Link>
               </div>
             )}
           </div>
@@ -221,7 +221,6 @@ export default function Navbar(){
             {KontaktOpen && (
               <div className="absolute z-50 mt-2 bg-white rounded-lg shadow-lg w-72 py-2">
                 <Link to="/kontakt/ansprechpartner" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Direkter Ansprechpartner</Link>
-                <Link to="/kontakt/messeauftritte" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Messeauftritte</Link>
                 <Link to="/kontakt/formular" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Kontaktformular</Link>
                 <Link to="/kontakt/karteanfahrt" className="block px-4 py-2 text-sm hover:bg-slate-50" onClick={() => setKontaktOpen(false)}>Standortkarte & Anfahrt</Link>
               </div>
@@ -281,7 +280,6 @@ export default function Navbar(){
               {UnternehmenOpen && (
                 <div className="mt-1 flex flex-col pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                   <Link to="/unternehmen/about" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2 text-sm">Über uns</Link>
-                  <Link to="/unternehmen/standorte" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2 text-sm">Standorte</Link>
                   <Link to="/unternehmen/nachhaltigkeit" onClick={() => { setOpenMobile(false); setUnternehmenOpen(false); }} className="block px-2 py-2 text-sm">Nachhaltigkeit</Link>
                 </div>
               )}
@@ -331,10 +329,11 @@ export default function Navbar(){
               >Aktuelles</button>
               {AktuellesOpen && (
                 <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
-                    {/* Messeauftritte nur unter Kontakt */}
+                    {/* Messeauftritte jetzt unter Aktuelles (mobile) */}
                   {/* Pressemitteilungen entfernt */}
                   <Link to="/aktuelles/innovation-forschung" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Innovation / Forschung</Link>
                   <Link to="/aktuelles/praxiswissen" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Praxiswissen</Link>
+                  <Link to="/aktuelles/messeauftritte" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setAktuellesOpen(false); }}>Messeauftritte</Link>
                 </div>
               )}
             </div>
@@ -351,7 +350,6 @@ export default function Navbar(){
                 {KontaktOpen && (
                   <div className="pl-4" onMouseDown={(e)=>e.stopPropagation()}>
                     <Link to="/kontakt/ansprechpartner" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Direkter Ansprechpartner</Link>
-                    <Link to="/kontakt/messeauftritte" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Messeauftritte</Link>
                     <Link to="/kontakt/formular" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Kontaktformular</Link>
                     <Link to="/kontakt/karteanfahrt" className="block px-2 py-3 text-sm" onClick={() => { setOpenMobile(false); setKontaktOpen(false); }}>Standortkarte & Anfahrt</Link>
                   </div>

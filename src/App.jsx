@@ -5,7 +5,6 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/unternehmen/About'
-import Standorte from './pages/unternehmen/Standorte'
 import Herstellung from './pages/produkte/Herstellung'
 import Portfolio from './pages/produkte/portfolio'
 import Dienstleistungen from './pages/produkte/dienstleistungen'
@@ -17,7 +16,7 @@ import Biokompatibilitaet from './pages/zertifizierung/Biokompatibilitaet'
 import Zertifikate from './pages/zertifizierung/Zertifikate'
 // Nachhaltigkeit vorübergehend entfernt
 import Nachhaltigkeit from './pages/unternehmen/nachhaltigkeit'
-import Messeauftritte from './pages/kontakt/Messeauftritte'
+import Messeauftritte from './pages/aktuelles/Messeauftritte'
 // Pressemitteilungen entfernt
 import InnovationForschung from './pages/aktuelles/InnovationForschung'
 import Praxiswissen from './pages/aktuelles/Praxiswissen'
@@ -49,7 +48,6 @@ export default function App(){
           <Routes>
             <Route path="/" element={<Home/>} />
             <Route path="unternehmen/about" element={<About/>} />
-            <Route path="unternehmen/standorte" element={<Standorte/>} />
             <Route path="produkte/herstellung" element={<Herstellung/>} />
             <Route path="produkte/download" element={<Download/>} />
             <Route path="produkte/portfolio" element={<Portfolio/>} />
@@ -61,8 +59,8 @@ export default function App(){
             <Route path="zertifizierung/zertifikate" element={<Zertifikate/>} />
             {/* Nachhaltigkeit-Routen entfernt */}
             <Route path="unternehmen/nachhaltigkeit" element={<Nachhaltigkeit/>} />
-            {/* Messeauftritte nur unter Kontakt */}
-            <Route path="kontakt/messeauftritte" element={<Messeauftritte/>} />
+            {/* Messeauftritte (jetzt unter Aktuelles) */}
+            <Route path="aktuelles/messeauftritte" element={<Messeauftritte/>} />
             {/* Pressemitteilungen Route entfernt */}
             <Route path="aktuelles/innovation-forschung" element={<InnovationForschung/>} />
             <Route path="aktuelles/praxiswissen" element={<Praxiswissen/>} />
