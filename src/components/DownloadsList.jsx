@@ -94,6 +94,7 @@ export default function DownloadsList({
   splitByDataSheet = true, // show data sheets separated from others
   defaultItems = null, // fallback array of { filename, size }
   showHeadingGradient = true, // controls gradient bar under main title
+  showCertificatesSection = true, // controls rendering of the certificates section
 }) {
   const [files, setFiles] = useState(null)
   const [error, setError] = useState(null)
@@ -138,62 +139,70 @@ export default function DownloadsList({
       .filter(f => includeRe ? includeRe.test(f.filename) : true)
       .filter(f => excludeRe ? !excludeRe.test(f.filename) : true)
   ) : null
+  const listingContent = (
+    <>
+      {shown === null && !error && (<div className="mt-6">Lade Dokumentliste…</div>)}
+      {error && (<div className="mt-6 text-sm text-rose-600">Konnte Download-Liste nicht laden. Die statische Liste wird angezeigt.</div>)}
+
+      {shown && splitByDataSheet && (
+        <div className="grid md:grid-cols-2 gap-6">
+          <CategoryHeading>Datenblätter</CategoryHeading>
+          {shown.filter(f => /datenblatt/i.test(f.filename)).map(f => (
+            <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
+          ))}
+        </div>
+      )}
+
+      {shown && splitByDataSheet && (
+        <div className="grid md:grid-cols-2 gap-6 mt-8">
+          <CategoryHeading>Sonstige Dokumente</CategoryHeading>
+          {shown.filter(f => !/datenblatt/i.test(f.filename)).map(f => (
+            <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
+          ))}
+        </div>
+      )}
+
+      {shown && !splitByDataSheet && (
+        <div className="grid md:grid-cols-2 gap-6">
+          {shown.map(f => (
+            <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
+          ))}
+        </div>
+      )}
+
+      {error && defaultItems && (
+        <>
+          <div className="grid md:grid-cols-2 gap-6">
+            <CategoryHeading>Datenblätter</CategoryHeading>
+            {defaultItems.dataSheets && defaultItems.dataSheets.map((d, i) => {
+              const href = /^https?:\/\//i.test(d.href) ? d.href : assetUrl(String(d.href || '').replace(/^\//, ''))
+              return (<DocLink key={i} title={d.title} desc={d.desc} href={href} />)
+            })}
+          </div>
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <CategoryHeading>Sonstige Dokumente</CategoryHeading>
+            {defaultItems.others && defaultItems.others.map((d, i) => {
+              const href = /^https?:\/\//i.test(d.href) ? d.href : assetUrl(String(d.href || '').replace(/^\//, ''))
+              return (<DocLink key={i} title={d.title} desc={d.desc} href={href} />)
+            })}
+          </div>
+        </>
+      )}
+    </>
+  )
 
   return (
     <main className="flex-1 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16" role="main" aria-labelledby="downloads-title">
     <h2 id="downloads-title" className="text-3xl md:text-4xl font-semibold">{title}</h2>
     {showHeadingGradient && <GradientBar />}
-      {intro && <p className="mt-3 text-slate-600 max-w-3xl">{intro}</p>}
-
-      <Section title="Zertifikate / Bescheinigungen zum Download">
-        {shown === null && !error && (<div className="mt-6">Lade Dokumentliste…</div>)}
-        {error && (<div className="mt-6 text-sm text-rose-600">Konnte Download-Liste nicht laden. Die statische Liste wird angezeigt.</div>)}
-
-        {shown && splitByDataSheet && (
-          <div className="grid md:grid-cols-2 gap-6">
-            <CategoryHeading>Datenblätter</CategoryHeading>
-            {shown.filter(f => /datenblatt/i.test(f.filename)).map(f => (
-              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
-            ))}
-          </div>
-        )}
-
-        {shown && splitByDataSheet && (
-          <div className="grid md:grid-cols-2 gap-6 mt-8">
-            <CategoryHeading>Sonstige Dokumente</CategoryHeading>
-            {shown.filter(f => !/datenblatt/i.test(f.filename)).map(f => (
-              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
-            ))}
-          </div>
-        )}
-
-        {shown && !splitByDataSheet && (
-          <div className="grid md:grid-cols-2 gap-6">
-            {shown.map(f => (
-              <DocLink key={f.filename} title={beautifyFilename(f.filename)} href={assetUrl(`downloads/${f.filename}`)} size={f.size} />
-            ))}
-          </div>
-        )}
-
-        {error && defaultItems && (
-          <>
-            <div className="grid md:grid-cols-2 gap-6">
-              <CategoryHeading>Datenblätter</CategoryHeading>
-              {defaultItems.dataSheets && defaultItems.dataSheets.map((d, i) => {
-                const href = /^https?:\/\//i.test(d.href) ? d.href : assetUrl(String(d.href || '').replace(/^\//, ''))
-                return (<DocLink key={i} title={d.title} desc={d.desc} href={href} />)
-              })}
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <CategoryHeading>Sonstige Dokumente</CategoryHeading>
-              {defaultItems.others && defaultItems.others.map((d, i) => {
-                const href = /^https?:\/\//i.test(d.href) ? d.href : assetUrl(String(d.href || '').replace(/^\//, ''))
-                return (<DocLink key={i} title={d.title} desc={d.desc} href={href} />)
-              })}
-            </div>
-          </>
-        )}
-      </Section>
+      {intro && <p className="mt-3 text-slate-600">{intro}</p>}
+      {showCertificatesSection ? (
+        <Section title="Zertifikate / Bescheinigungen zum Download">
+          {listingContent}
+        </Section>
+      ) : (
+        <div className="mt-12">{listingContent}</div>
+      )}
     </main>
   )
 }
