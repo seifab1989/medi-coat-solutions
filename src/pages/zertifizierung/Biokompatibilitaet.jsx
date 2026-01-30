@@ -60,12 +60,12 @@ export default function Biokompatibilitaet() {
 // Separates Bild-Element mit base-sicherem Pfad, damit Vite base berücksichtigt wird
 function ZytotoxBild(){
   return (
-    <div className="aspect-[16/9] mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative bg-white w-full">
+    <div className="mt-4 mb-3 rounded-3xl border border-slate-200/60 shadow-sm bg-white w-full flex justify-center">
       <img
         src={assetUrl('assets/biokompatibilitaet.png')}
         alt="Zytotoxizität – Prüfung nach DIN EN ISO 10993-5"
         loading="lazy"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="block rounded-2xl"
       />
     </div>
   );
