@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Button from './Button'
-import MediCoatLogo from './MediCoatLogo'
+import IovaraCoatLogo from './IovaraCoatLogo'
 
 export default function Navbar(){
   const [openMobile, setOpenMobile] = useState(false)
@@ -117,13 +117,15 @@ export default function Navbar(){
     <header className="relative backdrop-blur bg-gradient-to-r from-blue-900/0 via-blue-600/0 to-green-500/0 backdrop-blur sticky top-0 z-50">
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-3">
-            <MediCoatLogo />
+            <Link to="/" className="flex items-center gap-3">
+            <div className="w-40 overflow-visible">
+              <IovaraCoatLogo className="block origin-left" style={{ transform: 'scale(3)', transformOrigin: 'left' }} />
+            </div>
           </Link>
         </div>
 
         {/* Desktop nav */}
-        <nav className="mc-nav hidden lg:flex gap-6 text-slate-700 items-center">
+        <nav className="mc-nav hidden lg:flex gap-6 text-slate-700 items-center lg:ml-[7rem]">
           <div className="relative" ref={UnternehmenRef}>
             <button
               onClick={() => setUnternehmenOpen(v => !v)}
@@ -229,8 +231,8 @@ export default function Navbar(){
 
         </nav>
 
-        <div className="mc-cta hidden lg:block ml-6 lg:ml-8 shrink-0">
-          <Button to="/kontakt/formular" className="px-4 py-2">Beratung anfragen</Button>
+        <div className="mc-cta hidden lg:block ml-6 lg:ml-auto shrink-0">
+           <Button to="/kontakt/formular" className="px-3 py-1 text-sm whitespace-normal max-w-[140px] text-center font-bold" style={{fontWeight: 700}}>Beratung anfragen</Button>
         </div>
 
         {/* Mobile toggle */}
