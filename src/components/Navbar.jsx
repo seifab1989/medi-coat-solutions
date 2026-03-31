@@ -115,7 +115,7 @@ export default function Navbar(){
 
   return (
     <header className="relative backdrop-blur bg-gradient-to-r from-blue-900/0 via-blue-600/0 to-green-500/0 backdrop-blur sticky top-0 z-50">
-  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+  <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
             <Link to="/" className="flex items-center gap-3">
             <div className="w-40 overflow-visible">

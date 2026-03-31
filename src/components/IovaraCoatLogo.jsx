@@ -26,7 +26,7 @@ export default function IovaraCoatLogo({ className, ...props }) {
         </linearGradient>
       </defs>
 
-      <g transform="translate(20, 25)">
+      <g transform="translate(0, 25)">
         <g aria-label="Iovara">
           <text x="0" y="30" fontFamily="Arial, sans-serif" fontSize="36" fontWeight="bold" fill="url(#iovaraGradient)">
             I
