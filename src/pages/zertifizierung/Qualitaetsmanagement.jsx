@@ -22,7 +22,7 @@ export default function Qualitaetsmanagement() {
           <h2 className="text-2xl md:text-3xl font-semibold">Unser Anspruch: Sicherheit und Zuverlässigkeit</h2>
           <GradientBar />
           <p className="text-slate-700 leading-relaxed">
-            MediCoat Solutions legt größten Wert auf die Qualität der Produkte und Prozesse. Unsere PVD‑Schichten
+            IovaraCoat legt größten Wert auf die Qualität der Produkte und Prozesse. Unsere PVD‑Schichten
             erfüllen höchste Anforderungen an Biokompatibilität, Langlebigkeit, Hygiene und Korrosionsbeständigkeit.
           </p>
           <p className="text-slate-700 leading-relaxed mt-4">

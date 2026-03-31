@@ -8,10 +8,10 @@ export default function Datenschutz(){
       <GradientBar />
       <article className="prose prose-slate max-w-none">
         <p><strong>Stand:</strong> 25.09.2025</p>
-        <p>Diese Datenschutzerklärung informiert Sie darüber, wie die MediCoat Solutions GmbH (nachfolgend „wir" oder „MediCoat") personenbezogene Daten verarbeitet. Sie richtet sich an Besucher unserer Website, Interessenten, Kunden, Lieferanten, Dienstleister sowie Bewerberinnen und Bewerber.</p>
+        <p>Diese Datenschutzerklärung informiert Sie darüber, wie die IovaraCoat GmbH (nachfolgend „wir" oder „IovaraCoat") personenbezogene Daten verarbeitet. Sie richtet sich an Besucher unserer Website, Interessenten, Kunden, Lieferanten, Dienstleister sowie Bewerberinnen und Bewerber.</p>
 
         <h2>1. Verantwortlicher</h2>
-        <p>MediCoat Solutions GmbH<br/>[Anschrift einfügen]<br/>[PLZ] [Ort], Deutschland<br/>Telefon: [Telefonnummer]<br/>E‑Mail: [allgemeine Kontakt‑E‑Mail]</p>
+        <p>IovaraCoat GmbH<br/>[Anschrift einfügen]<br/>[PLZ] [Ort], Deutschland<br/>Telefon: [Telefonnummer]<br/>E‑Mail: [allgemeine Kontakt‑E‑Mail]</p>
 
         <h2>2. Kontaktdaten des Datenschutzbeauftragten</h2>
         <p>Dr.&nbsp;Fabian Seifried<br/>[Adresse]<br/>E‑Mail: [DSB‑E‑Mail]</p>

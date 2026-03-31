@@ -31,7 +31,7 @@ export default function KontaktAnsprechpartner() {
 
           <div className="mt-6 flex flex-wrap gap-3">
             <a
-              href="mailto:beratung@medicoat.de"
+              href="mailto:beratung@iovaracoat.de"
               className="inline-flex items-center justify-center rounded-full px-5 py-3 bg-gradient-to-r from-blue-800 via-blue-600 to-green-500 text-white font-medium shadow"
             >
               E-Mail an Dr. Seifried
@@ -58,9 +58,9 @@ export default function KontaktAnsprechpartner() {
               <p className="text-sm text-slate-600">Gründer &amp; Geschäftsführer</p>
               <a
                 className="text-sm text-blue-700 underline mt-2 inline-block"
-                href="mailto:beratung@medicoat.de"
+                href="mailto:beratung@iovaracoat.de"
               >
-                beratung@medicoat.de
+                beratung@iovaracoat.de
               </a>
             </div>
           </GradientCard>

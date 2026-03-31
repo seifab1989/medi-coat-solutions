@@ -8,7 +8,7 @@ export default function Team(){
   const person = { 
     name: "Dr. Fabian Seifried", 
     role: "Geschäftsführung / Gründer", 
-    email: "fabian.seifried@medicoat.example" 
+    email: "fabian.seifried@iovaracoat.example" 
   };
   return (
     <Container as="main" role="main" aria-labelledby="team-title">

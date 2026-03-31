@@ -12,7 +12,7 @@ export default function AGB() {
         <p><strong>Hinweis:</strong> Dies ist ein Platzhaltertext für die AGB. Er sollte vor Veröffentlichung durch gültige, rechtlich geprüfte Inhalte ersetzt werden.</p>
 
         <h2>1. Geltungsbereich</h2>
-        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen MediCoat Solutions ("wir") und unseren Kunden ("Sie"), soweit nicht ausdrücklich abweichende schriftliche Vereinbarungen getroffen wurden.</p>
+        <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen IovaraCoat ("wir") und unseren Kunden ("Sie"), soweit nicht ausdrücklich abweichende schriftliche Vereinbarungen getroffen wurden.</p>
 
         <h2>2. Vertragsabschluss</h2>
         <p>Unsere Angebote sind freibleibend und unverbindlich. Ein Vertrag kommt erst durch unsere schriftliche Auftragsbestätigung oder durch Ausführung der Leistung zustande.</p>

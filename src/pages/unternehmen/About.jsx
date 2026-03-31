@@ -12,7 +12,7 @@ function About() {
       </h2>
 
       <p className="mt-3 text-slate-600">
-        MediCoat Solutions steht für präzise, reproduzierbare PVD-Beschichtungen
+        IovaraCoat steht für präzise, reproduzierbare PVD-Beschichtungen
         für die Medizintechnik. Unsere Mission: Funktion und Patientensicherheit
         zusammenbringen – durch validierte Prozesse, Transparenz und
         partnerschaftliche Zusammenarbeit.
@@ -42,9 +42,9 @@ function About() {
 
         <div className="lg:col-span-5">
           <div className="aspect-[4/3] rounded-3xl border border-slate-200/60 shadow-sm overflow-hidden relative">
-            <img
+              <img
               src={assetUrl("assets/about.jpg")}
-              alt="MediCoat Solutions – Über uns"
+              alt="IovaraCoat – Über uns"
               loading="lazy"
               className="absolute inset-0 w-full h-full object-cover"
             />

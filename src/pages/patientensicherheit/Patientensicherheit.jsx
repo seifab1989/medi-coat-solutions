@@ -86,7 +86,7 @@ export default function Patientensicherheit() {
             </li>
             <li>
               Der mit <strong>CrN-mod</strong> beschichtete Prüfkörper (rechts) zeigt keine punktuellen kupferfarbigen Verfärbungen,
-              weil die CrN-mod-Schicht das Eisen schützt. Die CrN-mod-Schicht von MediCoat Solutions reagiert zudem nicht mit der
+              weil die CrN-mod-Schicht das Eisen schützt. Die CrN-mod-Schicht von IovaraCoat reagiert zudem nicht mit der
               Kupfersulfat-Lösung und ist somit beständig gegen Korrosion.
             </li>
           </ul>
