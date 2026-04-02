@@ -5,7 +5,7 @@ export const COATINGS: Coating[] = [
   { name: "CrN-mod (Chromnitrid) – Die „Erfahrene“", color: "silbergrau (L*/ a*/ b*: 70/ 1/ 3 ±5)", hardness: "2700 ±200 HV", thickness: "1 – 8 µm", corrosion: "sehr gut",
     features: ["Gängigster Ersatz des galvanischen Hartchroms und Cr(VI)-frei","Geringer Reibungskoeffizient","Hochwertiges Erscheinungsbild der Metallic-Farbe"]},
   { name: "ZrN (Zirkonnitrid) – Die „Unterschätzte“", color: "weißgelb (L*/ a*/ b*: 87/ -2/ 23 ±5)", hardness: "2600 ±200 HV", thickness: "1 – 3 µm", corrosion: "sehr gut",
-    features: ["Verbesserte Röntgensichtbarkeit im Vergleich zu TiN, DLC und CrN","Exzellenter Verschleißschutz bei hoher Zähigkeit","Chemische Langzeitstabilität"]},
+    features: ["Verbesserte Röntgensichtbarkeit im Vergleich zu TiN und DLC","Exzellenter Verschleißschutz bei hoher Zähigkeit","Chemische Langzeitstabilität"]},
   { name: "CrN-MC (Chromoxinitrid) – Die „Starke“", color: "anthrazit-regenbogen (L*/ a*/ b*: 55/ -3/ -1 ±5)", hardness: "2600 ±200 HV", thickness: "1 – 3 µm", corrosion: "exzellent",
     features: ["Hervorragend geeignet auf Edelstahl (z. B. 1.4301)","Hydrophile Oberflächeneigenschaften (abhängig vom Bauteil)","Geeignet für eine Vielzahl medizinischer Instrumente / Produkte"]},
   { name: "DLC (a-C:H) – Der „Diamant“ (externer Partner)", color: "anthrazit (L*/ a*/ b*: 54/ 1/ 2 ±5)", hardness: "2000 ±200 HV", thickness: "1 – 3 µm", corrosion: "exzellent",
