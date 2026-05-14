@@ -26,7 +26,7 @@ export default function Download(){
 
       <div className="grid md:grid-cols-2 gap-6 mt-8">
         <CategoryHeading>Datenblätter</CategoryHeading>
-        <DocLink title="TiN-mod – Der „Allrounde“" desc="Vielseitig einsetzbar..." href={assetUrl('downloads/datenblatt-tin-mod.pdf')} size={size('datenblatt-tin-mod.pdf')} />
+        <DocLink title="TiN-mod – Der „Allrounder“" desc="Vielseitig einsetzbar..." href={assetUrl('downloads/datenblatt-tin-mod.pdf')} size={size('datenblatt-tin-mod.pdf')} />
         <DocLink title="CrN-mod – Die „Erfahrene“" desc="Robust, langlebig..." href={assetUrl('downloads/datenblatt-crn-mod.pdf')} size={size('datenblatt-crn-mod.pdf')} />
   <DocLink title={'ZrN – Die „Unterschätzte“'} desc="Besondere Eigenschaften..." href={assetUrl('downloads/datenblatt-zrn.pdf')} size={size('datenblatt-zrn.pdf')} />
         <DocLink title="CrN‑MC – Die „Starke“" desc="Maximale Belastbarkeit..." href={assetUrl('downloads/datenblatt-crn-mc.pdf')} size={size('datenblatt-crn-mc.pdf')} />
